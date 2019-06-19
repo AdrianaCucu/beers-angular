@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,14 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent {
   items;
 
-  clearCart() {
-    this.items = this.cartService.clearCart();
+  constructor(private cartService: CartService) {
+    this.items = this.cartService.getItems();
   }
 
-  constructor(
-    private cartService: CartService,
-  ) {
-    this.items = this.cartService.getItems();
+  clearCart() {
+    this.items = this.cartService.clearCart();
   }
 
   onSubmit(customerData) {
