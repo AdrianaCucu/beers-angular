@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
-  MAX_PER_PAGE = 12;
+  MAX_PER_PAGE = 10;
 
   constructor(private http: HttpClient) {}
 

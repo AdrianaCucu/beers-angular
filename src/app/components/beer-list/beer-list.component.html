@@ -1,25 +1,14 @@
-<h3>Items</h3>
-
-<div *ngFor="let beer of beers">
-  <p>
-    {{ beer.name }}
-  </p>
-</div>
-
-<!--
-<div class="ui container">
-  <div *ngFor="let beer of beers; index as productId" class="ui card">
-    <div class="ui image">
+<div class="ui cards">
+  <div *ngFor="let beer of beers" class="ui card">
+    <div class="ui small centered image">
       <img src="{{ beer.image_url }}" />
     </div>
     <div class="content">
       <a class="header">{{ beer.name }}</a>
       <div class="meta">{{ beer.tagline }}</div>
-      <div class="description">{{ beer.description }}</div>
     </div>
   </div>
 </div>
--->
 
 <app-beer-list-controls
   (updatePage)="updatePage($event)"
