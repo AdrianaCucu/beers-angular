@@ -1,15 +1,19 @@
-<div class="ui cards">
-  <div *ngFor="let beer of beers" class="ui card">
-    <div class="ui small centered image">
-      <img src="{{ beer.image_url }}" />
-    </div>
-    <div class="content">
-      <a class="header">{{ beer.name }}</a>
-      <div class="meta">{{ beer.tagline }}</div>
+<div class="ui five column grid">
+  <div *ngFor="let beer of beers" class="ui column">
+    <div class="ui card">
+      <div class="ui small centered image">
+        <img src="{{ beer.image_url }}" />
+      </div>
+      <div class="content">
+        <a class="header">{{ beer.name }}</a>
+        <div class="meta">{{ beer.tagline }}</div>
+      </div>
     </div>
   </div>
 </div>
 
-<app-beer-list-controls
-  (updatePage)="updatePage($event)"
-></app-beer-list-controls>
+<div class="ui centered grid">
+  <app-beer-list-controls
+    (updatePage)="updatePage($event)"
+  ></app-beer-list-controls>
+</div>
