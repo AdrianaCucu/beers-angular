@@ -30,6 +30,8 @@ export class BeersService {
             this.MAX_PER_PAGE
           }&abv_gt=10`
         );
+      case 'random':
+        return this.http.get(`${this.API_PATH}/beers/random`);
       default:
         return this.http.get(
           `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
