@@ -11,15 +11,17 @@ import { FavouritesService } from 'src/app/services/favourites.service';
 export class BeerListComponent implements OnInit {
   beers;
 
-  constructor(private beersService: BeersService, private favouritesService: FavouritesService) {}
+  constructor(
+    private beersService: BeersService,
+    private favouritesService: FavouritesService
+  ) {}
 
   ngOnInit() {
     this.updatePage();
   }
 
-  updatePage(page?: number) {
-    this.beersService.getBeers(page).subscribe(items => (this.beers = items));
-    console.log(this.beers);
+  updatePage(page?: number, filter?: string) {
+    this.beersService.getBeers(page, filter).subscribe(items => (this.beers = items));
   }
 
   addToFavourites(beer) {
