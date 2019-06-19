@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BeersService } from '../../services/beers.service';
+import { FavouritesService } from 'src/app/services/favourites.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -10,7 +11,7 @@ import { BeersService } from '../../services/beers.service';
 export class BeerListComponent implements OnInit {
   beers;
 
-  constructor(private beersService: BeersService) {}
+  constructor(private beersService: BeersService, private favouritesService: FavouritesService) {}
 
   ngOnInit() {
     this.updatePage();
@@ -19,5 +20,9 @@ export class BeerListComponent implements OnInit {
   updatePage(page?: number) {
     this.beersService.getBeers(page).subscribe(items => (this.beers = items));
     console.log(this.beers);
+  }
+
+  addToFavourites(beer) {
+    this.favouritesService.addToFavourites(beer);
   }
 }

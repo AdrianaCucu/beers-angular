@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
-  MAX_PER_PAGE = 10;
+  MAX_PER_PAGE = 40;
 
   constructor(private http: HttpClient) {}
 
@@ -15,4 +15,6 @@ export class BeersService {
       `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
     );
   }
+
+  // !!!!!!!! NEED TO ADD FILTERS !!!!!!!!!!!!
 }

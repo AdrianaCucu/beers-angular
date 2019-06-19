@@ -8,15 +8,15 @@ export class FavouritesService {
 
   constructor() {}
 
-  addToCart(product) {
-    this.items.push(product);
+  addToFavourites(beer) {
+    this.items.push(beer);
   }
 
   getItems() {
     return this.items;
   }
 
-  clearCart() {
+  clearFavourites() {
     this.items = [];
     return this.items;
   }

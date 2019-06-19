@@ -1,4 +1,4 @@
-<div class="ui five column grid">
+<div class="ui five column padded grid">
   <div *ngFor="let beer of beers; index as beerId" class="ui column">
     <div class="ui card">
       <div class="ui small centered image">
@@ -7,6 +7,12 @@
       <div class="content">
         <a class="header">{{ beer.name }}</a>
         <div class="meta">{{ beer.tagline }}</div>
+      </div>
+
+      <div class="extra content">
+        <button class="ui button" (click)="addToFavourites(beer)">
+          <i class="star icon"></i>
+        </button>
       </div>
     </div>
   </div>
