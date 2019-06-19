@@ -13,4 +13,7 @@ export class BeerListComponent implements OnInit {
   ngOnInit() {
   }
 
+  updatePage(page?: number) {
+ 
+  }
 }
