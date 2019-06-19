@@ -15,6 +15,6 @@ export class FavouritesComponent {
   }
 
   clearFavourites() {
-    this.items = this.favouritesService.clearCart();
+    this.items = this.favouritesService.clearFavourites();
   }
 }
