@@ -12,15 +12,21 @@ export class BeersService {
     // Response object is JSON by default.
     // Do not map response to response.json(), gives error
     switch (filter) {
-      case 'none':
-        return this.http.get(
-          `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
-        );
       case 'weak':
         return this.http.get(
           `${this.API_PATH}/beers?page=${page}&per_page=${
             this.MAX_PER_PAGE
-          }&abv_lt=4.5`
+          }&abv_lt=5`
+        );
+      case 'medium':
+        return this.http.get(
+          `${this.API_PATH}/beers?page=${page}&per_page=${
+            this.MAX_PER_PAGE
+          }&abv_lt=10&abv_gt=5`
+        );
+      default:
+        return this.http.get(
+          `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
         );
     }
   }
