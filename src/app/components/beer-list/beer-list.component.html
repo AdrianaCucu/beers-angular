@@ -1,5 +1,14 @@
+<h3>Items</h3>
+
+<div *ngFor="let beer of beers">
+  <p>
+    {{ beer.name }}
+  </p>
+</div>
+
+<!--
 <div class="ui container">
-  <div class="ui card" *ngFor="let beer of beers">
+  <div *ngFor="let beer of beers; index as productId" class="ui card">
     <div class="ui image">
       <img src="{{ beer.image_url }}" />
     </div>
@@ -10,5 +19,8 @@
     </div>
   </div>
 </div>
+-->
 
-<app-beer-list-controls></app-beer-list-controls>
+<app-beer-list-controls
+  (updatePage)="updatePage($event)"
+></app-beer-list-controls>

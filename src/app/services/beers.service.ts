@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class BeersService {
@@ -10,11 +9,10 @@ export class BeersService {
   constructor(private http: HttpClient) {}
 
   getBeers(page: number = 1) {
-    const response = this.http
-      .get(`${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`)
-      .pipe(map((res: Response) => res.json));
-
-    console.log(response);
-    return response;
+    // Response object is JSON by default.
+    // Do not map response to response.json(), gives error
+    return this.http.get(
+      `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
+    );
   }
 }
