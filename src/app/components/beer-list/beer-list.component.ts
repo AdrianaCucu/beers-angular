@@ -14,6 +14,6 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage(page?: number) {
- 
+
   }
 }
