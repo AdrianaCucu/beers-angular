@@ -1,5 +1,5 @@
 <div class="ui five column grid">
-  <div *ngFor="let beer of beers" class="ui column">
+  <div *ngFor="let beer of beers; index as beerId" class="ui column">
     <div class="ui card">
       <div class="ui small centered image">
         <img src="{{ beer.image_url }}" />

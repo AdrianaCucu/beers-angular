@@ -1,9 +1,9 @@
-<h3>Cart</h3>
+<h1>Favourites</h1>
 
 <div *ngIf="items.length === 0">
-  <p>
-    Your cart is empty.
-  </p>
+  <h3>
+    Your don't have any favourites yet.
+  </h3>
 </div>
 
 <div class="cart-item" *ngFor="let item of items">
@@ -13,4 +13,4 @@
 
 <br />
 
-<button *ngIf="items.length > 0" (click)="clearCart()">Clear Cart</button>
+<button *ngIf="items.length > 0" (click)="clearFavourites()">Clear Cart</button>
