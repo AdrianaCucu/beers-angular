@@ -1,12 +1,21 @@
 <div class="ui segment base-colours">
   <app-top-bar></app-top-bar>
+
   <h1>Favourites</h1>
 
   <div *ngIf="items.size === 0">
     <h3>
-      Your don't have any favourites yet.
+      Your don't have any favourites.
     </h3>
   </div>
+
+  <button
+    class="ui left floated button inverted-colours"
+    *ngIf="items.size > 0"
+    (click)="clearFavourites()"
+  >
+    Remove all
+  </button>
 
   <div class="ui cards">
     <div class="ui card" *ngFor="let item of items">
@@ -30,10 +39,4 @@
       </div>
     </div>
   </div>
-
-  <br />
-
-  <button *ngIf="items.length > 0" (click)="clearFavourites()">
-    Clear Cart
-  </button>
 </div>
