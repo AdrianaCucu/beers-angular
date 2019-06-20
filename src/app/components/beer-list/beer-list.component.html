@@ -38,11 +38,16 @@
         </div>
         <div class="content">
           <a class="header">
+            <a
+              class="turn-yellow"
+              [title]="beer.name + ' details'"
+              [routerLink]="['/beers', beerId]"
+              (click)="selectBeer(beer)"
+            >
+              {{ beer.name }}
+            </a>
 
 
-              <a class ="turn-yellow" [title]="beer.name + ' details'" [routerLink] ="['/beers', beerId]">
-                {{beer.name}}
-              </a>
 
           </a>
           <div class="meta">{{ beer.tagline }}</div>

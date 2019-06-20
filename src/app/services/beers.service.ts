@@ -6,7 +6,17 @@ export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
   MAX_PER_PAGE = 50;
 
+  selectedBeerId;
+
   constructor(private http: HttpClient) {}
+
+  setBeerById(id) {
+    this.selectedBeerId = id;
+  }
+
+  getSelectedBeer() {
+    return this.http.get(`${this.API_PATH}/beers/${this.selectedBeerId}`);
+  }
 
   getBeers(page: number = 1, filter = 'none') {
     // Response object is JSON by default.
