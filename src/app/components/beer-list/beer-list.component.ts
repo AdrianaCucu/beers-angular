@@ -21,7 +21,9 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage(page?: number, filter?: string) {
-    this.beersService.getBeers(page, filter).subscribe(items => (this.beers = items));
+    this.beersService
+      .getBeers(page, filter)
+      .subscribe(items => (this.beers = items));
   }
 
   addToFavourites(beer) {
