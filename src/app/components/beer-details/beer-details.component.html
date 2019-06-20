@@ -1,8 +1,51 @@
-<div class="ui segment" style="background-color: #292826;">
+<div class="ui segment base-colours">
   <app-top-bar></app-top-bar>
 
-  <!-- There is only one beer -->
+  <!-- There is only one bere, but it only works like this. -->
   <div *ngFor="let beer of items; index as beerId">
-    <h3>{{ beer.name }}</h3>
+    <div class="ui container segment full-container">
+      <h2 class="ui header">
+        <div class="ui container title yellow-text">
+          <p>{{ beer.name }}</p>
+        </div>
+      </h2>
+
+      <img class="ui left floated image" src="{{ beer.image_url }}" />
+
+      <div class="right-side">
+        <div class="description black-text medium-text">
+          <p>{{ beer.description }}</p>
+        </div>
+
+        <br />
+
+        <div clss="first-brewed">
+          <div class="meta black-text medium-text">
+            <p><i>First brewed:</i> {{ beer.first_brewed }}</p>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="food-pairing">
+          <div class="description black-text medium-text">
+            <p><i>Food pairing:</i> {{ beer.food_pairing }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-left"></div>
+
+      <div class="bottom-right">
+        <div class="extra content">
+          <button
+            class="ui right floated button favourite-button turn-yellow small-text"
+            (click)="addToFavourites(beer)"
+          >
+            Add to favourites
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
