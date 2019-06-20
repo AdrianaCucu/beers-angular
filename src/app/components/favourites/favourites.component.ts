@@ -14,6 +14,10 @@ export class FavouritesComponent {
     this.items = this.favouritesService.getItems();
   }
 
+  removeBeer(beer) {
+    this.favouritesService.removeFromFavourites(beer);
+  }
+
   clearFavourites() {
     this.items = this.favouritesService.clearFavourites();
   }

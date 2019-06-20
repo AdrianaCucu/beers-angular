@@ -12,6 +12,10 @@ export class FavouritesService {
     this.items.add(beer);
   }
 
+  removeFromFavourites(beer) {
+    this.items.delete(beer);
+  }
+
   getItems() {
     return this.items;
   }
