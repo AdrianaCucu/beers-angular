@@ -4,12 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FavouritesService {
-  items = [];
+  items = new Set();
 
   constructor() {}
 
   addToFavourites(beer) {
-    this.items.push(beer);
+    this.items.add(beer);
   }
 
   getItems() {
@@ -17,7 +17,7 @@ export class FavouritesService {
   }
 
   clearFavourites() {
-    this.items = [];
+    this.items = new Set();
     return this.items;
   }
 }
