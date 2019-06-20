@@ -1,0 +1,18 @@
+.base-colours {
+  background-color: #292826;
+  color: #f9d342;
+}
+
+.base-colours:hover {
+  background-color: #292826;
+  color: #f9d342;
+}
+
+.base-colours:focus {
+  background-color: #292826;
+  color: #f9d342;
+}
+
+i:hover {
+  transform: scale(1.2);
+}

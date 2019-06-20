@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.base-colours {
+  background-color: #292826;
+  color: #F9D342;
+}
+
+.inverted-colours {
+  background-color: #F9D342;
+  color: #292826;
+}

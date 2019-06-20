@@ -1,28 +1,19 @@
-<h1 class="ui header" style="background-color: #292826;">
-  <a [routerLink]="['/']">
-    <div
-      class="ui vertical animated button"
-      style="background-color: #292826; color: #F9D342;"
-    >
-      <h1 class="visible content">
-        <i class="beer icon"></i>
-      </h1>
-      <h1 class="hidden content">
-        Beers
-      </h1>
-    </div>
+<h1 class="ui header base-colours">
+  <a
+    [routerLink]="['/']"
+    class="ui vertical button base-colours"
+  >
+    <h1>
+      <i class="beer icon"></i>
+    </h1>
   </a>
 
   <a
     [routerLink]="['/favourites']"
-    class="ui vertical animated button"
-    style="background-color: #292826; color: #F9D342;"
+    class="ui vertical button base-colours"
   >
-    <h1 class="visible content">
+    <h1>
       <i class="star icon"></i>
     </h1>
-    <h3 class="hidden content">
-      Favourites
-    </h3>
   </a>
 </h1>
