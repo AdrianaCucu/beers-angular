@@ -18,6 +18,10 @@
   color: #f9d342;
 }
 
+.turn-yellow {
+  color: #292826;
+}
+
 .turn-yellow:hover {
   color: #f9d342;
 }

@@ -6,7 +6,7 @@ export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
   MAX_PER_PAGE = 50;
 
-  selectedBeerId = 0;
+  selectedBeerId;
 
   constructor(private http: HttpClient) {}
 

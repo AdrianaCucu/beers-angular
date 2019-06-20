@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FavouritesService } from '../../services/favourites.service';
+import { BeersService } from 'src/app/services/beers.service';
 
 @Component({
   selector: 'app-favourites',
@@ -10,7 +11,10 @@ import { FavouritesService } from '../../services/favourites.service';
 export class FavouritesComponent {
   items;
 
-  constructor(private favouritesService: FavouritesService) {
+  constructor(
+    private favouritesService: FavouritesService,
+    private beersService: BeersService
+  ) {
     this.items = this.favouritesService.getItems();
   }
 
@@ -20,5 +24,9 @@ export class FavouritesComponent {
 
   clearFavourites() {
     this.items = this.favouritesService.clearFavourites();
+  }
+
+  selectBeer(beer) {
+    this.beersService.setBeerById(beer.id);
   }
 }

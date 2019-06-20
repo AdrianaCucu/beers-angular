@@ -18,11 +18,18 @@
   </button>
 
   <div class="ui cards">
-    <div class="ui card" *ngFor="let item of items">
+    <div class="ui card" *ngFor="let item of items; index as itemId">
       <div class="content">
         <img class="left floated mini ui image" src="{{ item.image_url }}" />
         <a class="header">
-          <div class="turn-yellow">{{ item.name }}</div>
+          <a
+            class="turn-yellow"
+            [title]="item.name + ' details'"
+            [routerLink]="['/beers', itemId]"
+            (click)="selectBeer(item)"
+          >
+            {{ item.name }}</a
+          >
         </a>
         <div class="meta">
           {{ item.description }}
