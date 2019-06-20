@@ -1,39 +1,56 @@
 <div class="ui segment" style="background-color: #292826;">
-  <button class="ui button inverted-colours" (click)="updatePage(1, 'none')">
-    Remove filter
-  </button>
-  <button class="ui button inverted-colours" (click)="updatePage(1, 'weak')">
-    0%-5%
-  </button>
-  <button class="ui button inverted-colours" (click)="updatePage(1, 'medium')">
-    5%-10%
-  </button>
-  <button class="ui button inverted-colours" (click)="updatePage(1, 'strong')">
-    >10%
-  </button>
-  <button class="ui button inverted-colours" (click)="updatePage(1, 'random')">
-    Random
-  </button>
+  <app-top-bar></app-top-bar>
+
+  <h1>
+    <button class="ui button inverted-colours" (click)="updatePage(1, 'none')">
+      Remove filter
+    </button>
+    <button class="ui button inverted-colours" (click)="updatePage(1, 'weak')">
+      0%-5%
+    </button>
+    <button
+      class="ui button inverted-colours"
+      (click)="updatePage(1, 'medium')"
+    >
+      5%-10%
+    </button>
+    <button
+      class="ui button inverted-colours"
+      (click)="updatePage(1, 'strong')"
+    >
+      >10%
+    </button>
+    <button
+      class="ui button inverted-colours"
+      (click)="updatePage(1, 'random')"
+    >
+      Random
+    </button>
+  </h1>
 </div>
 
-<div class="beers-list">
-  <div *ngFor="let beer of beers; index as beerId" class="ui column">
-    <div class="ui card card-box">
-      <div class="ui small centered image" style="background: transparent;">
-        <img src="{{ beer.image_url }}" />
-      </div>
-      <div class="content">
-        <a class="header">{{ beer.name }}</a>
-        <div class="meta">{{ beer.tagline }}</div>
-      </div>
+<div class="ui segment base-colours">
+  <div class="beers-list">
+    <div *ngFor="let beer of beers; index as beerId" class="ui column">
+      <div class="ui card card-box">
+        <div class="ui small centered image" style="background: transparent;">
+          <img src="{{ beer.image_url }}" />
+        </div>
+        <div class="content">
+          <a class="header">
+            <div class="turn-yellow">{{ beer.name }}</div>
+          </a>
+          <div class="meta">{{ beer.tagline }}</div>
+        </div>
 
-      <div class="extra content">
-        <button
-          class="ui button favourite-button"
-          (click)="addToFavourites(beer)"
-        >
-          <i class="star icon"></i>
-        </button>
+        <div class="extra content">
+          <button
+            class="ui right floated button favourite-button turn-yellow"
+            (click)="addToFavourites(beer)"
+          >
+            Add to favourites
+          </button>
+        </div>
       </div>
     </div>
   </div>
