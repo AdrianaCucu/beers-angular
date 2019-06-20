@@ -11,6 +11,7 @@ import { BeerListComponent } from './components/beer-list/beer-list.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { BeerListControlsComponent } from './components/beer-list-controls/beer-list-controls.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     TopBarComponent,
     BeerListControlsComponent,
     FavouritesComponent,
+    BeerDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: BeerListComponent },
+      { path: 'beers/:beerId', component: BeerDetailsComponent},
       { path: 'favourites', component: FavouritesComponent }
     ])
   ],
