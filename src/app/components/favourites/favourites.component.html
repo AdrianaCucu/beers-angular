@@ -6,8 +6,18 @@
   </h3>
 </div>
 
-<div class="favourites-item" *ngFor="let item of items">
-  <span>{{item}}</span>
+<div class="ui items">
+    <div class="item" *ngFor="let item of items">
+        <div class="ui mini image">
+          <img src="{{ item.image_url }}">
+        </div>
+        <div class="content">
+          <a class="header">{{item.name}}</a>
+          <div class="meta">
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
 </div>
 
 <br />
