@@ -21,15 +21,23 @@
 
         <div clss="first-brewed">
           <div class="meta black-text medium-text">
-            <p><i>First brewed:</i> {{ beer.first_brewed }}</p>
+            <p>First brewed: {{ beer.first_brewed }}</p>
           </div>
         </div>
 
         <br />
 
         <div class="food-pairing">
-          <div class="description black-text medium-text">
+          <div class="description black-text small-text">
             <p><i>Food pairing:</i> {{ beer.food_pairing }}</p>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="brewers-tips">
+          <div class="description black-text small-text">
+            <p><i>Brewer's tips:</i> {{ beer.brewers_tips }}</p>
           </div>
         </div>
       </div>
@@ -39,7 +47,7 @@
       <div class="bottom-right">
         <div class="extra content">
           <button
-            class="ui right floated button favourite-button turn-yellow small-text"
+            class="ui right floated button favourite-button turn-yellow"
             (click)="addToFavourites(beer)"
           >
             Add to favourites
