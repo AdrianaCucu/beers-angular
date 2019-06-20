@@ -10,11 +10,7 @@ import { BeersService } from 'src/app/services/beers.service';
   styleUrls: ['./beer-details.component.css']
 })
 export class BeerDetailsComponent implements OnInit {
-  beer;
-
-  addToFavourites(beer) {
-    this.favouritesService.addToFavourites(beer);
-  }
+  items;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +19,16 @@ export class BeerDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.beer = this.beersService.getSelectedBeer();
-    console.log(this.beer);
+    this.updatePage();
+  }
+
+  updatePage() {
+    this.beersService
+      .getBeers(1, 'selected')
+      .subscribe(item => (this.items = item));
+  }
+
+  addToFavourites(beer) {
+    this.favouritesService.addToFavourites(beer);
   }
 }

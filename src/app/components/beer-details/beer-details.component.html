@@ -1,3 +1,8 @@
-<p>
-  beer-details works!
-</p>
+<div class="ui segment" style="background-color: #292826;">
+  <app-top-bar></app-top-bar>
+
+  <!-- There is only one beer -->
+  <div *ngFor="let beer of items; index as beerId">
+    <h3>{{ beer.name }}</h3>
+  </div>
+</div>
