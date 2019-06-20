@@ -14,6 +14,18 @@
   height: 550px;
 }
 
+.favourite-button {
+  background-color: transparent;
+}
+
+.favourite-button:hover {
+  background-color: transparent;
+}
+
+.favourite-button:focus {
+  background-color: transparent;
+}
+
 .inverted-colours {
   background-color: #f9d342;
   color: #292826;
