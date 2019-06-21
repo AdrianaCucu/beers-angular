@@ -19,11 +19,6 @@
   color: #f9d342;
 }
 
-.inverted-colours:focus {
-  background-color: #292826;
-  color: #f9d342;
-}
-
 .small-text {
   font-size: 1.3vmax;
 }
