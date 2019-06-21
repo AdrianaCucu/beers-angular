@@ -6,21 +6,24 @@
   <div class="beers-list">
     <div *ngFor="let beer of beers" class="ui column">
       <div class="ui card card-box">
-        <div class="ui small centered image" style="background: transparent;">
-          <img src="{{ beer.image_url }}" />
-        </div>
         <div class="content">
-          <a class="header">
-            <a
-              class="turn-yellow"
-              [title]="beer.name + ' details'"
-              [routerLink]="['/beers', beer.id]"
-              (click)="selectBeer(beer)"
-            >
-              {{ beer.name }}
+          <div class="ui small image" style="background: transparent;">
+            <img src="{{ beer.image_url }}" />
+          </div>
+
+          <div class="ui container bottom-text">
+            <a class="header">
+              <a
+                class="turn-yellow title"
+                [title]="beer.name + ' details'"
+                [routerLink]="['/beers', beer.id]"
+                (click)="selectBeer(beer)"
+              >
+                {{ beer.name }}
+              </a>
             </a>
-          </a>
-          <div class="meta">{{ beer.tagline }}</div>
+            <div class="meta">{{ beer.tagline }}</div>
+          </div>
         </div>
 
         <div class="extra content">

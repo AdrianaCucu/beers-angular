@@ -12,7 +12,7 @@ export class FiltersComponent implements OnInit {
 
   ngOnInit() {}
 
-  selectPage(filter: string = 'no-filter') {
+  selectPage(filter: string) {
     this.beersService.setFilter(filter);
   }
 }

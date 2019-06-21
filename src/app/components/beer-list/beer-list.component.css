@@ -7,7 +7,14 @@
 }
 
 .beers-list img {
-  width: 100px;
+  width: 95px;
+  position: absolute;
+  left: 50%;
+}
+
+.bottom-text {
+  position: absolute;
+  bottom: 12%;
 }
 
 .card-box {
@@ -44,6 +51,10 @@
 .inverted-colours:focus {
   background-color: #292826;
   color: #f9d342;
+}
+
+.title {
+  font-size: 200%;
 }
 
 .turn-yellow {
