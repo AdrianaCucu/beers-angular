@@ -12,6 +12,7 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { BeerListControlsComponent } from './components/beer-list-controls/beer-list-controls.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +21,20 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
     TopBarComponent,
     BeerListControlsComponent,
     FavouritesComponent,
-    BeerDetailsComponent
+    BeerDetailsComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: BeerListComponent },
-      { path: ':currentPage', component: BeerListComponent },
+      { path: '', component: LandingPageComponent },
+      { path: 'no-filter', component: BeerListComponent },
+      { path: 'weak', component: BeerListComponent },
+      { path: 'medium', component: BeerListComponent },
+      { path: 'strong', component: BeerListComponent },
+      { path: 'random', component: BeerListComponent },
       { path: 'beers/:beerId', component: BeerDetailsComponent },
       { path: 'favourites', component: FavouritesComponent }
     ])
