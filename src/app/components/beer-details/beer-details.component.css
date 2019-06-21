@@ -42,6 +42,11 @@ img {
   height: 45vh;
 }
 
+.loader-container {
+  height: 70vh;
+  width: 100vw;
+}
+
 .medium-text {
   font-size: 2.3vmin;
 }

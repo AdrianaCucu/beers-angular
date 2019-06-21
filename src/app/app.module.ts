@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { BeersService } from './services/beers.service';
+import { FavouritesService } from './services/favourites.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

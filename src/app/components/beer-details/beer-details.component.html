@@ -4,6 +4,13 @@
 </div>
 
 <div class="ui segment base-colours">
+  <!-- Loader animation -->
+  <div *ngIf="!items" class="loader-container">
+    <div class="ui loader-container active dimmer">
+      <div class="ui massive loader"></div>
+    </div>
+  </div>
+
   <!-- There is only one bere, but it only works like this. -->
   <div *ngFor="let beer of items; index as beerId">
     <div class="ui container segment full-container">

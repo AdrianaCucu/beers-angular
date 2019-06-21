@@ -5,6 +5,14 @@
 
 <div class="ui segment base-colours">
   <div class="beers-list">
+
+    <!-- Loader animation -->
+    <div *ngIf="!beers" class="loader-container">
+      <div class="ui loader-container active dimmer">
+        <div class="ui massive loader"></div>
+      </div>
+    </div>
+
     <div *ngFor="let beer of beers" class="ui column">
       <div class="ui card card-box">
         <div class="content">

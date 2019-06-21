@@ -53,6 +53,11 @@
   color: #f9d342;
 }
 
+.loader-container {
+  height: 70vh;
+  width: 100vw;
+}
+
 .title {
   font-size: 180%;
 }
