@@ -1,6 +1,12 @@
 <div class="ui segment" style="background-color: #292826;">
   <app-top-bar></app-top-bar>
 
+  <div class="ui grid">
+    <app-beer-list-controls
+      (updatePage)="updatePage($event)"
+    ></app-beer-list-controls>
+  </div>
+
   <h1>
     <button class="ui button inverted-colours" (click)="updatePage(1, 'none')">
       Remove filter
@@ -62,11 +68,3 @@
     </div>
   </div>
 </div>
-
-<!--
-<div class="ui centered grid">
-  <app-beer-list-controls
-    (updatePage)="updatePage($event)"
-  ></app-beer-list-controls>
-</div>
--->
