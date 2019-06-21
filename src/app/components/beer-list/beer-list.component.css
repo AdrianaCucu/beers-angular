@@ -7,14 +7,14 @@
 }
 
 .beers-list img {
-  width: 95px;
-  position: absolute;
-  left: 50%;
+  display: block;
+  margin: auto;
+  width: 32%;
 }
 
 .bottom-text {
   position: absolute;
-  bottom: 12%;
+  bottom: 14%;
 }
 
 .card-box {
@@ -54,7 +54,7 @@
 }
 
 .title {
-  font-size: 200%;
+  font-size: 180%;
 }
 
 .turn-yellow {
