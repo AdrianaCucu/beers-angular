@@ -25,6 +25,10 @@
   font-size: 7vh;
 }
 
+.under-header {
+  top: 15vmax;
+}
+
 .yellow-text {
   color: #f9d342;
 }

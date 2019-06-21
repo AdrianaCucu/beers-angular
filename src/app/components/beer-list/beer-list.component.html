@@ -1,11 +1,10 @@
-<div class="ui segment" style="background-color: #292826;">
+<div class="ui segment fixed-header base-colours">
   <app-top-bar></app-top-bar>
   <app-filters></app-filters>
 </div>
 
-<div class="ui segment base-colours">
+<div class="ui segment base-colours under-header">
   <div class="beers-list">
-
     <!-- Loader animation -->
     <div *ngIf="!beers" class="loader-container">
       <div class="ui loader-container active dimmer">

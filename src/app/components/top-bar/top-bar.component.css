@@ -17,6 +17,12 @@
   font-size: 4vmin;
 }
 
+.fixed-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
 .title {
   font-size: 9vmin;
 }

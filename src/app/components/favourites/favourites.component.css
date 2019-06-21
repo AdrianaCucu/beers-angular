@@ -3,6 +3,12 @@
   color: #f9d342;
 }
 
+.fixed-header {
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+}
+
 .inverted-colours {
   background-color: #f9d342;
   color: #292826;
@@ -24,4 +30,8 @@
 
 .turn-yellow:hover {
   color: #f9d342;
+}
+
+.under-header {
+  top: 14vmax;
 }

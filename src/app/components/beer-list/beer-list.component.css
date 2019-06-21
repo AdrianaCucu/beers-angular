@@ -1,3 +1,8 @@
+.base-colours {
+  background-color: #292826;
+  color: #f9d342;
+}
+
 .beers-list {
   display: grid;
   justify-items: center;
@@ -33,9 +38,12 @@
   background-color: transparent;
 }
 
-.base-colours {
-  background-color: #292826;
-  color: #f9d342;
+.fixed-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  height: 14vmax;
+  width: 100vw;
 }
 
 .inverted-colours {
@@ -68,4 +76,8 @@
 
 .turn-yellow:hover {
   color: #f9d342;
+}
+
+.under-header {
+  top: 14vmax;
 }
