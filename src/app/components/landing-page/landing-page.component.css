@@ -1,0 +1,30 @@
+.base-colours {
+  background-color: #292826;
+  color: #f9d342;
+}
+
+.full-container {
+  height: 50vh;
+  width: 50vw;
+}
+
+.right-floated {
+  float: right;
+}
+
+.small-container {
+  height: 10vh;
+  width: 50vw;
+}
+
+.subtitle {
+  font-size: 3vh;
+}
+
+.title {
+  font-size: 7vh;
+}
+
+.yellow-text {
+  color: #f9d342;
+}
