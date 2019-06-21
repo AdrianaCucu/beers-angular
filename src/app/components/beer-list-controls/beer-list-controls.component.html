@@ -1,14 +1,17 @@
-<button
-  class="ui left attached icon button"
-  style="background-color: #292826; color: #F9D342;"
-  (click)="previousPage()"
->
-  <i class="angle left icon"></i>
-</button>
-<button
-  class="ui right attached icon button"
-  style="background-color: #292826; color: #F9D342;"
-  (click)="nextPage()"
->
-  <i class="angle right icon"></i>
-</button>
+<div class="ui container" *ngIf="currentPage">
+  <button
+    class="ui left attached icon button"
+    style="background-color: #292826; color: #F9D342;"
+    (click)="previousPage()"
+  >
+    <i class="angle left icon"></i>
+  </button>
+  <button
+    class="ui right attached icon button"
+    style="background-color: #292826; color: #F9D342;"
+    [routerLink]="['', currentPage]"
+    (click)="nextPage()"
+  >
+    <i class="angle right icon"></i>
+  </button>
+</div>

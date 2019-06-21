@@ -20,7 +20,7 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
     TopBarComponent,
     BeerListControlsComponent,
     FavouritesComponent,
-    BeerDetailsComponent,
+    BeerDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,8 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
     HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: BeerListComponent },
-      { path: 'beers/:beerId', component: BeerDetailsComponent},
+      { path: ':currentPage', component: BeerListComponent },
+      { path: 'beers/:beerId', component: BeerDetailsComponent },
       { path: 'favourites', component: FavouritesComponent }
     ])
   ],
