@@ -1,0 +1,37 @@
+<h1>
+  <button
+    class="ui button inverted-colours"
+    (click)="selectPage('none')"
+    [routerLink]="['/no-filter']"
+  >
+    No Filter
+  </button>
+  <button
+    class="ui button inverted-colours"
+    (click)="selectPage('weak')"
+    [routerLink]="['/weak']"
+  >
+    0%-5%
+  </button>
+  <button
+    class="ui button inverted-colours"
+    (click)="selectPage('medium')"
+    [routerLink]="['/medium']"
+  >
+    5%-10%
+  </button>
+  <button
+    class="ui button inverted-colours"
+    (click)="selectPage('strong')"
+    [routerLink]="['/strong']"
+  >
+    >10%
+  </button>
+  <button
+    class="ui button inverted-colours"
+    (click)="selectPage('random')"
+    [routerLink]="['/random']"
+  >
+    Random
+  </button>
+</h1>

@@ -1,43 +1,7 @@
 <div class="ui segment" style="background-color: #292826;">
   <app-top-bar></app-top-bar>
 
-  <h1>
-    <button
-      class="ui button inverted-colours"
-      (click)="updatePage(1, 'none')"
-      [routerLink]="['/no-filter']"
-    >
-      No Filter
-    </button>
-    <button
-      class="ui button inverted-colours"
-      (click)="updatePage(1, 'weak')"
-      [routerLink]="['/weak']"
-    >
-      0%-5%
-    </button>
-    <button
-      class="ui button inverted-colours"
-      (click)="updatePage(1, 'medium')"
-      [routerLink]="['/medium']"
-    >
-      5%-10%
-    </button>
-    <button
-      class="ui button inverted-colours"
-      (click)="updatePage(1, 'strong')"
-      [routerLink]="['/strong']"
-    >
-      >10%
-    </button>
-    <button
-      class="ui button inverted-colours"
-      (click)="updatePage(1, 'random')"
-      [routerLink]="['/random']"
-    >
-      Random
-    </button>
-  </h1>
+  <app-filters></app-filters>
 </div>
 
 <div class="ui segment base-colours">
