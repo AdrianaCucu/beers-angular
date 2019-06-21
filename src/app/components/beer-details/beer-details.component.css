@@ -34,7 +34,7 @@
 }
 
 .full-container {
-  height: 80vh;
+  height: 70vh;
   width: 80vh;
 }
 
@@ -51,7 +51,7 @@ img {
 }
 
 .title {
-  font-size: 7vmin;
+  font-size: 6vmin;
 }
 
 .turn-yellow {
