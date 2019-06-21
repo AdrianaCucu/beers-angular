@@ -12,8 +12,6 @@ export class FavouritesService {
   /**
    * Updates the array of ids and the set of favourites.
    * (Needed ids array to solve duplicates issue.)
-   *
-   * @param beer
    */
   addToFavourites(beer) {
     let exists = false;
@@ -34,8 +32,6 @@ export class FavouritesService {
 
   /**
    * Removes both the beer and the id.
-   *
-   * @param beer
    */
   removeFromFavourites(beer) {
     for (let i = 0; i < this.ids.length; i++) {

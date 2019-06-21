@@ -18,14 +18,14 @@
   </button>
 
   <div class="ui cards">
-    <div class="ui card" *ngFor="let item of items; index as itemId">
+    <div class="ui card" *ngFor="let item of items">
       <div class="content">
         <img class="left floated mini ui image" src="{{ item.image_url }}" />
         <a class="header">
           <a
             class="turn-yellow"
             [title]="item.name + ' details'"
-            [routerLink]="['/beers', itemId]"
+            [routerLink]="['/beers', item.id]"
             (click)="selectBeer(item)"
           >
             {{ item.name }}</a
