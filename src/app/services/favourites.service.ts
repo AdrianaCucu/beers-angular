@@ -32,7 +32,17 @@ export class FavouritesService {
     console.log(this.items);
   }
 
+  /**
+   * Removes both the beer and the id.
+   *
+   * @param beer
+   */
   removeFromFavourites(beer) {
+    for (let i = 0; i < this.ids.length; i++) {
+      if (beer.id === this.ids[i]) {
+        this.ids.splice(i, 1);
+      }
+    }
     this.items.delete(beer);
   }
 
@@ -40,7 +50,11 @@ export class FavouritesService {
     return this.items;
   }
 
+  /**
+   * Resets the beers and the ids and updates the favourites page.
+   */
   clearFavourites() {
+    this.ids = [];
     this.items = new Set();
     return this.items;
   }
