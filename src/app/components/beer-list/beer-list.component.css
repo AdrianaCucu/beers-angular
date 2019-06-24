@@ -13,16 +13,16 @@
 .beers-list img {
   display: block;
   margin: auto;
-  width: 32%;
+  height: 30vh;
 }
 
 .bottom-text {
   position: absolute;
-  bottom: 14%;
+  bottom: 8vh;
 }
 
 .card-box {
-  height: 550px;
+  height: 58vh;
 }
 
 .favourite-button {
@@ -43,7 +43,7 @@
 }
 
 .title {
-  font-size: 180%;
+  font-size: 3vh;
 }
 
 .turn-yellow {
@@ -55,7 +55,7 @@
 }
 
 .under-header {
-  top: 14vmax;
+  top: 12vmax;
 }
 
 .viewport {
