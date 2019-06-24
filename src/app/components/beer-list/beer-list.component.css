@@ -58,3 +58,11 @@
 .under-header {
   top: 14vmax;
 }
+
+.viewport {
+  position: fixed;
+  height: 60vh;
+  width: 50vw;
+  background: white;
+  margin: 2em 8em 8em;
+}

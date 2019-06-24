@@ -1,43 +1,45 @@
 <div class="ui segment base-colours under-header">
-  <div class="beers-list">
-    <!-- Loader animation -->
-    <div *ngIf="!beers" class="loader-container">
-      <div class="ui loader-container active dimmer">
-        <div class="ui massive loader"></div>
+  <cdk-virtual-scroll-viewport itemSize="100%" class="viewport">
+    <div class="beers-list">
+      <!-- Loader animation -->
+      <div *ngIf="!beers" class="loader-container">
+        <div class="ui loader-container active dimmer">
+          <div class="ui massive loader"></div>
+        </div>
       </div>
-    </div>
 
-    <div *ngFor="let beer of beers" class="ui column">
-      <div class="ui card card-box">
-        <div class="content">
-          <div class="ui" style="background: transparent;">
-            <img src="{{ beer.image_url }}" />
-          </div>
+      <div *ngFor="let beer of beers" class="ui column">
+        <div class="ui card card-box">
+          <div class="content">
+            <div class="ui" style="background: transparent;">
+              <img src="{{ beer.image_url }}" />
+            </div>
 
-          <div class="bottom-text">
-            <a class="header">
-              <a
-                class="turn-yellow title"
-                [title]="beer.name + ' details'"
-                [routerLink]="['/beers', beer.id]"
-                (click)="selectBeer(beer)"
-              >
-                {{ beer.name }}
+            <div class="bottom-text">
+              <a class="header">
+                <a
+                  class="turn-yellow title"
+                  [title]="beer.name + ' details'"
+                  [routerLink]="['/beers', beer.id]"
+                  (click)="selectBeer(beer)"
+                >
+                  {{ beer.name }}
+                </a>
               </a>
-            </a>
-            <div class="meta">{{ beer.tagline }}</div>
+              <div class="meta">{{ beer.tagline }}</div>
+            </div>
           </div>
-        </div>
 
-        <div class="extra content">
-          <button
-            class="ui right floated button favourite-button turn-yellow"
-            (click)="addToFavourites(beer)"
-          >
-            Add to favourites
-          </button>
+          <div class="extra content">
+            <button
+              class="ui right floated button favourite-button turn-yellow"
+              (click)="addToFavourites(beer)"
+            >
+              Add to favourites
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </cdk-virtual-scroll-viewport>
 </div>
