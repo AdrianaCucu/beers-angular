@@ -42,7 +42,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
       { path: 'favourites', component: FavouritesComponent }
     ])
   ],
-  providers: [BeersService],
+  providers: [BeersService, FavouritesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

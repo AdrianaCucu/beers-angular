@@ -48,6 +48,7 @@
 
 .sub-header {
   position: fixed;
+  left: 2vw;
   top: 10vmax;
 }
 
