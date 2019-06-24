@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { BeersService } from './services/beers.service';
 import { FavouritesService } from './services/favourites.service';
@@ -29,6 +30,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ScrollingModule,
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent },
       { path: 'no-filter', component: BeerListComponent },
