@@ -18,6 +18,10 @@
   color: #f9d342;
 }
 
+.padded {
+  margin-bottom: 10px;
+}
+
 .turn-yellow {
   color: #292826;
 }
@@ -27,5 +31,10 @@
 }
 
 .under-header {
-  top: 14vmax;
+  top: 12vmax;
+}
+
+.viewport {
+  height: 60vh;
+  width: 95vw;
 }

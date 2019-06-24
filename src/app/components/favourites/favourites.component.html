@@ -6,40 +6,42 @@
   </div>
 
   <button
-    class="ui left floated button inverted-colours"
+    class="ui left floated button padded inverted-colours"
     *ngIf="items.size > 0"
     (click)="clearFavourites()"
   >
     Remove all
   </button>
 
-  <div class="ui cards">
-    <div class="ui card" *ngFor="let item of items">
-      <div class="content">
-        <img class="left floated mini ui image" src="{{ item.image_url }}" />
-        <a class="header">
-          <a
-            class="turn-yellow"
-            [title]="item.name + ' details'"
-            [routerLink]="['/beers', item.id]"
-            (click)="selectBeer(item)"
+  <cdk-virtual-scroll-viewport itemSize="60vh" class="viewport">
+    <div class="ui cards">
+      <div class="ui card" *ngFor="let item of items">
+        <div class="content">
+          <img class="left floated mini ui image" src="{{ item.image_url }}" />
+          <a class="header">
+            <a
+              class="turn-yellow"
+              [title]="item.name + ' details'"
+              [routerLink]="['/beers', item.id]"
+              (click)="selectBeer(item)"
+            >
+              {{ item.name }}</a
+            >
+          </a>
+          <div class="meta">
+            {{ item.description }}
+          </div>
+        </div>
+        <div class="extra content">
+          <button
+            class="ui right floated button turn-yellow"
+            style="background-color: transparent"
+            (click)="removeBeer(item)"
           >
-            {{ item.name }}</a
-          >
-        </a>
-        <div class="meta">
-          {{ item.description }}
+            Remove from favourites
+          </button>
         </div>
       </div>
-      <div class="extra content">
-        <button
-          class="ui right floated button turn-yellow"
-          style="background-color: transparent"
-          (click)="removeBeer(item)"
-        >
-          Remove from favourites
-        </button>
-      </div>
     </div>
-  </div>
+  </cdk-virtual-scroll-viewport>
 </div>
