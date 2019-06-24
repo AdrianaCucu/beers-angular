@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 
 import { BeersService } from '../../services/beers.service';
 import { FavouritesService } from '../../services/favourites.service';
-// import { PaginationService } from '../../services/pagination.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -22,10 +21,10 @@ export class BeerListComponent implements OnInit {
     this.updatePage();
   }
 
-  updatePage(page?: number, filter?: string) {
-    this.beersService
-      .getBeers(page, filter)
-      .subscribe(items => (this.beers = items));
+  updatePage(filter?: string) {
+    this.beersService.setPageNumber(filter);
+    this.beersService.setFilter(filter);
+    this.beersService.getBeers().subscribe(items => (this.beers = items));
   }
 
   addToFavourites(beer) {
@@ -37,6 +36,8 @@ export class BeerListComponent implements OnInit {
   }
 
   scrollHandler(e) {
-    console.log(e);
+    if (e === 'bottom') {
+      this.updatePage();
+    }
   }
 }
