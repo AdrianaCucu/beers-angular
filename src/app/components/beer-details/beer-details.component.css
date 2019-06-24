@@ -33,14 +33,6 @@
   background-color: transparent;
 }
 
-.fixed-header {
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  height: 14vmax;
-  width: 100vw;
-}
-
 .full-container {
   height: 70vh;
   width: 80vh;

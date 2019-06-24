@@ -3,15 +3,6 @@
   color: #f9d342;
 }
 
-.fixed-header {
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  height: 13vmax;
-  width: 100vw;
-  background-color: #292826;
-}
-
 .inverted-colours {
   background-color: #f9d342;
   color: #292826;
