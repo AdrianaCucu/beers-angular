@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { BeersService } from '../../services/beers.service';
-import { FavouritesService } from 'src/app/services/favourites.service';
+import { FavouritesService } from '../../services/favourites.service';
+// import { PaginationService } from '../../services/pagination.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -32,5 +34,9 @@ export class BeerListComponent implements OnInit {
 
   selectBeer(beer) {
     this.beersService.setBeerById(beer.id);
+  }
+
+  scrollHandler(e) {
+    console.log(e);
   }
 }

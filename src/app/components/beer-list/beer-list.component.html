@@ -1,5 +1,10 @@
 <div class="ui segment base-colours under-header">
-  <cdk-virtual-scroll-viewport itemSize="60vh" class="viewport">
+  <cdk-virtual-scroll-viewport
+    itemSize="60vh"
+    class="viewport"
+    appScrollable
+    (scrollPosition)="scrollHandler($event)"
+  >
     <div class="beers-list">
       <!-- Loader animation -->
       <div *ngIf="!beers" class="loader-container">
