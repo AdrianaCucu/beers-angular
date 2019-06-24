@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
-  MAX_PER_PAGE = 10;
+  MAX_PER_PAGE = 40;
 
   selectedBeerId;
   filter = 'no-filter';
