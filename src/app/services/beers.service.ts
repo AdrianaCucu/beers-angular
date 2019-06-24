@@ -8,7 +8,6 @@ export class BeersService {
 
   selectedBeerId;
   filter = 'no-filter';
-  page = 1;
 
   constructor(private http: HttpClient) {}
 
@@ -20,38 +19,30 @@ export class BeersService {
     this.filter = filter;
   }
 
-  setPageNumber(filter = 'no-filter') {
-    if (filter === this.filter) {
-      this.page++;
-    } else {
-      this.page = 1;
-    }
-  }
-
-  getBeers() {
+  getBeers(page, filter = this.filter) {
     // Response object is JSON by default.
     // Do not map response to response.json(), gives error
-    switch (this.filter) {
+    switch (filter) {
       case 'selected':
         return this.http.get(`${this.API_PATH}/beers/${this.selectedBeerId}`);
 
       case 'weak':
         return this.http.get(
-          `${this.API_PATH}/beers?page=${this.page}&per_page=${
+          `${this.API_PATH}/beers?page=${page}&per_page=${
             this.MAX_PER_PAGE
           }&abv_lt=5`
         );
 
       case 'medium':
         return this.http.get(
-          `${this.API_PATH}/beers?page=${this.page}&per_page=${
+          `${this.API_PATH}/beers?page=${page}&per_page=${
             this.MAX_PER_PAGE
           }&abv_lt=10&abv_gt=5`
         );
 
       case 'strong':
         return this.http.get(
-          `${this.API_PATH}/beers?page=${this.page}&per_page=${
+          `${this.API_PATH}/beers?page=${page}&per_page=${
             this.MAX_PER_PAGE
           }&abv_gt=10`
         );
@@ -61,7 +52,7 @@ export class BeersService {
 
       default:
         return this.http.get(
-          `${this.API_PATH}/beers?page=${this.page}&per_page=${
+          `${this.API_PATH}/beers?page=${page}&per_page=${
             this.MAX_PER_PAGE
           }`
         );

@@ -11,6 +11,7 @@ import { FavouritesService } from '../../services/favourites.service';
 })
 export class BeerListComponent implements OnInit {
   beers;
+  page = 1;
 
   constructor(
     private beersService: BeersService,
@@ -22,9 +23,9 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage(filter?: string) {
-    this.beersService.setPageNumber(filter);
-    this.beersService.setFilter(filter);
-    this.beersService.getBeers().subscribe(items => (this.beers = items));
+    this.beersService
+      .getBeers(this.page, filter)
+      .subscribe(items => (this.beers = items));
   }
 
   addToFavourites(beer) {
@@ -37,6 +38,8 @@ export class BeerListComponent implements OnInit {
 
   scrollHandler(e) {
     if (e === 'bottom') {
+      this.page++;
+      console.log(this.page);
       this.updatePage();
     }
   }
