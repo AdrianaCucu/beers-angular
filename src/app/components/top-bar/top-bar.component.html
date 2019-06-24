@@ -1,5 +1,5 @@
 <div class="fixed-header">
-  <h1 class="ui header base-colours">
+  <h1 class="ui header">
     <a [routerLink]="['/']" class="ui vertical button base-colours">
       <h1 class="title">
         Beers
@@ -12,4 +12,42 @@
       </h2>
     </a>
   </h1>
+
+  <div class="container">
+      <button
+        class="ui button inverted-colours small-text"
+        (click)="selectPage('none')"
+        [routerLink]="['/no-filter']"
+      >
+        All
+      </button>
+      <button
+        class="ui button inverted-colours small-text"
+        (click)="selectPage('weak')"
+        [routerLink]="['/weak']"
+      >
+        0%-5%
+      </button>
+      <button
+        class="ui button inverted-colours small-text"
+        (click)="selectPage('medium')"
+        [routerLink]="['/medium']"
+      >
+        5%-10%
+      </button>
+      <button
+        class="ui button inverted-colours small-text"
+        (click)="selectPage('strong')"
+        [routerLink]="['/strong']"
+      >
+        >10%
+      </button>
+      <button
+        class="ui button inverted-colours small-text"
+        (click)="selectPage('random')"
+        [routerLink]="['/random']"
+      >
+        ?
+      </button>
+    </div>
 </div>

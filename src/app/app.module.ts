@@ -14,7 +14,6 @@ import { BeerListControlsComponent } from './components/beer-list-controls/beer-
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { FiltersComponent } from './components/filters/filters.component';
     BeerListControlsComponent,
     FavouritesComponent,
     BeerDetailsComponent,
-    LandingPageComponent,
-    FiltersComponent
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
