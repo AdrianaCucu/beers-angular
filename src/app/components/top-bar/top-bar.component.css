@@ -14,7 +14,7 @@
 }
 
 .favourites {
-  font-size: 4vmin;
+  font-size: 3vmax;
 }
 
 .fixed-header {
@@ -32,6 +32,11 @@
   font-size: 1.3vmax;
 }
 
+.sub-header {
+  position: fixed;
+  top: 10vmax;
+}
+
 .title {
-  font-size: 9vmin;
+  font-size: 6vmax;
 }
