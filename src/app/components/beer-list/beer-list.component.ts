@@ -51,7 +51,6 @@ export class BeerListComponent implements OnInit {
   scrollHandler(e) {
     if (e === 'bottom') {
       this.page++;
-      console.log(this.page);
       this.updatePage();
     }
   }

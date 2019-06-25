@@ -49,7 +49,7 @@ export class BeersService {
       case 'random':
         return this.http.get(`${this.API_PATH}/beers/random`);
 
-      case 'no-filter':
+      default:
         return this.http.get(
           `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
         );
