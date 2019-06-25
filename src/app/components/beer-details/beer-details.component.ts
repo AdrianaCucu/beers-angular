@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FavouritesService } from 'src/app/services/favourites.service';
 import { BeersService } from 'src/app/services/beers.service';
@@ -11,14 +11,18 @@ import { BeersService } from 'src/app/services/beers.service';
 })
 export class BeerDetailsComponent implements OnInit {
   items;
+  id;
 
   constructor(
-    private route: ActivatedRoute,
     private favouritesService: FavouritesService,
-    private beersService: BeersService
+    private beersService: BeersService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    this.id = this.router.url.replace(/\D/g, '');
+    this.beersService.setBeerById(this.id);
+    console.log(this.id);
     this.updatePage();
   }
 
