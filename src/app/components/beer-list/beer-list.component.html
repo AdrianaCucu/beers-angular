@@ -7,7 +7,7 @@
   >
     <div class="beers-list">
       <!-- Loader animation -->
-      <div *ngIf="!beers" class="loader-container">
+      <div *ngIf="beers.length === 0" class="loader-container">
         <div class="ui loader-container active dimmer">
           <div class="ui massive loader"></div>
         </div>
