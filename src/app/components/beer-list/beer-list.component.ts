@@ -4,16 +4,15 @@ import { Router } from '@angular/router';
 import { BeersService } from '../../services/beers.service';
 import { FavouritesService } from '../../services/favourites.service';
 
-
 @Component({
   selector: 'app-beer-list',
   templateUrl: './beer-list.component.html',
   styleUrls: ['./beer-list.component.css']
 })
 export class BeerListComponent implements OnInit {
-  beers = []; // This array stores all beers retrieved so far with the current filter.
+  beers; // This array stores all beers retrieved so far with the current filter.
   currentBeers;
-  page = 1;
+  page;
   filter;
 
   constructor(
@@ -23,6 +22,8 @@ export class BeerListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.beers = [];
+    this.page = 1;
     this.filter = this.router.url.replace('/', '');
     this.updatePage(this.filter);
   }
