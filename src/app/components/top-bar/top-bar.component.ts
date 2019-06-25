@@ -10,12 +10,11 @@ import { BeersService } from 'src/app/services/beers.service';
 export class TopBarComponent implements OnInit {
   @Output() clickEvent = new EventEmitter();
 
-  constructor(private beersService: BeersService) {}
+  constructor() {}
 
   ngOnInit() {}
 
   selectPage(filter: string) {
-    this.beersService.setFilter(filter);
     this.clickEvent.emit(filter);
   }
 }

@@ -7,7 +7,6 @@ export class BeersService {
   MAX_PER_PAGE = 20;
 
   selectedBeerId;
-  filter = 'no-filter';
 
   constructor(private http: HttpClient) {}
 
@@ -15,11 +14,7 @@ export class BeersService {
     this.selectedBeerId = id;
   }
 
-  setFilter(filter) {
-    this.filter = filter;
-  }
-
-  getBeers(page, filter = this.filter) {
+  getBeers(page, filter) {
     // Response object is JSON by default.
     // Do not map response to response.json(), gives error
     switch (filter) {
