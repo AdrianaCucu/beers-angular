@@ -15,7 +15,7 @@ export class BeersService {
     this.selectedBeerId = id;
   }
 
-  setFilter(filter = 'no-filter') {
+  setFilter(filter) {
     this.filter = filter;
   }
 

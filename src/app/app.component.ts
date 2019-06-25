@@ -9,9 +9,8 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'beers-angular';
 
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit() {
-    this.router.navigate(['']);
   }
 }

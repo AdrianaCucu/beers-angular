@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { BeersService } from '../../services/beers.service';
 import { FavouritesService } from '../../services/favourites.service';
+
 
 @Component({
   selector: 'app-beer-list',
@@ -13,17 +14,22 @@ export class BeerListComponent implements OnInit {
   beers = []; // This array stores all beers retrieved so far with the current filter.
   currentBeers;
   page = 1;
+  filter;
 
   constructor(
     private beersService: BeersService,
-    private favouritesService: FavouritesService
+    private favouritesService: FavouritesService,
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.updatePage();
+    this.filter = this.router.url.replace('/', '');
+    this.updatePage(this.filter);
   }
 
   updatePage(filter?: string) {
+    console.log(this.beersService.filter);
+
     this.beersService.getBeers(this.page, filter).subscribe(
       items => (
         (this.currentBeers = items),
@@ -33,6 +39,8 @@ export class BeerListComponent implements OnInit {
         console.log(this.beers)
       )
     );
+
+    console.log(this.beersService.filter);
   }
 
   addToFavourites(beer) {

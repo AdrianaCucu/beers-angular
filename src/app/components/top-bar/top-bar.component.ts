@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { BeersService } from 'src/app/services/beers.service';
 
@@ -8,11 +8,14 @@ import { BeersService } from 'src/app/services/beers.service';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+  @Output() clickEvent = new EventEmitter();
+
   constructor(private beersService: BeersService) {}
 
   ngOnInit() {}
 
   selectPage(filter: string) {
     this.beersService.setFilter(filter);
+    this.clickEvent.emit(filter);
   }
 }
