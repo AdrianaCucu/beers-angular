@@ -11,7 +11,11 @@ export class BeersService {
   constructor(private http: HttpClient) {}
 
   setBeerById(id) {
-    this.selectedBeerId = id;
+    if (id) {
+      this.selectedBeerId = id;
+    } else {
+      this.selectedBeerId = 0; // To handle invalid routes to specific beers.
+    }
   }
 
   getBeers(page, filter) {
@@ -45,11 +49,9 @@ export class BeersService {
       case 'random':
         return this.http.get(`${this.API_PATH}/beers/random`);
 
-      default:
+      case 'no-filter':
         return this.http.get(
-          `${this.API_PATH}/beers?page=${page}&per_page=${
-            this.MAX_PER_PAGE
-          }`
+          `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
         );
     }
   }
