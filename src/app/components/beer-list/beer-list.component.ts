@@ -29,8 +29,6 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage(filter?: string) {
-    console.log(this.beersService.filter);
-
     this.beersService.getBeers(this.page, filter).subscribe(
       items => (
         (this.currentBeers = items),
@@ -40,8 +38,6 @@ export class BeerListComponent implements OnInit {
         console.log(this.beers)
       )
     );
-
-    console.log(this.beersService.filter);
   }
 
   addToFavourites(beer) {

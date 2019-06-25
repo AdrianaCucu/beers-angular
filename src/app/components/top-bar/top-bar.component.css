@@ -38,8 +38,8 @@
 }
 
 .inverted-colours:focus {
-  background-color: #292826;
-  color: #f9d342;
+  background-color: #f9d342;
+  color: #292826;
 }
 
 .small-text {

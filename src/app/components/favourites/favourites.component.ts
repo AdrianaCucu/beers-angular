@@ -8,13 +8,15 @@ import { BeersService } from 'src/app/services/beers.service';
   templateUrl: './favourites.component.html',
   styleUrls: ['./favourites.component.css']
 })
-export class FavouritesComponent {
+export class FavouritesComponent implements OnInit {
   items;
 
   constructor(
     private favouritesService: FavouritesService,
     private beersService: BeersService
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.items = this.favouritesService.getItems();
   }
 
