@@ -14,40 +14,40 @@
   </h1>
 
   <div class="ui container sub-header">
-      <button
-        class="ui button inverted-colours small-text"
-        (click)="selectPage('none')"
-        [routerLink]="['/no-filter']"
-      >
-        All
-      </button>
-      <button
-        class="ui button inverted-colours small-text"
-        (click)="selectPage('weak')"
-        [routerLink]="['/weak']"
-      >
-        0%-5%
-      </button>
-      <button
-        class="ui button inverted-colours small-text"
-        (click)="selectPage('medium')"
-        [routerLink]="['/medium']"
-      >
-        5%-10%
-      </button>
-      <button
-        class="ui button inverted-colours small-text"
-        (click)="selectPage('strong')"
-        [routerLink]="['/strong']"
-      >
-        >10%
-      </button>
-      <button
-        class="ui button inverted-colours small-text"
-        (click)="selectPage('random')"
-        [routerLink]="['/random']"
-      >
-        ?
-      </button>
-    </div>
+    <a
+      class="ui button inverted-colours small-text"
+      (click)="selectPage('no-filter')"
+      [routerLink]="['/no-filter']"
+    >
+      All
+    </a>
+    <a
+      class="ui button inverted-colours small-text"
+      (click)="selectPage('weak')"
+      [routerLink]="['/weak']"
+    >
+      0%-5%
+    </a>
+    <a
+      class="ui button inverted-colours small-text"
+      (click)="selectPage('medium')"
+      [routerLink]="['/medium']"
+    >
+      5%-10%
+    </a>
+    <a
+      class="ui button inverted-colours small-text"
+      (click)="selectPage('strong')"
+      [routerLink]="['/strong']"
+    >
+      >10%
+    </a>
+    <a
+      class="ui button inverted-colours small-text"
+      (click)="selectPage('random')"
+      [routerLink]="['/random']"
+    >
+      ?
+    </a>
+  </div>
 </div>
