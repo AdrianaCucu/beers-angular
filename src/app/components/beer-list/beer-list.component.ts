@@ -10,7 +10,8 @@ import { FavouritesService } from '../../services/favourites.service';
   styleUrls: ['./beer-list.component.css']
 })
 export class BeerListComponent implements OnInit {
-  beers;
+  beers = []; // This array stores all beers retrieved so far with the current filter.
+  currentBeers;
   page = 1;
 
   constructor(
@@ -23,9 +24,15 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage(filter?: string) {
-    this.beersService
-      .getBeers(this.page, filter)
-      .subscribe(items => (this.beers = items));
+    this.beersService.getBeers(this.page, filter).subscribe(
+      items => (
+        (this.currentBeers = items),
+        this.beers.push(...this.currentBeers),
+        // For testing:
+        console.log(this.currentBeers),
+        console.log(this.beers)
+      )
+    );
   }
 
   addToFavourites(beer) {
