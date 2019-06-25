@@ -41,7 +41,8 @@ import { ScrollableDirective } from './directives/scrollable.directive';
       { path: 'strong', component: BeerListComponent },
       { path: 'random', component: BeerListComponent },
       { path: 'beers/:beerId', component: BeerDetailsComponent },
-      { path: 'favourites', component: FavouritesComponent }
+      { path: 'favourites', component: FavouritesComponent },
+      { path: '**', redirectTo: '' }
     ])
   ],
   providers: [BeersService, FavouritesService],
