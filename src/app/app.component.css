@@ -1,4 +1,12 @@
-.base-colours {
-  background-color: #292826;
+a:link, a:visited, a:hover, a:active{
   color: #F9D342;
+  text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 4vh;
+  text-align: center;
 }
