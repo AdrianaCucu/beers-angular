@@ -6,25 +6,22 @@ export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
   MAX_PER_PAGE = 20;
 
-  selectedBeerId;
-
   constructor(private http: HttpClient) {}
 
-  setBeerById(id) {
-    if (id) {
-      this.selectedBeerId = id;
-    } else {
-      this.selectedBeerId = 0; // To handle invalid routes to specific beers.
-    }
+  getSelectedBeer(id) {
+    return this.http.get(`${this.API_PATH}/beers/${id}`);
   }
 
+  /**
+   * Returns array of beer objects based on the filter and the page number.
+   *
+   * @param page - the current page
+   * @param filter the selected filter
+   */
   getBeers(page, filter) {
     // Response object is JSON by default.
     // Do not map response to response.json(), gives error
     switch (filter) {
-      case 'selected':
-        return this.http.get(`${this.API_PATH}/beers/${this.selectedBeerId}`);
-
       case 'weak':
         return this.http.get(
           `${this.API_PATH}/beers?page=${page}&per_page=${

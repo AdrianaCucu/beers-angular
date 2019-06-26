@@ -27,7 +27,6 @@ export class BeerDetailsComponent implements OnInit {
   ngOnInit() {
     // this.id = this.router.url.replace(/\D/g, '');
     this.idError = false;
-    this.beersService.setBeerById(this.id);
     console.log(this.id);
     this.updatePage();
   }
@@ -44,7 +43,7 @@ export class BeerDetailsComponent implements OnInit {
   updatePage() {
     if (this.validateId(this.id)) {
       this.beersService
-        .getBeers(1, 'selected')
+        .getSelectedBeer(this.id)
         .subscribe(item => (this.items = item));
     } else {
       this.idError = true;
