@@ -17,15 +17,19 @@ export class FavouritesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // console.log(localStorage.getItem('favourites'));
+
     this.items = this.favouritesService.getItems();
   }
 
   removeBeer(beer) {
     this.favouritesService.removeFromFavourites(beer);
+    window.location.reload();
   }
 
   clearFavourites() {
-    this.items = this.favouritesService.clearFavourites();
+    this.favouritesService.clearFavourites();
+    window.location.reload();
   }
 
   selectBeer(beer) {

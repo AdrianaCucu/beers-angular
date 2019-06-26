@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { isDataSource } from '@angular/cdk/collections';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class FavouritesService {
    * (Needed ids array to solve duplicates issue.)
    */
   addToFavourites(beer) {
+
     let exists = false;
     for (let i = 0; i < this.ids.length && !exists; i++) {
       if (beer.id === this.ids[i]) {
@@ -26,13 +28,13 @@ export class FavouritesService {
       this.items.push(beer);
     }
 
-    console.log(this.ids);
-    console.log(this.items);
+    // console.log(this.ids);
+    // console.log(this.items);
 
     localStorage.setItem('favourites', JSON.stringify(this.items));
-    let storage = localStorage.getItem('favourites');
-    console.log('storage');
-    console.log(storage);
+    localStorage.setItem('favouritesIds', JSON.stringify(this.ids));
+    // console.log('storage');
+    // console.log(localStorage.getItem('favourites'));
   }
 
   /**
@@ -45,10 +47,19 @@ export class FavouritesService {
         this.items.splice(i, 1);
       }
     }
+
+    console.log(this.items);
+
+    localStorage.setItem('favourites', JSON.stringify(this.items));
+    localStorage.setItem('favouritesIds', JSON.stringify(this.ids));
+    // console.log('storage');
+    // console.log(localStorage.getItem('favourites'));
   }
 
   getItems() {
-    return this.items;
+    console.log(localStorage.getItem('favourites'));
+
+    return JSON.parse(localStorage.getItem('favourites'));
   }
 
   /**
@@ -57,6 +68,8 @@ export class FavouritesService {
   clearFavourites() {
     this.ids = [];
     this.items = [];
-    return this.items;
+
+    localStorage.setItem('favourites', JSON.stringify(this.items));
+    localStorage.setItem('favouritesIds', JSON.stringify(this.ids));
   }
 }
