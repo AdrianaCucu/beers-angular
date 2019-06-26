@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FavouritesService } from '../../services/favourites.service';
-import { BeersService } from 'src/app/services/beers.service';
 
 @Component({
   selector: 'app-favourites',
@@ -12,8 +11,7 @@ export class FavouritesComponent implements OnInit {
   items;
 
   constructor(
-    private favouritesService: FavouritesService,
-    private beersService: BeersService
+    private favouritesService: FavouritesService
   ) {}
 
   ngOnInit() {
@@ -30,9 +28,5 @@ export class FavouritesComponent implements OnInit {
   clearFavourites() {
     this.favouritesService.clearFavourites();
     window.location.reload();
-  }
-
-  selectBeer(beer) {
-    this.beersService.setBeerById(beer.id);
   }
 }
