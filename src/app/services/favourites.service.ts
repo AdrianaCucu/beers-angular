@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { isDataSource } from '@angular/cdk/collections';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavouritesService {
-  items = [];
-  ids = [];
+  items = JSON.parse(localStorage.getItem('favourites'));
+  ids = JSON.parse(localStorage.getItem('favouritesIds'));
 
   constructor() {}
 
@@ -15,11 +15,13 @@ export class FavouritesService {
    * (Needed ids array to solve duplicates issue.)
    */
   addToFavourites(beer) {
-
     let exists = false;
-    for (let i = 0; i < this.ids.length && !exists; i++) {
-      if (beer.id === this.ids[i]) {
-        exists = true;
+
+    if (this.ids.length) {
+      for (let i = 0; i < this.ids.length && !exists; i++) {
+        if (beer.id === this.ids[i]) {
+          exists = true;
+        }
       }
     }
 
