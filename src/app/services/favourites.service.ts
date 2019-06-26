@@ -61,7 +61,7 @@ export class FavouritesService {
   getItems() {
     console.log(localStorage.getItem('favourites'));
 
-    return JSON.parse(localStorage.getItem('favourites'));
+    return this.items;
   }
 
   /**
