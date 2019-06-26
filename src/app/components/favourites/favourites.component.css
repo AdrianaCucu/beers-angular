@@ -35,6 +35,7 @@
 }
 
 .viewport {
+  overflow-y: scroll;
   height: 55vh;
   width: 95vw;
 }
