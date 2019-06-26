@@ -5,8 +5,8 @@ import { isDataSource } from '@angular/cdk/collections';
   providedIn: 'root'
 })
 export class FavouritesService {
-  items = JSON.parse(localStorage.getItem('favourites'));
-  ids = JSON.parse(localStorage.getItem('favouritesIds'));
+  items = localStorage.getItem('favourites') ? JSON.parse(localStorage.getItem('favourites')) : [];
+  ids = localStorage.getItem('favouritesIds') ? JSON.parse(localStorage.getItem('favouritesIds')) : [];
 
   constructor() {}
 

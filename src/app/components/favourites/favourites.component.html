@@ -1,5 +1,5 @@
 <div class="ui segment base-colours under-header">
-  <div *ngIf="!items || !items.length">
+  <div *ngIf="!items.length">
     <h3>
       Your don't have any favourites.
     </h3>
@@ -7,7 +7,7 @@
 
   <button
     class="ui left floated button padded inverted-colours"
-    *ngIf="items && items.length"
+    *ngIf="items.length"
     (click)="clearFavourites()"
   >
     Remove all
