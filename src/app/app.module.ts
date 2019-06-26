@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './components/beer-list/beer-list.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { BeerListControlsComponent } from './components/beer-list-controls/beer-list-controls.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -22,7 +21,6 @@ import { ScrollableDirective } from './directives/scrollable.directive';
     AppComponent,
     BeerListComponent,
     TopBarComponent,
-    BeerListControlsComponent,
     FavouritesComponent,
     BeerDetailsComponent,
     LandingPageComponent,
