@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FavouritesService } from 'src/app/services/favourites.service';
 import { BeersService } from 'src/app/services/beers.service';
 import { isNumber } from 'util';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-beer-details',
@@ -12,7 +13,7 @@ import { isNumber } from 'util';
 })
 export class BeerDetailsComponent implements OnInit {
   items;
-  id: string;
+  id;
   idError: boolean;
 
   constructor(
@@ -20,8 +21,7 @@ export class BeerDetailsComponent implements OnInit {
     private beersService: BeersService,
     private route: ActivatedRoute
   ) {
-    route.params.subscribe();
-    this.id = route.params.value.beerId;
+    route.params.subscribe(params => (this.id = params['beerId']));
   }
 
   ngOnInit() {
@@ -38,11 +38,7 @@ export class BeerDetailsComponent implements OnInit {
    * @param id - the beer id contained in the route
    */
   validateId(id: string) {
-    return (
-      /^\d+$/.test(id) &&
-      parseInt(id, 10) > 0 &&
-      parseInt(id, 10) < 326
-    );
+    return /^\d+$/.test(id) && parseInt(id, 10) > 0 && parseInt(id, 10) < 326;
   }
 
   updatePage() {

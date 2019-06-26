@@ -1,7 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
-import { BeersService } from 'src/app/services/beers.service';
-
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
