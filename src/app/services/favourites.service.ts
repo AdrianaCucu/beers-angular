@@ -1,12 +1,15 @@
-import { Injectable, OnInit } from '@angular/core';
-import { isDataSource } from '@angular/cdk/collections';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavouritesService {
-  items = localStorage.getItem('favourites') ? JSON.parse(localStorage.getItem('favourites')) : [];
-  ids = localStorage.getItem('favouritesIds') ? JSON.parse(localStorage.getItem('favouritesIds')) : [];
+  items = localStorage.getItem('favourites')
+    ? JSON.parse(localStorage.getItem('favourites'))
+    : [];
+  ids = localStorage.getItem('favouritesIds')
+    ? JSON.parse(localStorage.getItem('favouritesIds'))
+    : [];
 
   constructor() {}
 
@@ -35,6 +38,7 @@ export class FavouritesService {
 
     localStorage.setItem('favourites', JSON.stringify(this.items));
     localStorage.setItem('favouritesIds', JSON.stringify(this.ids));
+
     // console.log('storage');
     // console.log(localStorage.getItem('favourites'));
   }
@@ -50,16 +54,17 @@ export class FavouritesService {
       }
     }
 
-    console.log(this.items);
+    // console.log(this.items);
 
     localStorage.setItem('favourites', JSON.stringify(this.items));
     localStorage.setItem('favouritesIds', JSON.stringify(this.ids));
+
     // console.log('storage');
     // console.log(localStorage.getItem('favourites'));
   }
 
   getItems() {
-    console.log(localStorage.getItem('favourites'));
+    // console.log(localStorage.getItem('favourites'));
 
     return this.items;
   }

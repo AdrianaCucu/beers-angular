@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { FavouritesService } from 'src/app/services/favourites.service';
 import { BeersService } from 'src/app/services/beers.service';
-import { isNumber } from 'util';
-import { __values } from 'tslib';
 
 @Component({
   selector: 'app-beer-details',
@@ -25,9 +23,10 @@ export class BeerDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.id = this.router.url.replace(/\D/g, '');
     this.idError = false;
-    console.log(this.id);
+
+    // console.log(this.id);
+
     this.updatePage();
   }
 

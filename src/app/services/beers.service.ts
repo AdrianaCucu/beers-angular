@@ -10,7 +10,7 @@ export class BeersService {
 
   /**
    *  Returns an array containing only the selected beer.
-   * 
+   *
    * @param id - the id of the beer (integer between 1-325)
    */
   getSelectedBeer(id) {
