@@ -8,6 +8,11 @@ export class BeersService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   *  Returns an array containing only the selected beer.
+   * 
+   * @param id - the id of the beer (integer between 1-325)
+   */
   getSelectedBeer(id) {
     return this.http.get(`${this.API_PATH}/beers/${id}`);
   }

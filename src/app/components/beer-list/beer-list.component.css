@@ -61,4 +61,5 @@
 
 .viewport {
   height: 61vh;
+  overflow-y: scroll;
 }
