@@ -44,10 +44,6 @@ export class BeerListComponent implements OnInit {
     this.favouritesService.addToFavourites(beer);
   }
 
-  selectBeer(beer) {
-    this.beersService.setBeerById(beer.id);
-  }
-
   scrollHandler(e) {
     if (e === 'bottom') {
       this.page++;
