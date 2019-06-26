@@ -1,9 +1,16 @@
 <div class="ui segment base-colours under-header">
   <!-- Loader animation -->
-  <div *ngIf="!items" class="loader-container">
+  <div *ngIf="!items && !idError" class="loader-container">
     <div class="ui loader-container active dimmer">
       <div class="ui massive loader"></div>
     </div>
+  </div>
+
+  <!-- Error message -->
+  <div *ngIf="idError">
+    <h3>
+      Invalid route.
+    </h3>
   </div>
 
   <!-- There is only one bere, but it only works like this. -->

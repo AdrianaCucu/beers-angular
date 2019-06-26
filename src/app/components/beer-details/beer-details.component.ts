@@ -12,7 +12,8 @@ import { isNumber } from 'util';
 })
 export class BeerDetailsComponent implements OnInit {
   items;
-  id;
+  id: string;
+  idError: boolean;
 
   constructor(
     private favouritesService: FavouritesService,
@@ -25,6 +26,7 @@ export class BeerDetailsComponent implements OnInit {
 
   ngOnInit() {
     // this.id = this.router.url.replace(/\D/g, '');
+    this.idError = false;
     this.beersService.setBeerById(this.id);
     console.log(this.id);
     this.updatePage();
@@ -37,9 +39,9 @@ export class BeerDetailsComponent implements OnInit {
    */
   validateId(id: string) {
     return (
-      /^\d+$/.test(this.id) &&
-      parseInt(this.id, 10) > 0 &&
-      parseInt(this.id, 10) < 326
+      /^\d+$/.test(id) &&
+      parseInt(id, 10) > 0 &&
+      parseInt(id, 10) < 326
     );
   }
 
@@ -48,6 +50,8 @@ export class BeerDetailsComponent implements OnInit {
       this.beersService
         .getBeers(1, 'selected')
         .subscribe(item => (this.items = item));
+    } else {
+      this.idError = true;
     }
   }
 

@@ -12,8 +12,8 @@ import { FavouritesService } from '../../services/favourites.service';
 export class BeerListComponent implements OnInit {
   beers; // This array stores all beers retrieved so far with the current filter.
   currentBeers;
-  page;
-  filter;
+  page: number;
+  filter: string;
 
   constructor(
     private beersService: BeersService,
