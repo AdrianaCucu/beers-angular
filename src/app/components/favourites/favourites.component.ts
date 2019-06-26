@@ -22,7 +22,6 @@ export class FavouritesComponent implements OnInit {
 
   removeBeer(beer) {
     this.favouritesService.removeFromFavourites(beer);
-    window.location.reload();
   }
 
   clearFavourites() {
