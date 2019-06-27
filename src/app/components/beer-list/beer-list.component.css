@@ -4,10 +4,11 @@
 }
 
 .beers-list {
+  width: 83vw;
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 3.5vh 2vw;
+  grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
+  grid-gap: 3.5vh 0.1vw;
 }
 
 .beers-list img {
@@ -23,7 +24,8 @@
 }
 
 .card-box {
-  height: 58vh;
+  height: 55vh;
+  width: 30vh;
 }
 
 .favourite-button {
@@ -39,7 +41,7 @@
 }
 
 .loader-container {
-  height: 60vh;
+  height: 90vh;
   width: 100vw;
 }
 
@@ -56,11 +58,12 @@
 }
 
 .under-header {
-  left: 16vmax;
+  position: relative;
+  left: 8rem;
 }
 
 .viewport {
-  height: 90vh;
-  width: 80vw;
+  height: 92vh;
+  width: 85vw;
   overflow-y: scroll;
 }

@@ -18,11 +18,11 @@
 }
 
 .fixed-header {
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: #292826;
 }
 
 .inverted-colours {
@@ -40,11 +40,12 @@
   color: #292826;
 }
 
-.small-text {
-  font-size: 1.5vh;
+.menu {
+  width: 500px;
 }
 
-.sub-header {
+.small-text {
+  font-size: 1.5vh;
 }
 
 .title {
