@@ -1,11 +1,11 @@
-<div class="ui segment base-colours under-header">
-  <!-- Loader animation -->
-  <div *ngIf="!items && !idError">
-    <div class="ui active dimmer">
-      <div class="ui massive loader"></div>
-    </div>
+<!-- Loader animation -->
+<div *ngIf="!items && !idError">
+  <div class="ui active dimmer">
+    <div class="ui massive loader"></div>
   </div>
+</div>
 
+<div class="ui segment base-colours under-header">
   <!-- Error message -->
   <div *ngIf="idError">
     <h3>

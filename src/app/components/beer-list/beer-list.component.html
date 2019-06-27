@@ -1,18 +1,18 @@
 <app-top-bar (clickEvent)="ngOnInit()"></app-top-bar>
 
+<!-- Loader animation -->
+<div *ngIf="!beers.length">
+  <div class="ui active dimmer">
+    <div class="ui massive loader"></div>
+  </div>
+</div>
+
 <div
   class="ui container base-colours under-header viewport"
   appScrollable
   (scrollPosition)="scrollHandler($event)"
 >
   <div class="beers-list">
-    <!-- Loader animation -->
-    <div *ngIf="!beers.length" class="loader-container">
-      <div class="ui active dimmer">
-        <div class="ui massive loader"></div>
-      </div>
-    </div>
-
     <div *ngFor="let beer of beers" class="ui column">
       <div class="ui card card-box">
         <div class="content">

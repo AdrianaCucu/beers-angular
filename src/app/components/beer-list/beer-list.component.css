@@ -39,6 +39,11 @@
   background-color: transparent;
 }
 
+.full-container {
+  height: 100%;
+  width: 100%;
+}
+
 .title {
   font-size: 3vh;
 }
