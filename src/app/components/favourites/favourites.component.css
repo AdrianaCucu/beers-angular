@@ -3,6 +3,14 @@
   color: #f9d342;
 }
 
+button {
+  width: 10rem;
+}
+
+.cards {
+  margin: 0;
+}
+
 .inverted-colours {
   background-color: #f9d342;
   color: #292826;
@@ -31,11 +39,13 @@
 }
 
 .under-header {
-  top: 12vmax;
+  display: grid;
+  position: relative;
+  left: 16rem;
 }
 
 .viewport {
   overflow-y: scroll;
-  height: 55vh;
-  width: 95vw;
+  height: 85vh;
+  width: 80vw;
 }
