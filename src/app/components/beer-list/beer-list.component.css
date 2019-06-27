@@ -56,10 +56,11 @@
 }
 
 .under-header {
-  top: 12vmax;
+  left: 16vmax;
 }
 
 .viewport {
-  height: 61vh;
+  height: 90vh;
+  width: 80vw;
   overflow-y: scroll;
 }
