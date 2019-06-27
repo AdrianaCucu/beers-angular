@@ -4,7 +4,7 @@ a:hover {
 }
 
 .background-gradient{
-  background: linear-gradient(140deg, #0d0c0c 0%, #292826 35%, #55523a 60%, #f9d342 99%) !important;
+  background: linear-gradient(140deg, #0d0c0c 0%, #292826 100%) !important;
 }
 
 .base-colours {
