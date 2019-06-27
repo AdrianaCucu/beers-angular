@@ -14,7 +14,7 @@
 }
 
 .favourites {
-  font-size: 3vmax;
+  font-size: 2vh;
 }
 
 .fixed-header {
@@ -22,8 +22,6 @@
   top: 0;
   left: 0;
   z-index: 2;
-  height: 14vmax;
-  width: 100vw;
   background-color: #292826;
 }
 
@@ -43,15 +41,12 @@
 }
 
 .small-text {
-  font-size: 1.3vmax;
+  font-size: 1.5vh;
 }
 
 .sub-header {
-  position: fixed;
-  left: 2vw;
-  top: 10vmax;
 }
 
 .title {
-  font-size: 6vmax;
+  font-size: 3vh;
 }
