@@ -1,49 +1,43 @@
-<div class="ui vertical menu fixed-header">
-  <h1 class="ui item">
-    <a [routerLink]="['/']" class="ui item button base-colours">
-      <h1 class="title">
-        Beers
-      </h1>
-    </a>
+<div class="ui vertical pointing menu fixed-header background-gradient">
+  <a [routerLink]="['/']" class="ui item title base-colours">
+    Beers
+  </a>
 
-    <a [routerLink]="['/favourites']" class="ui item button base-colours">
-      <h2 class="favourites">
-        Favourites
-      </h2>
-    </a>
-  </h1>
+  <a [routerLink]="['/favourites']" class="ui item favourites base-colours">
+    Favourites
+  </a>
 
-  <div class="ui item container sub-header">
+  <div class="sub-header">
     <a
-      class="ui button inverted-colours small-text"
+      class="ui item base-colours"
       (click)="selectPage('no-filter')"
       [routerLink]="['/no-filter']"
     >
       All
     </a>
     <a
-      class="ui button inverted-colours small-text"
+      class="ui item base-colours"
       (click)="selectPage('weak')"
       [routerLink]="['/weak']"
     >
       0%-5%
     </a>
     <a
-      class="ui button inverted-colours small-text"
+      class="ui item base-colours"
       (click)="selectPage('medium')"
       [routerLink]="['/medium']"
     >
       5%-10%
     </a>
     <a
-      class="ui button inverted-colours small-text"
+      class="ui item base-colours"
       (click)="selectPage('strong')"
       [routerLink]="['/strong']"
     >
       >10%
     </a>
     <a
-      class="ui button inverted-colours small-text"
+      class="ui item base-colours"
       (click)="selectPage('random')"
       [routerLink]="['/random']"
     >

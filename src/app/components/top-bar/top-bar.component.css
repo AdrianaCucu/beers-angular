@@ -1,16 +1,14 @@
+a:hover {
+  background-color: #f9d342 !important;
+  color: #292826 !important;
+}
+
+.background-gradient{
+  background: linear-gradient(140deg, #0d0c0c 0%, #292826 35%, #55523a 60%, #f9d342 99%) !important;
+}
+
 .base-colours {
-  background-color: #292826;
-  color: #f9d342;
-}
-
-.base-colours:hover {
-  background-color: #292826;
-  color: #f9d342;
-}
-
-.base-colours:focus {
-  background-color: #292826;
-  color: #f9d342;
+  color: #f9d342 !important;
 }
 
 .favourites {
@@ -23,6 +21,8 @@
   top: 0;
   left: 0;
   z-index: 2;
+  padding: 1px;
+  border: 0;
 }
 
 .inverted-colours {
@@ -38,10 +38,6 @@
 .inverted-colours:focus {
   background-color: #f9d342;
   color: #292826;
-}
-
-.menu {
-  width: 500px;
 }
 
 .small-text {
