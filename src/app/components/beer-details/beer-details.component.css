@@ -40,7 +40,7 @@
 }
 
 img {
-  height: 45vmin;
+  height: 60vmin;
 }
 
 .medium-text {
@@ -65,7 +65,33 @@ img {
 
 .under-header {
   position: relative;
-  left: 15rem;
+  left: 15vw;
   height: 90vh;
   width: 85vw;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1100px) {
+  .under-header {
+    left: 22vw;
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  img {
+    height: 50vmin;
+  }
+
+  .medium-text {
+    font-size: 3vmin;
+  }
+
+  .small-text {
+    font-size: 2.5vmin;
+  }
+
+  .under-header {
+    left: 26vw;
+    width: 75vw;
+  }
 }
