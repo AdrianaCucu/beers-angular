@@ -4,11 +4,10 @@
 }
 
 .beers-list {
-  width: 83vw;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
-  grid-gap: 3.5vh 0.1vw;
+  grid-gap: 3.5vh 2vw;
 }
 
 .beers-list img {
@@ -40,7 +39,6 @@
   background-color: transparent;
 }
 
-
 .title {
   font-size: 3vh;
 }
@@ -55,11 +53,44 @@
 
 .under-header {
   position: relative;
-  left: 8rem;
+  top: 5px;
+  left: 6vw;
 }
 
 .viewport {
   height: 92vh;
-  width: 85vw;
+  width: 80vw !important;
   overflow-y: scroll;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1100px) {
+  .beers-list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(23vh, 1fr));
+    grid-gap: 3.5vh 0;
+  }
+
+  .card-box {
+    height: 55vh;
+    width: 23vh;
+  }
+
+  .under-header {
+    left: 5vw;
+  }
+
+  .viewport {
+    width: 70vw !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .under-header {
+    left: 16vw;
+  }
+
+  .viewport {
+    width: 45vmax !important;
+  }
 }

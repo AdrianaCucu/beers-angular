@@ -17,6 +17,7 @@ a:hover {
 
 .fixed-header {
   height: 100%;
+  width: 15vmax !important;
   position: fixed;
   top: 0;
   left: 0;
