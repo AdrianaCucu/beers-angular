@@ -35,16 +35,12 @@
 }
 
 .full-container {
-  height: 59.5vh;
+  height: 80vh;
+  top: 5vh;
 }
 
 img {
   height: 45vmin;
-}
-
-.loader-container {
-  height: 61vh;
-  width: 100vw;
 }
 
 .medium-text {
@@ -68,5 +64,8 @@ img {
 }
 
 .under-header {
-  top: 12vmax;
+  position: relative;
+  left: 15rem;
+  height: 90vh;
+  width: 85vw;
 }
