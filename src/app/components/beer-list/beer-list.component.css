@@ -7,7 +7,7 @@
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
-  grid-gap: 3.5vh 2vw;
+  grid-gap: 3.5vh 1vw;
 }
 
 .beers-list img {
