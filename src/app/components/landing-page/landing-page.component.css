@@ -5,7 +5,7 @@
 
 .full-container {
   height: 50vh;
-  width: 50vw;
+  width: 50vw !important;
 }
 
 .right-floated {
@@ -14,7 +14,7 @@
 
 .small-container {
   height: 10vh;
-  width: 50vw;
+  width: 50vw !important;
 }
 
 .subtitle {
@@ -26,9 +26,43 @@
 }
 
 .under-header {
-  top: 13vmax;
+  position: relative;
+  left: 7vw;
+  top: 10vh;
 }
 
 .yellow-text {
   color: #f9d342;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1100px) {
+  .subtitle {
+    font-size: 2vh;
+  }
+
+  .under-header {
+    left: 2vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .full-container {
+    width: 60vw !important;
+  }
+
+  .small-container {
+    width: 60vw !important;
+  }
+
+  .subtitle {
+    font-size: 2vh;
+  }
+
+  .title {
+    font-size: 4.5vh;
+  }
+
+  .under-header {
+    left: 26vw;
+  }
 }

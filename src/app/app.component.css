@@ -4,9 +4,11 @@ a:link, a:visited, a:hover, a:active{
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   height: 4vh;
+  font-size: 1.5vh;
   text-align: center;
+  z-index: 2;
 }

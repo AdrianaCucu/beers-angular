@@ -4,7 +4,7 @@ a:hover {
 }
 
 .background-gradient{
-  background: linear-gradient(140deg, #0d0c0c 0%, #292826 100%) !important;
+  background: linear-gradient(140deg, #0d0c0c 0%, #292826 90%) !important;
 }
 
 .base-colours {
@@ -16,7 +16,7 @@ a:hover {
 }
 
 .fixed-header {
-  height: 100%;
+  height: 100vh;
   width: 15vmax !important;
   position: fixed;
   top: 0;
