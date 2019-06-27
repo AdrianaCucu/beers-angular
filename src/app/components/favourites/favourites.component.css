@@ -41,11 +41,24 @@ button {
 .under-header {
   display: grid;
   position: relative;
-  left: 16rem;
+  left: 17vw;
+  height: 92vh;
+  width: 80vw !important;
 }
 
 .viewport {
   overflow-y: scroll;
-  height: 85vh;
-  width: 80vw;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1100px) {
+  .under-header {
+    left: 20vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .under-header {
+    left: 30vw;
+    width: 70vw !important;
+  }
 }
