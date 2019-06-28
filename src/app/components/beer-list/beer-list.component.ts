@@ -31,11 +31,11 @@ export class BeerListComponent implements OnInit {
   updatePage() {
     this.beersService.getBeers(this.page, this.filter).subscribe(
       items => (
-        (this.currentBeers = items), this.beers.push(...this.currentBeers),
+        (this.currentBeers = items), this.beers.push(...this.currentBeers)
 
         // For testing:
-        console.log(this.currentBeers),
-        console.log(this.beers)
+        // console.log(this.currentBeers),
+        // console.log(this.beers)
       )
     );
   }
