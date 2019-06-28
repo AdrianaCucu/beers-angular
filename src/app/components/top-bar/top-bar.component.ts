@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
+import { BeersService } from 'src/app/services/beers.service';
+
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
@@ -8,11 +10,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TopBarComponent implements OnInit {
   @Output() clickEvent = new EventEmitter();
 
-  constructor() {}
+  constructor(private beersService: BeersService) {}
 
   ngOnInit() {}
 
-  selectPage(filter: string) {
+  filterSelected(filter) {
+    return this.beersService.containsFilter(filter);
+  }
+
+  selectFilter(filter: string) {
     this.clickEvent.emit(filter);
   }
 }

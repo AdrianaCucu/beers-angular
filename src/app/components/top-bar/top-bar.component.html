@@ -11,56 +11,59 @@
   </a>
 
   <div class="sub-header">
+    <!---->
 
+    <a
+      class="ui button item remove-button base-colours"
+      (click)="selectFilter('reset')"
+    >
+      Reset filters
+    </a>
 
-    <!--
     <div class="ui item">
-      <div class="ui checkbox">
-        <input type="checkbox" />
-        <label class="base-colours">All</label>
-      </div>
-    </div>
-
-    <div class="ui item">
-      <div class="ui checkbox">
-        <input type="checkbox" />
+      <div
+        class="ui checkbox"
+        (click)="selectFilter('weak')"
+        [routerLink]="['/weak']"
+      >
+        <input type="checkbox" [checked]="filterSelected('weak')" />
         <label class="base-colours">0%-5%</label>
       </div>
     </div>
-    -->
 
+    <div class="ui item">
+      <div
+        class="ui checkbox"
+        (click)="selectFilter('medium')"
+        [routerLink]="['/medium']"
+      >
+        <input type="checkbox" [checked]="filterSelected('medium')" />
+        <label class="base-colours">5%-10%</label>
+      </div>
+    </div>
 
+    <div class="ui item">
+      <div
+        class="ui checkbox"
+        (click)="selectFilter('strong')"
+        [routerLink]="['/strong']"
+      >
+        <input type="checkbox" [checked]="filterSelected('strong')" />
+        <label class="base-colours">>10%</label>
+      </div>
+    </div>
 
-    <a
-      class="ui button item base-colours"
-      [routerLink]="['/no-filter']"
-    >
-      All
-    </a>
+    <div class="ui item">
+      <div
+        class="ui checkbox"
+        (click)="selectFilter('random')"
+        [routerLink]="['/random']"
+      >
+        <input type="checkbox" [checked]="filterSelected('random')" />
+        <label class="base-colours">?</label>
+      </div>
+    </div>
 
-    <a
-      class="ui button item base-colours"
-      [routerLink]="['/weak']"
-    >
-      0%-5%
-    </a>
-    <a
-      class="ui button item base-colours"
-      [routerLink]="['/medium']"
-    >
-      5%-10%
-    </a>
-    <a
-      class="ui button item base-colours"
-      [routerLink]="['/strong']"
-    >
-      >10%
-    </a>
-    <a
-      class="ui button item base-colours"
-      [routerLink]="['/random']"
-    >
-      ?
-    </a>
+    <!---->
   </div>
 </div>

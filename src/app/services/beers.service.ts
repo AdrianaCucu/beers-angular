@@ -13,7 +13,7 @@ export class BeersService {
   constructor(private http: HttpClient) {}
 
   /**
-   *  Returns an array containing only the selected beer.
+   * Returns an array containing only the selected beer.
    *
    * @param id - the id of the beer (integer between 1-325)
    */
@@ -22,7 +22,15 @@ export class BeersService {
   }
 
   getFilters() {
+    console.log(this.filters);
+
     return this.filters;
+  }
+
+  containsFilter(filter) {
+    // console.log(this.filters.includes(filter));
+
+    return this.filters.includes(filter);
   }
 
   addFilter(filter) {
@@ -42,8 +50,8 @@ export class BeersService {
 
     localStorage.setItem('filters', JSON.stringify(this.filters));
 
-    // console.log('storage-filters');
-    // console.log(localStorage.getItem('filters'));
+    console.log('storage-filters');
+    console.log(localStorage.getItem('filters'));
   }
 
   removeFilter(filter) {

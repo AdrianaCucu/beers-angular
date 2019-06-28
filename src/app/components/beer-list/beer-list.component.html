@@ -1,4 +1,6 @@
-<app-top-bar (clickEvent)="ngOnInit()"></app-top-bar>
+
+<app-top-bar (clickEvent)="addFilter($event)"></app-top-bar>
+
 
 <!-- Loader animation -->
 <div *ngIf="!beers.length">
