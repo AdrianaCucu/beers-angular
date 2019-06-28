@@ -29,14 +29,18 @@ export class BeerListComponent implements OnInit {
     this.updatePage();
   }
 
-  addFilter(filter) {
+  updateFilter(filter) {
     if (filter === 'reset') {
       this.beersService.resetFilters();
     } else {
       if (filter === 'random') {
         this.beersService.resetFilters();
       }
-      this.beersService.addFilter(filter);
+      if (this.beersService.containsFilter(filter)) {
+        this.beersService.removeFilter(filter);
+      } else {
+        this.beersService.addFilter(filter);
+      }
     }
     this.ngOnInit();
   }
@@ -46,14 +50,16 @@ export class BeerListComponent implements OnInit {
 
     if (this.filters.length) {
       for (const filter of this.filters) {
-        this.beersService.getBeers(this.page, filter).subscribe(
-          items => (
-            (this.currentBeers = items), this.beers.push(...this.currentBeers),
-
-            console.log(this.currentBeers),
-            console.log(this.beers)
-          )
-        );
+        this.beersService
+          .getBeers(this.page, filter)
+          .subscribe(
+            items => (
+              (this.currentBeers = items),
+              this.beers.push(...this.currentBeers),
+              console.log(this.currentBeers),
+              console.log(this.beers)
+            )
+          );
       }
     }
 
@@ -63,8 +69,8 @@ export class BeerListComponent implements OnInit {
         .getBeers(this.page, 'no-filter')
         .subscribe(
           items => (
-            (this.currentBeers = items), this.beers.push(...this.currentBeers),
-
+            (this.currentBeers = items),
+            this.beers.push(...this.currentBeers),
             console.log(this.currentBeers),
             console.log(this.beers)
           )
