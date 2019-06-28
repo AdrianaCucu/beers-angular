@@ -9,7 +9,7 @@ import { FavouritesService } from '../../services/favourites.service';
   styleUrls: ['./beer-list.component.css']
 })
 export class BeerListComponent implements OnInit {
-  beers; // This array stores all beers retrieved so far with the current filter.
+  beers; // This array stores all beers retrieved so far with the current filters.
   currentBeers;
   page: number;
 
@@ -42,6 +42,7 @@ export class BeerListComponent implements OnInit {
         this.beersService.addFilter(filter);
       }
     }
+
     this.ngOnInit();
   }
 
@@ -55,7 +56,6 @@ export class BeerListComponent implements OnInit {
             (this.currentBeers = items),
             this.beers.push(...this.currentBeers),
             this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)) // Sorts the beers by id.
-
             // console.log(this.currentBeers),
             // console.log(this.beers)
           )

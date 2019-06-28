@@ -42,12 +42,8 @@ a:hover {
   color: #292826;
 }
 
-.remove-button {
-  font-size: 1.5vh;
-}
-
 .small-text {
-  font-size: 1.5vh;
+  font-size: 1.8vh !important;
 }
 
 .title {
