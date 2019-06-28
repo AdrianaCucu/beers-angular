@@ -21,46 +21,52 @@
     </a>
 
     <div class="ui item">
-      <div
-        class="ui checkbox"
-        (click)="selectFilter('weak')"
-        [routerLink]="['/beer-catalogue']"
-      >
-        <input type="checkbox" [checked]="filterSelected('weak')" />
-        <label class="base-colours">0%-5%</label>
-      </div>
-    </div>
+      <div class="header base-colours">ABV</div>
 
-    <div class="ui item">
-      <div
-        class="ui checkbox"
-        (click)="selectFilter('medium')"
-        [routerLink]="['/beer-catalogue']"
-      >
-        <input type="checkbox" [checked]="filterSelected('medium')" />
-        <label class="base-colours">5%-10%</label>
-      </div>
-    </div>
+      <div class="menu">
+        <div class="ui item">
+          <div
+            class="ui checkbox"
+            (click)="selectFilter('weak')"
+            [routerLink]="['/beer-catalogue']"
+          >
+            <input type="checkbox" [checked]="filterSelected('weak')" />
+            <label class="base-colours">0%-5%</label>
+          </div>
+        </div>
 
-    <div class="ui item">
-      <div
-        class="ui checkbox"
-        (click)="selectFilter('strong')"
-        [routerLink]="['/beer-catalogue']"
-      >
-        <input type="checkbox" [checked]="filterSelected('strong')" />
-        <label class="base-colours">>10%</label>
-      </div>
-    </div>
+        <div class="ui item">
+          <div
+            class="ui checkbox"
+            (click)="selectFilter('medium')"
+            [routerLink]="['/beer-catalogue']"
+          >
+            <input type="checkbox" [checked]="filterSelected('medium')" />
+            <label class="base-colours">5%-10%</label>
+          </div>
+        </div>
 
-    <div class="ui item">
-      <div
-        class="ui checkbox"
-        (click)="selectFilter('random')"
-        [routerLink]="['/beer-catalogue']"
-      >
-        <input type="checkbox" [checked]="filterSelected('random')" />
-        <label class="base-colours">?</label>
+        <div class="ui item">
+          <div
+            class="ui checkbox"
+            (click)="selectFilter('strong')"
+            [routerLink]="['/beer-catalogue']"
+          >
+            <input type="checkbox" [checked]="filterSelected('strong')" />
+            <label class="base-colours">>10%</label>
+          </div>
+        </div>
+
+        <div class="ui item">
+          <div
+            class="ui checkbox"
+            (click)="selectFilter('random')"
+            [routerLink]="['/beer-catalogue']"
+          >
+            <input type="checkbox" [checked]="filterSelected('random')" />
+            <label class="base-colours">?</label>
+          </div>
+        </div>
       </div>
     </div>
 

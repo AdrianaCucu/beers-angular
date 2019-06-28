@@ -52,9 +52,10 @@ export class BeerListComponent implements OnInit {
           items => (
             (this.currentBeers = items),
             this.beers.push(...this.currentBeers),
-            this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)), // Sorts the beers by id.
-            console.log(this.currentBeers),
-            console.log(this.beers)
+            this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)) // Sorts the beers by id.
+
+            // console.log(this.currentBeers),
+            // console.log(this.beers)
           )
         );
       }
@@ -62,16 +63,14 @@ export class BeerListComponent implements OnInit {
 
     // If no filter is selected, all beers are retrieved.
     else {
-      this.beersService
-        .getBeers(this.page, 'no-filter')
-        .subscribe(
-          items => (
-            (this.currentBeers = items),
-            this.beers.push(...this.currentBeers),
-            console.log(this.currentBeers),
-            console.log(this.beers)
-          )
-        );
+      this.beersService.getBeers(this.page, 'no-filter').subscribe(
+        items => (
+          (this.currentBeers = items), this.beers.push(...this.currentBeers)
+
+          // console.log(this.currentBeers),
+          // console.log(this.beers)
+        )
+      );
     }
   }
 

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
-  MAX_PER_PAGE = 20;
+  MAX_PER_PAGE = 15;
 
   filters = localStorage.getItem('filters')
     ? JSON.parse(localStorage.getItem('filters'))
@@ -22,7 +22,7 @@ export class BeersService {
   }
 
   getFilters() {
-    console.log(this.filters);
+    // console.log(this.filters);
 
     return this.filters;
   }
@@ -50,8 +50,8 @@ export class BeersService {
 
     localStorage.setItem('filters', JSON.stringify(this.filters));
 
-    console.log('storage-filters');
-    console.log(localStorage.getItem('filters'));
+    // console.log('storage-filters');
+    // console.log(localStorage.getItem('filters'));
   }
 
   removeFilter(filter) {
