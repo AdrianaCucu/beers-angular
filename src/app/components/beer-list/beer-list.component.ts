@@ -13,7 +13,9 @@ export class BeerListComponent implements OnInit {
   beers; // This array stores all beers retrieved so far with the current filter.
   currentBeers;
   page: number;
-  filter: string;
+
+  // filters = ['medium', 'weak'];
+  filters: [];
 
   constructor(
     private beersService: BeersService,
@@ -24,20 +26,38 @@ export class BeerListComponent implements OnInit {
   ngOnInit() {
     this.beers = [];
     this.page = 1;
-    this.filter = this.router.url.replace('/', '');
+    this.beersService.resetFilters();
+    this.beersService.addFilter(this.router.url.replace('/', ''));
     this.updatePage();
   }
 
   updatePage() {
-    this.beersService.getBeers(this.page, this.filter).subscribe(
-      items => (
-        (this.currentBeers = items), this.beers.push(...this.currentBeers)
+    this.filters = this.beersService.getFilters();
 
-        // For testing:
-        // console.log(this.currentBeers),
-        // console.log(this.beers)
-      )
-    );
+    if (this.filters.length) {
+      for (const filter of this.filters) {
+        this.beersService.getBeers(this.page, filter).subscribe(
+          items => (
+            (this.currentBeers = items), this.beers.push(...this.currentBeers)
+
+            // For testing:
+            // console.log(this.currentBeers),
+            // console.log(this.beers)
+          )
+        );
+      }
+    }
+
+    // If no filter is selected, all beers are retrieved.
+    else {
+      this.beersService
+        .getBeers(this.page, 'no-filter')
+        .subscribe(
+          items => (
+            (this.currentBeers = items), this.beers.push(...this.currentBeers)
+          )
+        );
+    }
   }
 
   addToFavourites(beer) {

@@ -6,6 +6,10 @@ export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
   MAX_PER_PAGE = 20;
 
+  filters = localStorage.getItem('filters')
+    ? JSON.parse(localStorage.getItem('filters'))
+    : [];
+
   constructor(private http: HttpClient) {}
 
   /**
@@ -15,6 +19,52 @@ export class BeersService {
    */
   getSelectedBeer(id) {
     return this.http.get(`${this.API_PATH}/beers/${id}`);
+  }
+
+  getFilters() {
+    return this.filters;
+  }
+
+  addFilter(filter) {
+    let exists = false;
+
+    if (this.filters.length) {
+      for (let i = 0; i < this.filters.length && !exists; i++) {
+        if (filter === this.filters[i]) {
+          exists = true;
+        }
+      }
+    }
+
+    if (!exists) {
+      this.filters.push(filter);
+    }
+
+    localStorage.setItem('filters', JSON.stringify(this.filters));
+
+    // console.log('storage-filters');
+    // console.log(localStorage.getItem('filters'));
+  }
+
+  removeFilter(filter) {
+    for (let i = 0; i < this.filters.length; i++) {
+      if (filter === this.filters[i]) {
+        this.filters.splice(i, 1);
+      }
+    }
+
+    localStorage.setItem('filters', JSON.stringify(this.filters));
+
+    // console.log('storage-filters');
+    // console.log(localStorage.getItem('filters'));
+  }
+
+  resetFilters() {
+    this.filters = [];
+    localStorage.setItem('filters', JSON.stringify(this.filters));
+
+    // console.log('storage-filters');
+    // console.log(localStorage.getItem('filters'));
   }
 
   /**
