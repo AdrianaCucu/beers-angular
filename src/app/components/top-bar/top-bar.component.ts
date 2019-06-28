@@ -10,6 +10,8 @@ import { BeersService } from 'src/app/services/beers.service';
 export class TopBarComponent implements OnInit {
   @Output() clickEvent = new EventEmitter();
 
+  abv = ['weak', 'medium', 'strong'];
+
   constructor(private beersService: BeersService) {}
 
   ngOnInit() {}

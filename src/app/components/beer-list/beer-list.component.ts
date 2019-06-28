@@ -36,6 +36,8 @@ export class BeerListComponent implements OnInit {
       } else {
         if (filter === 'random') {
           this.beersService.resetFilters();
+        } else {
+          this.beersService.removeFilter('random');
         }
         this.beersService.addFilter(filter);
       }
