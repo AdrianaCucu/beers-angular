@@ -34,11 +34,7 @@ import { ScrollableDirective } from './directives/scrollable.directive';
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent },
       { path: 'beers/:beerId', component: BeerDetailsComponent },
-      { path: 'no-filter', component: BeerListComponent },
-      { path: 'weak', component: BeerListComponent },
-      { path: 'medium', component: BeerListComponent },
-      { path: 'strong', component: BeerListComponent },
-      { path: 'random', component: BeerListComponent },
+      { path: 'beer-catalogue', component: BeerListComponent },
       { path: 'favourites', component: FavouritesComponent },
       { path: '**', redirectTo: '' }
     ])
