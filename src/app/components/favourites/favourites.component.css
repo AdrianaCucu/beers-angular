@@ -9,6 +9,8 @@ button {
 
 .cards {
   margin: 0;
+  margin-top: 5vh;
+  height: 90vh;
 }
 
 .inverted-colours {
@@ -30,6 +32,14 @@ button {
   margin-bottom: 10px;
 }
 
+.top-button {
+  background-color: #292826;
+  width: 100%;
+  position: fixed;
+  top: 1vh;
+  z-index: 2;
+}
+
 .turn-yellow {
   color: #292826;
 }
@@ -42,7 +52,6 @@ button {
   display: grid;
   position: relative;
   left: 17vw;
-  height: 92vh;
   width: 80vw !important;
 }
 

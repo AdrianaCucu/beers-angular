@@ -5,13 +5,15 @@
     </h3>
   </div>
 
-  <button
-    class="ui left floated button padded inverted-colours"
-    *ngIf="items.length"
-    (click)="clearFavourites()"
-  >
-    Remove all
-  </button>
+  <div class="top-button">
+    <button
+      class="ui left floated button padded inverted-colours"
+      *ngIf="items.length"
+      (click)="clearFavourites()"
+    >
+      Remove all
+    </button>
+  </div>
 
   <div class="ui base-colours viewport">
     <div class="ui cards">

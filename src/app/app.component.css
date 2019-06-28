@@ -1,14 +1,24 @@
-a:link, a:visited, a:hover, a:active{
-  color: #F9D342;
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #f9d342;
   text-decoration: none;
 }
 
 footer {
+  background-color: #292826;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 4vh;
-  font-size: 1.5vh;
-  text-align: center;
   z-index: 2;
+}
+
+p {
+  position: fixed;
+  bottom: 1vh;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5vh;
 }
