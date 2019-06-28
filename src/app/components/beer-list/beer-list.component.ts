@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { BeersService } from '../../services/beers.service';
 import { FavouritesService } from '../../services/favourites.service';
@@ -19,8 +18,7 @@ export class BeerListComponent implements OnInit {
 
   constructor(
     private beersService: BeersService,
-    private favouritesService: FavouritesService,
-    private router: Router
+    private favouritesService: FavouritesService
   ) {}
 
   ngOnInit() {
@@ -33,12 +31,12 @@ export class BeerListComponent implements OnInit {
     if (filter === 'reset') {
       this.beersService.resetFilters();
     } else {
-      if (filter === 'random') {
-        this.beersService.resetFilters();
-      }
       if (this.beersService.containsFilter(filter)) {
         this.beersService.removeFilter(filter);
       } else {
+        if (filter === 'random') {
+          this.beersService.resetFilters();
+        }
         this.beersService.addFilter(filter);
       }
     }
@@ -50,16 +48,15 @@ export class BeerListComponent implements OnInit {
 
     if (this.filters.length) {
       for (const filter of this.filters) {
-        this.beersService
-          .getBeers(this.page, filter)
-          .subscribe(
-            items => (
-              (this.currentBeers = items),
-              this.beers.push(...this.currentBeers),
-              console.log(this.currentBeers),
-              console.log(this.beers)
-            )
-          );
+        this.beersService.getBeers(this.page, filter).subscribe(
+          items => (
+            (this.currentBeers = items),
+            this.beers.push(...this.currentBeers),
+            this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)), // Sorts the beers by id.
+            console.log(this.currentBeers),
+            console.log(this.beers)
+          )
+        );
       }
     }
 
