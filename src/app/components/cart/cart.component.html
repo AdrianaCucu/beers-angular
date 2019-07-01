@@ -1,3 +1,42 @@
-<p>
-  cart works!
-</p>
+<div class="ui segment base-colours under-header">
+  <div *ngIf="!items.length">
+    <h3>
+      Your cart is empty.
+    </h3>
+  </div>
+
+  <div class="top-button">
+    <button
+      class="ui left floated button padded inverted-colours"
+      *ngIf="items.length"
+      (click)="clearCart()"
+    >
+      Remove all
+    </button>
+  </div>
+
+  <div class="ui base-colours viewport">
+    <div class="ui relaxed divided list">
+      <div class="ui item list-colours" *ngFor="let item of items">
+        <div class="content">
+          <a
+            class="title turn-yellow list-colours"
+            [title]="item.name + ' details'"
+            [routerLink]="['/beers', item.id]"
+          >
+            {{ item.name }}
+          </a>
+        </div>
+        <div class="extra content">
+          <button
+            class="ui right floated button turn-yellow bottom-button"
+            style="background-color: transparent"
+            (click)="removeBeer(item)"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

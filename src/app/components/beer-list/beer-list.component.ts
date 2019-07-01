@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BeersService } from '../../services/beers.service';
 import { FavouritesService } from '../../services/favourites.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -20,7 +21,8 @@ export class BeerListComponent implements OnInit {
 
   constructor(
     private beersService: BeersService,
-    private favouritesService: FavouritesService
+    private favouritesService: FavouritesService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -48,8 +50,8 @@ export class BeerListComponent implements OnInit {
     // Beers selected by name.
     else if (this.filters.includes('name')) {
       this.beersService
-      .getBeers(this.page, 'name')
-      .subscribe(items => (this.beers = items));
+        .getBeers(this.page, 'name')
+        .subscribe(items => (this.beers = items));
     }
 
     // If 'random' is not selected.
@@ -74,6 +76,10 @@ export class BeerListComponent implements OnInit {
 
   addToFavourites(beer) {
     this.favouritesService.addToFavourites(beer);
+  }
+
+  addToCart(beer) {
+    this.cartService.addToCart(beer);
   }
 
   scrollHandler(e) {

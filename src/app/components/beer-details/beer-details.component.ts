@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { FavouritesService } from 'src/app/services/favourites.service';
 import { BeersService } from 'src/app/services/beers.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-beer-details',
@@ -17,6 +18,7 @@ export class BeerDetailsComponent implements OnInit {
   constructor(
     private favouritesService: FavouritesService,
     private beersService: BeersService,
+    private cartService: CartService,
     private route: ActivatedRoute
   ) {
     route.params.subscribe(params => (this.id = params['beerId']));
@@ -51,5 +53,9 @@ export class BeerDetailsComponent implements OnInit {
 
   addToFavourites(beer) {
     this.favouritesService.addToFavourites(beer);
+  }
+
+  addToCart(beer) {
+    this.cartService.addToCart(beer);
   }
 }

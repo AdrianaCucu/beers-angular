@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FavouritesService } from '../../services/favourites.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-favourites',
@@ -11,7 +12,8 @@ export class FavouritesComponent implements OnInit {
   items;
 
   constructor(
-    private favouritesService: FavouritesService
+    private favouritesService: FavouritesService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class FavouritesComponent implements OnInit {
 
   removeBeer(beer) {
     this.favouritesService.removeFromFavourites(beer);
+  }
+
+  addToCart(beer) {
+    this.cartService.addToCart(beer);
   }
 
   clearFavourites() {

@@ -3,8 +3,8 @@
   color: #f9d342;
 }
 
-button {
-  width: 10rem;
+.bottom-button {
+  padding: 1vh 1vh;
 }
 
 .cards {

@@ -19,7 +19,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
     this.deviceWidth = window.innerWidth;
-    console.log(this.deviceWidth);
+    // console.log(this.deviceWidth);
   }
 
   filterSelected(filter) {

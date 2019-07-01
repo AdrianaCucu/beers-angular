@@ -35,11 +35,19 @@
         </div>
         <div class="extra content">
           <button
-            class="ui right floated button turn-yellow"
+            class="ui right floated button turn-yellow bottom-button"
             style="background-color: transparent"
             (click)="removeBeer(item)"
           >
             Remove from favourites
+          </button>
+
+          <button
+            class="ui right floated button turn-yellow bottom-button"
+            style="background-color: transparent"
+            (click)="addToCart(item)"
+          >
+            Add to cart
           </button>
         </div>
       </div>
