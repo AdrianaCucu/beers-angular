@@ -10,7 +10,7 @@ import { FavouritesService } from './services/favourites.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './components/beer-list/beer-list.component';
-import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -20,7 +20,7 @@ import { ScrollableDirective } from './directives/scrollable.directive';
   declarations: [
     AppComponent,
     BeerListComponent,
-    TopBarComponent,
+    NavBarComponent,
     FavouritesComponent,
     BeerDetailsComponent,
     LandingPageComponent,

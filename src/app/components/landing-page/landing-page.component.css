@@ -27,8 +27,9 @@
 
 .under-header {
   position: relative;
-  left: 7vw;
+  left: 20vw;
   top: 10vh;
+  width: 70vw;
 }
 
 .yellow-text {
@@ -41,7 +42,7 @@
   }
 
   .under-header {
-    left: 2vw;
+    left: 20vw;
   }
 }
 
