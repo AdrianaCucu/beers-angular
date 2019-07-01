@@ -11,6 +11,7 @@ export class TopBarComponent implements OnInit {
   @Output() clickEvent = new EventEmitter();
 
   abv = ['weak', 'medium', 'strong'];
+  ibu = ['low', 'normal', 'high'];
 
   constructor(private beersService: BeersService) {}
 

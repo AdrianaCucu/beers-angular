@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class BeersService {
   API_PATH = 'https://api.punkapi.com/v2';
-  MAX_PER_PAGE = 15;
+  MAX_PER_PAGE = 20;
 
   filters = localStorage.getItem('filters')
     ? JSON.parse(localStorage.getItem('filters'))
@@ -81,7 +81,7 @@ export class BeersService {
    * @param page - the current page
    * @param filter the selected filter
    */
-  getBeers(page, filter) {
+  getBeers(page, filter?) {
     // Response object is JSON by default.
     // Do not map response to response.json(), gives error
     switch (filter) {
@@ -114,5 +114,87 @@ export class BeersService {
           `${this.API_PATH}/beers?page=${page}&per_page=${this.MAX_PER_PAGE}`
         );
     }
+  }
+
+   // Filters the beers based on the selected filters.
+   filterBeers(beers) {
+    let filteredBeers = beers;
+
+    if (this.filters.length) {
+      if (
+        this.filters.includes('weak') ||
+        this.filters.includes('medium') ||
+        this.filters.includes('strong')
+      ) {
+        filteredBeers = this.filterABV(filteredBeers);
+      }
+
+      if (
+        this.filters.includes('low') ||
+        this.filters.includes('normal') ||
+        this.filters.includes('high')
+      ) {
+        filteredBeers = this.filterIBU(filteredBeers);
+      }
+    }
+
+    console.log(filteredBeers);
+    return filteredBeers;
+  }
+
+  // Filtering based on the ABV property.
+  filterABV(beers) {
+    const filteredBeers = [];
+
+    for (const filter of this.filters) {
+      switch (filter) {
+        case 'weak': {
+          filteredBeers.push(...beers.filter(beer => beer.abv < 5));
+          break;
+        }
+
+        case 'medium': {
+          filteredBeers.push(
+            ...beers.filter(beer => beer.abv >= 5 && beer.abv <= 10)
+          );
+          break;
+        }
+
+        case 'strong': {
+          filteredBeers.push(...beers.filter(beer => beer.abv > 10));
+          break;
+        }
+      }
+    }
+
+    return filteredBeers;
+  }
+
+   // Filtering based on the IBU property.
+  filterIBU(beers) {
+    const filteredBeers = [];
+
+    for (const filter of this.filters) {
+      switch (filter) {
+        case 'low': {
+          filteredBeers.push(...beers.filter(beer => beer.ibu < 15));
+          break;
+        }
+
+        case 'normal': {
+          filteredBeers.push(
+            ...beers.filter(beer => beer.ibu >= 15 && beer.ibu <= 80)
+          );
+          break;
+        }
+
+        case 'high': {
+          filteredBeers.push(...beers.filter(beer => beer.ibu > 80));
+          break;
+        }
+      }
+    }
+
+    return filteredBeers;
   }
 }

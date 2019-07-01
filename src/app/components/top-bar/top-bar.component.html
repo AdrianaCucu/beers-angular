@@ -44,13 +44,36 @@
     </div>
 
     <div class="ui item">
+        <div class="header base-colours small-text">IBU</div>
+
+        <div class="menu">
+          <div *ngFor="let item of ibu">
+            <div class="ui item">
+              <div
+                class="ui checkbox"
+                (click)="selectFilter(item)"
+                [routerLink]="['/beer-catalogue']"
+              >
+                <input type="checkbox" [checked]="filterSelected(item)" />
+                <label class="base-colours small-text">
+                  <div *ngIf="item === 'low'">0-15</div>
+                  <div *ngIf="item === 'normal'">15-80</div>
+                  <div *ngIf="item === 'high'">>80</div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="ui item">
       <div
         class="ui checkbox"
         (click)="selectFilter('random')"
         [routerLink]="['/beer-catalogue']"
       >
         <input type="checkbox" [checked]="filterSelected('random')" />
-        <label class="base-colours">?</label>
+        <label class="base-colours small-text">?</label>
       </div>
     </div>
 

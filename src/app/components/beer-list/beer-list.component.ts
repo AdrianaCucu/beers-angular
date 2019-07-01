@@ -11,10 +11,10 @@ import { FavouritesService } from '../../services/favourites.service';
 export class BeerListComponent implements OnInit {
   beers; // This array stores all beers retrieved so far with the current filters.
   currentBeers;
+  allBeers;
   page: number;
 
-  // filters = ['medium', 'weak'];
-  filters: [];
+  filters;
 
   constructor(
     private beersService: BeersService,
@@ -23,7 +23,10 @@ export class BeerListComponent implements OnInit {
 
   ngOnInit() {
     this.beers = [];
+    this.allBeers = [];
     this.page = 1;
+    this.filters = this.beersService.getFilters();
+    console.log(this.filters);
     this.updatePage();
   }
 
@@ -47,29 +50,24 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage() {
-    this.filters = this.beersService.getFilters();
-
-    if (this.filters.length) {
-      for (const filter of this.filters) {
-        this.beersService.getBeers(this.page, filter).subscribe(
-          items => (
-            (this.currentBeers = items),
-            this.beers.push(...this.currentBeers),
-            this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)) // Sorts the beers by id.
-            // console.log(this.currentBeers),
-            // console.log(this.beers)
-          )
-        );
-      }
+    if (this.filters.includes('random')) {
+      this.beersService
+        .getBeers(this.page, 'random')
+        .subscribe(items => (this.beers = items));
     }
 
-    // If no filter is selected, all beers are retrieved.
+    // If 'random' is not selected.
     else {
-      this.beersService.getBeers(this.page, 'no-filter').subscribe(
+      this.beersService.getBeers(this.page).subscribe(
         items => (
-          (this.currentBeers = items), this.beers.push(...this.currentBeers)
+          (this.currentBeers = items),
+          this.allBeers.push(...this.currentBeers),
+          (this.beers = this.beersService.filterBeers(this.allBeers)),
+          this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)) // Sorts the beers by id.
 
+          // For testing:
           // console.log(this.currentBeers),
+          // console.log(this.allBeers),
           // console.log(this.beers)
         )
       );
