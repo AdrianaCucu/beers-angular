@@ -16,6 +16,7 @@
     <a
       class="ui button item small-text base-colours"
       (click)="selectFilter('reset')"
+      [routerLink]="['/beer-catalogue']"
     >
       Reset filters
     </a>
@@ -44,27 +45,29 @@
     </div>
 
     <div class="ui item">
-        <div class="header base-colours small-text">International Bitterness Units</div>
+      <div class="header base-colours small-text">
+        International Bitterness Units
+      </div>
 
-        <div class="menu">
-          <div *ngFor="let item of ibu">
-            <div class="ui item">
-              <div
-                class="ui checkbox"
-                (click)="selectFilter(item)"
-                [routerLink]="['/beer-catalogue']"
-              >
-                <input type="checkbox" [checked]="filterSelected(item)" />
-                <label class="base-colours small-text">
-                  <div *ngIf="item === 'low'">0-15</div>
-                  <div *ngIf="item === 'normal'">15-80</div>
-                  <div *ngIf="item === 'high'">>80</div>
-                </label>
-              </div>
+      <div class="menu">
+        <div *ngFor="let item of ibu">
+          <div class="ui item">
+            <div
+              class="ui checkbox"
+              (click)="selectFilter(item)"
+              [routerLink]="['/beer-catalogue']"
+            >
+              <input type="checkbox" [checked]="filterSelected(item)" />
+              <label class="base-colours small-text">
+                <div *ngIf="item === 'low'">0-15</div>
+                <div *ngIf="item === 'normal'">15-80</div>
+                <div *ngIf="item === 'high'">>80</div>
+              </label>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <div class="ui item">
       <div
