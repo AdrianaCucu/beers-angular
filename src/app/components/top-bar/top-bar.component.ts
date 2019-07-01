@@ -22,6 +22,21 @@ export class TopBarComponent implements OnInit {
   }
 
   selectFilter(filter: string) {
+    if (filter === 'reset') {
+      this.beersService.resetFilters();
+    } else {
+      if (this.beersService.containsFilter(filter)) {
+        this.beersService.removeFilter(filter);
+      } else {
+        if (filter === 'random') {
+          this.beersService.resetFilters();
+        } else {
+          this.beersService.removeFilter('random');
+        }
+        this.beersService.addFilter(filter);
+      }
+    }
+
     this.clickEvent.emit(filter);
   }
 }
