@@ -1,7 +1,7 @@
 <app-top-bar (clickEvent)="updateFilter()"></app-top-bar>
 
 <!-- Loader animation -->
-<div *ngIf="!beers.length">
+<div *ngIf="!beers.length && showLoader">
   <div class="ui active dimmer">
     <div class="ui massive loader"></div>
   </div>

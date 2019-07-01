@@ -39,6 +39,12 @@
   background-color: transparent;
 }
 
+.message {
+  position: absolute;
+  left: 6.5vh;
+  top: 3vh;
+}
+
 .title {
   font-size: 3vh;
 }

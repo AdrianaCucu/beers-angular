@@ -12,6 +12,10 @@ a:hover {
   background-color: transparent;
 }
 
+.button {
+  text-align: start;
+}
+
 .favourites {
   font-size: 2vh;
 }

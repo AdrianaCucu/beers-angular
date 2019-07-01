@@ -12,7 +12,9 @@ export class BeerListComponent implements OnInit {
   beers; // This array stores all beers retrieved so far with the current filters.
   currentBeers;
   allBeers;
+
   page: number;
+  showLoader: boolean;
 
   filters;
 
@@ -25,6 +27,7 @@ export class BeerListComponent implements OnInit {
     this.beers = [];
     this.allBeers = [];
     this.page = 1;
+    this.showLoader = true;
     this.filters = this.beersService.getFilters();
     // console.log(this.filters);
     this.updatePage();
@@ -56,6 +59,8 @@ export class BeerListComponent implements OnInit {
           // console.log(this.beers)
         )
       );
+
+      this.showLoader = false;
     }
   }
 
