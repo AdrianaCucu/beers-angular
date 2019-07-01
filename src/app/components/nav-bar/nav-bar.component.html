@@ -9,6 +9,23 @@
       <i class="search link icon"></i>
     </div>
   </div>
+
+  <div class="right-button item" [routerLink]="['/cart']">
+    <div *ngIf="deviceWidth > 450">
+      <div class="ui right labeled icon button inverted-colours">
+        Cart
+        <i class="shopping cart icon"></i>
+      </div>
+    </div>
+
+    <div *ngIf="deviceWidth <= 450">
+        <div class="ui icon button inverted-colours">
+          <i class="shopping cart icon"></i>
+        </div>
+      </div>
+  </div>
+
+
 </div>
 
 <div class="ui vertical pointing menu fixed-header background-gradient">

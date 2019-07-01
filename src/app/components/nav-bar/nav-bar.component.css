@@ -60,6 +60,11 @@ a:hover {
   border: 0;
 }
 
+.right-button {
+  position: fixed;
+  left: 15vmax;
+}
+
 .search-bar {
   width: 30vmax;
   position: fixed;

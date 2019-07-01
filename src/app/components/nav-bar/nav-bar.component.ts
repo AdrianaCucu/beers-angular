@@ -10,12 +10,17 @@ import { BeersService } from 'src/app/services/beers.service';
 export class NavBarComponent implements OnInit {
   @Output() clickEvent = new EventEmitter();
 
+  deviceWidth;
+
   abv = ['weak', 'medium', 'strong'];
   ibu = ['low', 'normal', 'high'];
 
   constructor(private beersService: BeersService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.deviceWidth = window.innerWidth;
+    console.log(this.deviceWidth);
+  }
 
   filterSelected(filter) {
     return this.beersService.containsFilter(filter);

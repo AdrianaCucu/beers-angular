@@ -15,6 +15,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
 import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ScrollableDirective } from './directives/scrollable.directive';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ScrollableDirective } from './directives/scrollable.directive';
     FavouritesComponent,
     BeerDetailsComponent,
     LandingPageComponent,
-    ScrollableDirective
+    ScrollableDirective,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { ScrollableDirective } from './directives/scrollable.directive';
       { path: 'beers/:beerId', component: BeerDetailsComponent },
       { path: 'beer-catalogue', component: BeerListComponent },
       { path: 'favourites', component: FavouritesComponent },
+      { path: 'cart', component: CartComponent },
       { path: '**', redirectTo: '' }
     ])
   ],
