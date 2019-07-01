@@ -38,10 +38,18 @@ export class BeerListComponent implements OnInit {
   }
 
   updatePage() {
+    // Random beer.
     if (this.filters.includes('random')) {
       this.beersService
         .getBeers(this.page, 'random')
         .subscribe(items => (this.beers = items));
+    }
+
+    // Beers selected by name.
+    else if (this.filters.includes('name')) {
+      this.beersService
+      .getBeers(this.page, 'name')
+      .subscribe(items => (this.beers = items));
     }
 
     // If 'random' is not selected.

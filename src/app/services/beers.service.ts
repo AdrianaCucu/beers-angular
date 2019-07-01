@@ -10,6 +10,8 @@ export class BeersService {
     ? JSON.parse(localStorage.getItem('filters'))
     : [];
 
+  name: string;
+
   constructor(private http: HttpClient) {}
 
   /**
@@ -19,6 +21,11 @@ export class BeersService {
    */
   getSelectedBeer(id) {
     return this.http.get(`${this.API_PATH}/beers/${id}`);
+  }
+
+  // Beer name provided by the user.
+  setName(name: string) {
+    this.name = name.replace(/\s+/g, '_');
   }
 
   getFilters() {
@@ -85,29 +92,14 @@ export class BeersService {
     // Response object is JSON by default.
     // Do not map response to response.json(), gives error
     switch (filter) {
-      case 'weak':
-        return this.http.get(
-          `${this.API_PATH}/beers?page=${page}&per_page=${
-            this.MAX_PER_PAGE
-          }&abv_lt=5`
-        );
-
-      case 'medium':
-        return this.http.get(
-          `${this.API_PATH}/beers?page=${page}&per_page=${
-            this.MAX_PER_PAGE
-          }&abv_lt=10&abv_gt=5`
-        );
-
-      case 'strong':
-        return this.http.get(
-          `${this.API_PATH}/beers?page=${page}&per_page=${
-            this.MAX_PER_PAGE
-          }&abv_gt=10`
-        );
-
       case 'random':
         return this.http.get(`${this.API_PATH}/beers/random`);
+
+      case 'name':
+        // If the name is empty, goes to default.
+        if (this.name) {
+          return this.http.get(`${this.API_PATH}/beers?beer_name=${this.name}`);
+        }
 
       default:
         return this.http.get(

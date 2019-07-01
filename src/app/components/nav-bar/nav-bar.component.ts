@@ -21,6 +21,12 @@ export class NavBarComponent implements OnInit {
     return this.beersService.containsFilter(filter);
   }
 
+  handleInput(event) {
+    this.beersService.resetFilters();
+    this.beersService.setName(event.target.value);
+    this.selectFilter('name');
+  }
+
   selectFilter(filter: string) {
     if (filter === 'reset') {
       this.beersService.resetFilters();

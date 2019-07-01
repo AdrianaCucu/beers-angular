@@ -1,7 +1,11 @@
 <div class="ui menu top-bar top-background">
   <div class="item search-bar">
     <div class="ui fluid icon input">
-      <input type="text" placeholder="Search..." />
+      <input
+        (keyup.enter)="handleInput($event)"
+        type="text"
+        placeholder="Search..."
+      />
       <i class="search link icon"></i>
     </div>
   </div>
