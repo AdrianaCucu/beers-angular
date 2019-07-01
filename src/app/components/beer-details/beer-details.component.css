@@ -36,7 +36,6 @@
 
 .full-container {
   height: 80vh;
-  top: 5vh;
 }
 
 img {
@@ -65,8 +64,9 @@ img {
 
 .under-header {
   position: relative;
+  top: 12vh;
   left: 15vw;
-  height: 90vh;
+  height: 85vh;
   width: 85vw;
 }
 
@@ -78,6 +78,7 @@ img {
 }
 
 @media only screen and (max-width: 450px) {
+
   img {
     height: 50vmin;
   }

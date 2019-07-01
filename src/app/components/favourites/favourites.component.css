@@ -9,7 +9,6 @@ button {
 
 .cards {
   margin: 0;
-  margin-top: 5vh;
 }
 
 .inverted-colours {
@@ -33,9 +32,10 @@ button {
 
 .top-button {
   background-color: #292826;
-  width: 100%;
   position: fixed;
-  top: 1vh;
+  top: 10vh;
+  padding: 1vh;
+  width: 100%;
   z-index: 2;
 }
 
@@ -50,12 +50,13 @@ button {
 .under-header {
   display: grid;
   position: relative;
+  top: 15vh;
   left: 17vw;
   width: 80vw !important;
 }
 
 .viewport {
-  height: 90vh;
+  height: 80vh;
   overflow-y: scroll;
 }
 

@@ -59,12 +59,12 @@
 
 .under-header {
   position: relative;
-  top: 5px;
+  top: 12vh;
   left: 6vw;
 }
 
 .viewport {
-  height: 92vh;
+  height: 80vh;
   width: 80vw !important;
   overflow-y: scroll;
 }
@@ -81,11 +81,11 @@
   }
 
   .under-header {
-    left: 6vw;
+    left: 7vw;
   }
 
   .viewport {
-    width: 70vw !important;
+    width: 80vw !important;
   }
 }
 

@@ -4,7 +4,12 @@ a:hover {
 }
 
 .background-gradient {
-  background: linear-gradient(180deg, #0d0c0c 0%,#0d0c0c 10%, #292826 90%) !important;
+  background: linear-gradient(
+    180deg,
+    #0d0c0c 0%,
+    #0d0c0c 10%,
+    #292826 90%
+  ) !important;
 }
 
 .base-colours {
@@ -14,10 +19,6 @@ a:hover {
 
 .button {
   text-align: start;
-}
-
-.top-background {
-  background: linear-gradient(270deg, #292826 0%,#292826 10%, #0d0c0c 65%);
 }
 
 .favourites {
@@ -54,6 +55,10 @@ a:hover {
   color: #292826;
 }
 
+.menu {
+  margin: 0;
+  border: 0;
+}
 
 .search-bar {
   width: 30vmax;
@@ -69,9 +74,14 @@ a:hover {
   font-size: 3vh;
 }
 
+.top-background {
+  background: linear-gradient(270deg, #292826 0%, #292826 10%, #0d0c0c 65%);
+}
+
 .top-bar {
   height: 10vh;
   width: 100vw;
-  position: absolute;
- left: 0;
+  position: fixed;
+  left: 0;
+  z-index: 2;
 }
