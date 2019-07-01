@@ -116,8 +116,8 @@ export class BeersService {
     }
   }
 
-   // Filters the beers based on the selected filters.
-   filterBeers(beers) {
+  // Filters the beers based on the selected filters.
+  filterBeers(beers) {
     let filteredBeers = beers;
 
     if (this.filters.length) {
@@ -138,7 +138,7 @@ export class BeersService {
       }
     }
 
-    console.log(filteredBeers);
+    // console.log(filteredBeers);
     return filteredBeers;
   }
 
@@ -170,7 +170,7 @@ export class BeersService {
     return filteredBeers;
   }
 
-   // Filtering based on the IBU property.
+  // Filtering based on the IBU property.
   filterIBU(beers) {
     const filteredBeers = [];
 

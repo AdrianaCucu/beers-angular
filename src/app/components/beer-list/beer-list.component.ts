@@ -26,11 +26,11 @@ export class BeerListComponent implements OnInit {
     this.allBeers = [];
     this.page = 1;
     this.filters = this.beersService.getFilters();
-    console.log(this.filters);
+    // console.log(this.filters);
     this.updatePage();
   }
 
-  updateFilter(filter) {
+  updateFilter() {
     this.ngOnInit();
   }
 
