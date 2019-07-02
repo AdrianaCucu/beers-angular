@@ -7,6 +7,11 @@
   padding: 1vh 1vh;
 }
 
+.header {
+  padding: 1vh 3vh 1vh 0;
+  font-size: 3vh;
+}
+
 .inverted-colours {
   background-color: #f9d342;
   color: #292826;
@@ -31,6 +36,10 @@
   margin-bottom: 10px;
 }
 
+.remove-button {
+  font-size: 1.4vh;
+}
+
 .title {
   position: relative;
   top: 2vh;
@@ -38,12 +47,12 @@
   font-size: 2vh;
 }
 
-.top-button {
-  background-color: #292826;
+.top-header {
   position: fixed;
-  top: 10vh;
+  top: 12vh;
+  left: 15vmax;
+  display: inline-flex;
   padding: 1vh;
-  width: 100%;
   z-index: 2;
 }
 
@@ -55,21 +64,19 @@
   color: #f9d342;
 }
 
-.under-header {
-  position: relative;
-  top: 15vh;
-  left: 17vw;
-  width: 80vw !important;
-}
-
 .viewport {
+  position: fixed;
+  top: 20vh;
+  left: 17vmax;
   height: 75vh;
+  width: 80vw;
+  align-content: center;
   overflow-y: scroll;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 1100px) {
-  .under-header {
-    left: 20vw;
+  .viewport {
+    width: 70vw;
   }
 }
 
@@ -78,12 +85,7 @@
     width: 55vw;
   }
 
-  .under-header {
-    left: 30vw;
-    width: 70vw !important;
-  }
-
-  .viewport {
-    height: 75vh;
+  .top-header {
+    top: 11vh;
   }
 }

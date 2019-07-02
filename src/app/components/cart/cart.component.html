@@ -1,19 +1,22 @@
-<div class="ui segment base-colours under-header">
-  <div *ngIf="!items.length">
-    <h3>
-      Your cart is empty.
-    </h3>
+<div *ngIf="!items.length" class="top-header">
+  <h3>
+    Your cart is empty.
+  </h3>
+</div>
+
+<div *ngIf="items.length" class="top-header">
+  <div class="header">
+    Shopping Basket
   </div>
 
-  <div class="top-button">
-    <button
-      class="ui left floated button padded inverted-colours"
-      *ngIf="items.length"
-      (click)="clearCart()"
-    >
-      Remove all
-    </button>
-  </div>
+  <button
+    class="ui left floated button remove-button inverted-colours"
+    (click)="clearCart()"
+  >
+    Empty Basket
+  </button>
+</div>
+
 
   <div class="ui base-colours viewport">
     <div class="ui relaxed divided list">
@@ -39,4 +42,4 @@
       </div>
     </div>
   </div>
-</div>
+
