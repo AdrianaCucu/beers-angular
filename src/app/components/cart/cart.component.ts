@@ -8,16 +8,15 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
   items;
+  deviceWidth;
 
-  constructor(
-    private cartService: CartService
-  ) {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    // console.log(localStorage.getItem('favourites'));
+    this.deviceWidth = window.innerWidth;
 
+    // console.log(localStorage.getItem('favourites'));
     this.items = this.cartService.getItems();
   }
 
@@ -33,5 +32,4 @@ export class CartComponent implements OnInit {
     this.cartService.clearCart();
     window.location.reload();
   }
-
 }

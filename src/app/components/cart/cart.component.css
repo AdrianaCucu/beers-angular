@@ -12,8 +12,14 @@
   width: 100%;
 }
 
+.content-container {
+  width: 30vw;
+  text-align: left;
+}
+
 .divider {
   left: 70% !important;
+  font-size: 1.5vh;
 }
 
 .grid {
@@ -85,7 +91,6 @@ img {
 }
 
 .under-header {
-  background: white;
   position: fixed;
   top: 20vh;
   left: 16vw;
@@ -96,11 +101,72 @@ img {
 
 .viewport {
   height: 66vh;
-  width: 110%;
+  width: 107%;
   overflow-y: scroll;
 }
 
 .wide-column {
   width: 70% !important;
   overflow-x: hidden;
+  padding-left: 0 !important;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1100px) {
+  .button {
+    padding: 0 !important;
+  }
+
+  .content-container {
+    width: 25vw;
+  }
+
+  .divider {
+    font-size: 1.2vh;
+  }
+
+  img {
+    height: 13vh;
+  }
+
+  .title {
+    font-size: 2.3vh;
+  }
+
+  .viewport {
+    width: 115%;
+  }
+
+  .under-header {
+    left: 20vw;
+    width: 78vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .content-container {
+    width: 23vw;
+    margin: 0 !important;
+  }
+
+  .image-container {
+    width: 16vw;
+  }
+
+  .title {
+    font-size: 2.5vh;
+  }
+
+  .viewport {
+    height: 55vh;
+    width: 122%;
+  }
+
+  .under-header {
+    left: 15.5vh;
+    width: 65vw;
+    height: 73vh;
+    overflow-x: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }

@@ -17,23 +17,20 @@
   </button>
 </div>
 
-<div class="ui segment under-header">
+<div *ngIf="deviceWidth > 450" class="ui segment under-header">
   <div class="ui two column very relaxed center aligned grid">
     <div class="column wide-column">
       <div class="ui middle aligned divided list viewport">
         <div class="item" *ngFor="let item of items">
           <div class="right floated content">
-            <div
-              class="ui button right-floated turn-yellow"
-              (click)="removeBeer(item)"
-            >
+            <div class="ui button turn-yellow" (click)="removeBeer(item)">
               <i class="x icon"></i>
-          </div>
+            </div>
           </div>
           <div class="left floated content image-container">
             <img src="{{ item.image_url }}" />
           </div>
-          <div class="left floated content">
+          <div class="left floated content content-container">
             <a
               class="turn-yellow"
               [title]="item.name + ' details'"
@@ -57,23 +54,36 @@
   </div>
 </div>
 
-<!--
-<div class="ui base-colours viewport">
-  <div class="ui row list-colours" *ngFor="let item of items">
-    <a
-      class="ui left floated button title turn-yellow list-colours"
-      [title]="item.name + ' details'"
-      [routerLink]="['/beers', item.id]"
-    >
-      {{ item.name }}
-    </a>
-
-    <button
-      class="ui button right-floated turn-yellow"
-      (click)="removeBeer(item)"
-    >
-      <i class="x large icon"></i>
-    </button>
+<div *ngIf="deviceWidth <= 450" class="ui segment under-header">
+  <div class="ui action">
+      <div class="ui button checkout-button">
+          <div class="title">Checkout</div>
+        </div>
   </div>
+
+  <div class="ui horizontal divider">
+    ready?
+  </div>
+
+  <div class="ui middle aligned divided list viewport">
+        <div class="item" *ngFor="let item of items">
+          <div class="right floated content">
+            <div class="ui button turn-yellow" (click)="removeBeer(item)">
+              <i class="x icon"></i>
+            </div>
+          </div>
+          <div class="left floated content image-container">
+            <img src="{{ item.image_url }}" />
+          </div>
+          <div class="left floated content content-container">
+            <a
+              class="turn-yellow"
+              [title]="item.name + ' details'"
+              [routerLink]="['/beers', item.id]"
+            >
+              {{ item.name }}
+            </a>
+          </div>
+        </div>
+      </div>
 </div>
--->
