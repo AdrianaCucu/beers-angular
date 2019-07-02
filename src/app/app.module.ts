@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { BeersService } from './services/beers.service';
 import { FavouritesService } from './services/favourites.service';
@@ -33,6 +34,7 @@ import { CartComponent } from './components/cart/cart.component';
     AppRoutingModule,
     HttpClientModule,
     ScrollingModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent },
       { path: 'beers/:beerId', component: BeerDetailsComponent },

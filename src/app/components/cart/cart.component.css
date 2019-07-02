@@ -42,17 +42,22 @@ img {
 }
 
 .inverted-colours {
-  background-color: #f9d342;
+  background-color: #f9d342 !important;
   color: #292826;
 }
 
 .inverted-colours:hover {
-  background-color: #292826;
+  background-color: #292826 !important;
   color: #f9d342;
 }
 
 .item {
   padding: 1vh !important;
+}
+
+label {
+  font-size: 1.5vh !important;
+  padding: 1.5vh 0 0 0 !important;
 }
 
 .narrow-column {
@@ -64,6 +69,10 @@ img {
 
 .remove-button {
   font-size: 1.4vh;
+}
+
+.text {
+  font-size: 1.5vh !important;
 }
 
 .title {
@@ -109,6 +118,11 @@ img {
   width: 70% !important;
   overflow-x: hidden;
   padding-left: 0 !important;
+}
+
+.yellow-text {
+  color: #f9d342;
+  font-size: 2vh !important;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 1100px) {

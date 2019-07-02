@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
 import { CartService } from 'src/app/services/cart.service';
 
@@ -10,12 +11,24 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   items;
+  
   deviceWidth;
   link;
 
-  constructor(private cartService: CartService, private route: ActivatedRoute) {
+  checkoutForm;
+
+  constructor(
+    private cartService: CartService,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {
     route.params.subscribe(params => (this.link = params['cart-link']));
     // console.log(this.link);
+
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
   }
 
   ngOnInit() {
@@ -36,5 +49,12 @@ export class CartComponent implements OnInit {
   clearCart() {
     this.cartService.clearCart();
     window.location.reload();
+  }
+
+  onSubmit(customerData) {
+    console.warn('Your order has been submitted', customerData);
+    window.alert('Your order has been submitted');
+    this.clearCart();
+    this.checkoutForm.reset();
   }
 }

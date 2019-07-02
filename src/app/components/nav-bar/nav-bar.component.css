@@ -46,13 +46,8 @@ a:hover {
 }
 
 .inverted-colours:hover {
-  background-color: #292826;
+  background-color: transparent;
   color: #f9d342;
-}
-
-.inverted-colours:focus {
-  background-color: #f9d342;
-  color: #292826;
 }
 
 .menu {
