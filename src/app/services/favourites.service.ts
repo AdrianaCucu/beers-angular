@@ -13,11 +13,8 @@ export class FavouritesService {
 
   constructor() {}
 
-  /**
-   * Updates the array of ids and the set of favourites.
-   * (Needed ids array to solve duplicates issue.)
-   */
-  addToFavourites(beer) {
+  // Checks if the specified beer was already added to favourites.
+  isInFavourites(beer) {
     let exists = false;
 
     if (this.ids.length) {
@@ -27,6 +24,27 @@ export class FavouritesService {
         }
       }
     }
+
+    return exists;
+  }
+
+  /**
+   * Updates the favourites based on whether the beer is already a favourite or not.
+   *
+   * @param beer - the selected beer
+   */
+  updateFavourites(beer) {
+    this.isInFavourites(beer)
+      ? this.removeFromFavourites(beer)
+      : this.addToFavourites(beer);
+  }
+
+  /**
+   * Updates the array of ids and the set of favourites.
+   * (Needed ids array to solve duplicates issue.)
+   */
+  addToFavourites(beer) {
+    const exists = this.isInFavourites(beer);
 
     if (!exists) {
       this.ids.push(beer.id);

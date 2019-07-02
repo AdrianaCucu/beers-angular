@@ -37,10 +37,16 @@
         <div class="bottom-right">
           <div class="extra content">
             <button
-              class="ui left floated icon button turn-yellow"
-              (click)="addToFavourites(beer)"
+              class="ui left floated icon button"
+              (click)="updateFavourites(beer)"
             >
-              <i class="star icon"></i>
+              <div *ngIf="!isInFavourites(beer)">
+                <i class="star icon turn-yellow"></i>
+              </div>
+
+              <div *ngIf="isInFavourites(beer)">
+                <i class="star icon yellow-text"></i>
+              </div>
             </button>
 
             <button

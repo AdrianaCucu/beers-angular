@@ -74,8 +74,12 @@ export class BeerListComponent implements OnInit {
     }
   }
 
-  addToFavourites(beer) {
-    this.favouritesService.addToFavourites(beer);
+  isInFavourites(beer) {
+    return this.favouritesService.isInFavourites(beer);
+  }
+
+  updateFavourites(beer) {
+    this.favouritesService.updateFavourites(beer);
   }
 
   addToCart(beer) {
