@@ -63,11 +63,11 @@
           (click)="updateFavourites(beer)"
         >
           <div *ngIf="!isInFavourites(beer)">
-            <i class="star icon turn-yellow"></i>
+            <i class="star large icon turn-yellow"></i>
           </div>
 
           <div *ngIf="isInFavourites(beer)">
-            <i class="star icon yellow-text"></i>
+            <i class="star large icon yellow-text"></i>
           </div>
         </button>
 
@@ -75,7 +75,7 @@
           class="ui right floated icon button turn-yellow"
           (click)="addToCart(beer)"
         >
-          <i class="shopping cart icon"></i>
+          <i class="shopping cart large icon"></i>
         </button>
       </div>
     </div>

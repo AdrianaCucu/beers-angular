@@ -37,6 +37,10 @@ button {
   width: 30vh;
 }
 
+.content {
+  padding: 1vh !important;
+}
+
 .favourite-button:hover {
   background-color: transparent;
 }
@@ -51,8 +55,12 @@ button {
   top: 3vh;
 }
 
+.meta {
+  font-size: 2vh !important;
+}
+
 .title {
-  font-size: 3vh;
+  font-size: 2.5vh;
 }
 
 .turn-yellow {
@@ -105,6 +113,7 @@ button {
   }
 
   .viewport {
+    height: 85vh;
     width: 45vmax !important;
   }
 }
