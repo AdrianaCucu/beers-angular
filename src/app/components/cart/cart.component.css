@@ -138,6 +138,10 @@ label {
     height: 13vh;
   }
 
+  .submit-button {
+    padding: 0.78571429em 1.5em 0.78571429em !important;
+  }
+
   .title {
     font-size: 2.3vh;
   }
@@ -156,6 +160,10 @@ label {
   .content-container {
     width: 23vw;
     margin: 0 !important;
+  }
+
+  .form-container {
+    width: 60vw;
   }
 
   .image-container {

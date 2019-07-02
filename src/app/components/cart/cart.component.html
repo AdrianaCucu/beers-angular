@@ -98,7 +98,7 @@
 
     <div class="ui segment under-header">
       <form
-        class="ui form"
+        class="ui form form-container"
         *ngIf="items.length > 0"
         [formGroup]="checkoutForm"
         (ngSubmit)="onSubmit(checkoutForm.value)"
@@ -225,7 +225,7 @@
           </div>
         </div>
 
-        <button class="ui button inverted-colours" type="submit">
+        <button class="ui button inverted-colours submit-button" type="submit">
           Submit Order
         </button>
       </form>
