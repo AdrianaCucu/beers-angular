@@ -57,7 +57,7 @@ img {
 
 label {
   font-size: 1.5vh !important;
-  padding: 1.5vh 0 0 0 !important;
+  padding: 1vh 0 0 0 !important;
 }
 
 .narrow-column {
@@ -69,10 +69,6 @@ label {
 
 .remove-button {
   font-size: 1.4vh;
-}
-
-.text {
-  font-size: 1.5vh !important;
 }
 
 .title {

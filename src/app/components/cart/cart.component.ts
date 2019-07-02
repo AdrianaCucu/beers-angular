@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 import { CartService } from 'src/app/services/cart.service';
 
@@ -11,7 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   items;
-  
+
   deviceWidth;
   link;
 
@@ -26,8 +26,9 @@ export class CartComponent implements OnInit {
     // console.log(this.link);
 
     this.checkoutForm = this.formBuilder.group({
-      name: '',
-      address: ''
+      first_name: ['', Validators.required],
+      last_name: ['', Validators.required],
+      address: ['', Validators.required]
     });
   }
 
