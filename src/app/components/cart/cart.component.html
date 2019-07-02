@@ -1,89 +1,95 @@
-<div *ngIf="!items.length" class="top-header">
-  <div class="header">
-    Your basket is empty
-  </div>
-</div>
-
-<div *ngIf="items.length" class="top-header">
-  <div class="header">
-    Shopping Basket
+<div *ngIf="link === 'cart'">
+  <div *ngIf="!items.length" class="top-header">
+    <div class="header">
+      Your basket is empty
+    </div>
   </div>
 
-  <button
-    class="ui left floated button remove-button inverted-colours"
-    (click)="clearCart()"
-  >
-    Empty Basket
-  </button>
-</div>
+  <div *ngIf="items.length" class="top-header">
+    <div class="header">
+      Shopping Basket
+    </div>
 
-<div *ngIf="deviceWidth > 450" class="ui segment under-header">
-  <div class="ui two column very relaxed center aligned grid">
-    <div class="column wide-column">
-      <div class="ui middle aligned divided list viewport">
-        <div class="item" *ngFor="let item of items">
-          <div class="right floated content">
-            <div class="ui button turn-yellow" (click)="removeBeer(item)">
-              <i class="x icon"></i>
+    <button
+      class="ui left floated button remove-button inverted-colours"
+      (click)="clearCart()"
+    >
+      Empty Basket
+    </button>
+  </div>
+
+  <div *ngIf="deviceWidth > 450" class="ui segment under-header">
+    <div class="ui two column very relaxed center aligned grid">
+      <div class="column wide-column">
+        <div class="ui middle aligned divided list viewport">
+          <div class="item" *ngFor="let item of items">
+            <div class="right floated content">
+              <div class="ui button turn-yellow" (click)="removeBeer(item)">
+                <i class="x icon"></i>
+              </div>
             </div>
-          </div>
-          <div class="left floated content image-container">
-            <img src="{{ item.image_url }}" />
-          </div>
-          <div class="left floated content content-container">
-            <a
-              class="turn-yellow"
-              [title]="item.name + ' details'"
-              [routerLink]="['/beers', item.id]"
-            >
-              {{ item.name }}
-            </a>
+            <div class="left floated content image-container">
+              <img src="{{ item.image_url }}" />
+            </div>
+            <div class="left floated content content-container">
+              <a
+                class="turn-yellow"
+                [title]="item.name + ' details'"
+                [routerLink]="['/beers', item.id]"
+              >
+                {{ item.name }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="column narrow-column">
-      <div class="ui button checkout-button">
+      <div class="column narrow-column">
+        <div class="ui button checkout-button" [routerLink]="['/checkout']">
+          <div class="title">Checkout</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui vertical divider">
+      ready?
+    </div>
+  </div>
+
+  <div *ngIf="deviceWidth <= 450" class="ui segment under-header">
+    <div class="ui action">
+      <div class="ui button checkout-button" [routerLink]="['/checkout']">
         <div class="title">Checkout</div>
       </div>
     </div>
-  </div>
-  <div class="ui vertical divider">
-    ready?
+
+    <div class="ui horizontal divider">
+      ready?
+    </div>
+
+    <div class="ui middle aligned divided list viewport">
+      <div class="item" *ngFor="let item of items">
+        <div class="right floated content">
+          <div class="ui button turn-yellow" (click)="removeBeer(item)">
+            <i class="x icon"></i>
+          </div>
+        </div>
+        <div class="left floated content image-container">
+          <img src="{{ item.image_url }}" />
+        </div>
+        <div class="left floated content content-container">
+          <a
+            class="turn-yellow"
+            [title]="item.name + ' details'"
+            [routerLink]="['/beers', item.id]"
+          >
+            {{ item.name }}
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div *ngIf="deviceWidth <= 450" class="ui segment under-header">
-  <div class="ui action">
-      <div class="ui button checkout-button">
-          <div class="title">Checkout</div>
-        </div>
-  </div>
-
-  <div class="ui horizontal divider">
-    ready?
-  </div>
-
-  <div class="ui middle aligned divided list viewport">
-        <div class="item" *ngFor="let item of items">
-          <div class="right floated content">
-            <div class="ui button turn-yellow" (click)="removeBeer(item)">
-              <i class="x icon"></i>
-            </div>
-          </div>
-          <div class="left floated content image-container">
-            <img src="{{ item.image_url }}" />
-          </div>
-          <div class="left floated content content-container">
-            <a
-              class="turn-yellow"
-              [title]="item.name + ' details'"
-              [routerLink]="['/beers', item.id]"
-            >
-              {{ item.name }}
-            </a>
-          </div>
-        </div>
-      </div>
+<div *ngIf="link === 'checkout'">
+  <div class="ui segment under-header"></div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { CartService } from 'src/app/services/cart.service';
 
@@ -10,8 +11,12 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
   items;
   deviceWidth;
+  link;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private route: ActivatedRoute) {
+    route.params.subscribe(params => (this.link = params['cart-link']));
+    // console.log(this.link);
+  }
 
   ngOnInit() {
     this.deviceWidth = window.innerWidth;

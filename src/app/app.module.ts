@@ -38,7 +38,7 @@ import { CartComponent } from './components/cart/cart.component';
       { path: 'beers/:beerId', component: BeerDetailsComponent },
       { path: 'beer-catalogue', component: BeerListComponent },
       { path: 'favourites', component: FavouritesComponent },
-      { path: 'cart', component: CartComponent },
+      { path: ':cart-link', component: CartComponent },
       { path: '**', redirectTo: '' }
     ])
   ],
