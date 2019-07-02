@@ -1,52 +1,52 @@
-<div class="ui segment base-colours under-header">
+<div class="top-header">
   <div *ngIf="!items.length">
     <h3>
-      Your don't have any favourites.
+      You don't have any favourites.
     </h3>
   </div>
 
   <button
-    class="ui left floated button padded inverted-colours top-button"
+    class="ui left floated button inverted-colours reset-button"
     *ngIf="items.length"
     (click)="clearFavourites()"
   >
     Reset favourites
   </button>
+</div>
 
-  <div class="ui base-colours viewport">
-    <div class="ui cards">
-      <div class="ui card" *ngFor="let item of items">
-        <div class="content">
-          <img class="left floated mini ui image" src="{{ item.image_url }}" />
-          <a class="header">
-            <a
-              class="turn-yellow"
-              [title]="item.name + ' details'"
-              [routerLink]="['/beers', item.id]"
-            >
-              {{ item.name }}</a
-            >
-          </a>
-          <div class="meta">
-            {{ item.description }}
-          </div>
-        </div>
-        <div class="extra content">
-          <button
-            class="ui left floated button turn-yellow bottom-button"
-            style="background-color: transparent"
-            (click)="removeBeer(item)"
+<div class="ui base-colours viewport">
+  <div class="ui cards">
+    <div class="ui card" *ngFor="let item of items">
+      <div class="content">
+        <img class="left floated mini ui image" src="{{ item.image_url }}" />
+        <a class="header">
+          <a
+            class="turn-yellow"
+            [title]="item.name + ' details'"
+            [routerLink]="['/beers', item.id]"
           >
-            Remove
-          </button>
+            {{ item.name }}</a
+          >
+        </a>
+        <div class="meta">
+          {{ item.description }}
+        </div>
+      </div>
+      <div class="extra content">
+        <button
+          class="ui left floated button turn-yellow bottom-button"
+          style="background-color: transparent"
+          (click)="removeBeer(item)"
+        >
+          Remove
+        </button>
 
-          <button
-            class="ui right floated icon button favourite-button turn-yellow"
-            (click)="addToCart(item)"
-          >
-            <i class="shopping cart icon"></i>
-          </button>
-        </div>
+        <button
+          class="ui right floated icon button favourite-button turn-yellow"
+          (click)="addToCart(item)"
+        >
+          <i class="shopping cart icon"></i>
+        </button>
       </div>
     </div>
   </div>

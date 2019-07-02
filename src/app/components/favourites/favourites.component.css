@@ -30,16 +30,17 @@ button {
   color: #f9d342;
 }
 
-.padded {
-  margin-bottom: 10px;
+
+.reset-button {
+  font-size: 1.5vh;
 }
 
-.top-button {
+
+.top-header {
   position: fixed;
-  top: 12vh;
-  padding: 1vh;
+  top: 14vh;
+  left: 17vmax;
   z-index: 2;
-  font-size: 2vh !important;
 }
 
 .turn-yellow {
@@ -50,30 +51,27 @@ button {
   color: #f9d342;
 }
 
-.under-header {
-  display: grid;
-  position: relative;
-  top: 15vh;
-  left: 17vw;
-  width: 80vw !important;
-}
-
 .viewport {
-  position: relative;
-  top: 2vh;
+  position: fixed;
+  top: 20vh;
+  left: 17vw;
   height: 80vh;
+  width: 80vw !important;
   overflow-y: scroll;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 1100px) {
-  .under-header {
+  .viewport {
     left: 20vw;
+    width: 75vw !important;
+    height: 75vh;
   }
 }
 
 @media only screen and (max-width: 450px) {
-  .under-header {
+  .viewport {
     left: 30vw;
     width: 70vw !important;
+    height: 75vh;
   }
 }
