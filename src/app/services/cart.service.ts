@@ -10,8 +10,33 @@ export class CartService {
 
   constructor() {}
 
+  isInCart(beer) {
+    let exists = false;
+
+    if (this.items.length) {
+      for (let i = 0; i < this.items.length && !exists; i++) {
+        if (beer.id === this.items[i].id) {
+          exists = true;
+        }
+      }
+    }
+
+    return exists;
+  }
+
+  updateCart(beer) {
+    this.isInCart(beer)
+      ? this.removeFromCart(beer)
+      : this.addToCart(beer);
+  }
+
+
   addToCart(beer) {
-    this.items.push(beer);
+    const exists = this.isInCart(beer);
+
+    if (!exists) {
+      this.items.push(beer);
+    }
 
     // console.log(this.items);
 

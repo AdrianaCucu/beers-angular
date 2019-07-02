@@ -42,10 +42,16 @@
         </button>
 
         <button
-          class="ui right floated icon button favourite-button turn-yellow"
-          (click)="addToCart(item)"
+          class="ui right floated icon button turn-yellow"
+          (click)="updateCart(item)"
         >
-          <i class="shopping cart large icon"></i>
+          <div *ngIf="!isInCart(item)">
+            <i class="shopping cart large icon turn-yellow"></i>
+          </div>
+
+          <div *ngIf="isInCart(item)">
+            <i class="shopping cart large icon yellow-text"></i>
+          </div>
         </button>
       </div>
     </div>

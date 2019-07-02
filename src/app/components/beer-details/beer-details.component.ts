@@ -59,7 +59,11 @@ export class BeerDetailsComponent implements OnInit {
     this.favouritesService.updateFavourites(beer);
   }
 
-  addToCart(beer) {
-    this.cartService.addToCart(beer);
+  isInCart(beer) {
+    return this.cartService.isInCart(beer);
+  }
+
+  updateCart(beer) {
+    this.cartService.updateCart(beer);
   }
 }

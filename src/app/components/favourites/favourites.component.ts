@@ -26,8 +26,12 @@ export class FavouritesComponent implements OnInit {
     this.favouritesService.removeFromFavourites(beer);
   }
 
-  addToCart(beer) {
-    this.cartService.addToCart(beer);
+  isInCart(beer) {
+    return this.cartService.isInCart(beer);
+  }
+
+  updateCart(beer) {
+    this.cartService.updateCart(beer);
   }
 
   clearFavourites() {

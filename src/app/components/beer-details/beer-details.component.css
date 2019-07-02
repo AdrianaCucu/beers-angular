@@ -21,10 +21,6 @@ button {
   text-align: center;
 }
 
-.yellow-text {
-  color: #f9d342;
-}
-
 .favourite-button:hover {
   background-color: transparent;
 }
@@ -57,16 +53,16 @@ img {
   color: #292826;
 }
 
-.turn-yellow:hover {
-  color: #f9d342;
-}
-
 .under-header {
   position: relative;
   top: 12vh;
   left: 15vw;
   height: 85vh;
   width: 85vw;
+}
+
+.yellow-text {
+  color: #f9d342;
 }
 
 @media only screen and (min-width: 500px) and (max-width: 1100px) {
