@@ -18,7 +18,7 @@
     </button>
   </div>
 
-  <div *ngIf="deviceWidth > 450" class="ui segment under-header">
+  <div *ngIf="items.length && deviceWidth > 450" class="ui segment under-header">
     <div class="ui two column very relaxed center aligned grid">
       <div class="column wide-column">
         <div class="ui middle aligned divided list viewport">
@@ -55,7 +55,7 @@
     </div>
   </div>
 
-  <div *ngIf="deviceWidth <= 450" class="ui segment under-header">
+  <div *ngIf="items.length && deviceWidth <= 450" class="ui segment under-header">
     <div class="ui action">
       <div class="ui button checkout-button" [routerLink]="['/checkout']">
         <div class="title">Checkout</div>
@@ -96,10 +96,9 @@
       Order Information
     </div>
 
-    <div class="ui segment under-header">
+    <div *ngIf="items.length > 0" class="ui segment under-header">
       <form
         class="ui form form-container"
-        *ngIf="items.length > 0"
         [formGroup]="checkoutForm"
         (ngSubmit)="onSubmit(checkoutForm.value)"
       >
