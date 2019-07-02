@@ -7,6 +7,10 @@
   padding: 1vh 1vh;
 }
 
+button {
+  background-color: transparent !important;
+}
+
 .cards {
   margin: 0;
 }

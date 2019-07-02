@@ -17,18 +17,24 @@
   height: 30vh;
 }
 
+.bottom-right {
+  position: absolute;
+  right: 1vmax;
+  bottom: 0.5vmax;
+}
+
 .bottom-text {
   position: absolute;
   bottom: 9.5vh;
 }
 
+button {
+  background-color: transparent !important;
+}
+
 .card-box {
   height: 55vh;
   width: 30vh;
-}
-
-.favourite-button {
-  background-color: transparent;
 }
 
 .favourite-button:hover {

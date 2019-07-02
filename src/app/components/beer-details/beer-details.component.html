@@ -59,18 +59,18 @@
     <div class="bottom-right">
       <div class="extra content">
         <button
-          class="ui right floated button favourite-button turn-yellow"
+          class="ui left floated icon button turn-yellow"
           (click)="addToFavourites(beer)"
         >
-          Add to favourites
+          <i class="star icon"></i>
         </button>
 
         <button
-        class="ui right floated button favourite-button turn-yellow"
-        (click)="addToCart(beer)"
-      >
-        Add to basket
-      </button>
+          class="ui right floated icon button turn-yellow"
+          (click)="addToCart(beer)"
+        >
+          <i class="shopping cart icon"></i>
+        </button>
       </div>
     </div>
   </div>
