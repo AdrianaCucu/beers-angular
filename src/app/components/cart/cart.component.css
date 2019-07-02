@@ -1,15 +1,38 @@
-.base-colours {
-  background-color: #292826;
+.button {
+  color: #292826;
+  background-color: transparent !important;
+}
+
+.button:hover {
   color: #f9d342;
 }
 
-.bottom-button {
-  padding: 1vh 1vh;
+.checkout-button {
+  height: 100%;
+  width: 100%;
+}
+
+.divider {
+  left: 70% !important;
+}
+
+.grid {
+  margin: 0 !important;
+  justify-content: center;
+  height: 68vh;
 }
 
 .header {
   padding: 1vh 3vh 1vh 0;
   font-size: 3vh;
+}
+
+.image-container {
+  width: 8vw;
+}
+
+img {
+  height: 15vh;
 }
 
 .inverted-colours {
@@ -22,18 +45,15 @@
   color: #f9d342;
 }
 
-.inverted-colours:focus {
-  background-color: #292826;
-  color: #f9d342;
+.item {
+  padding: 1vh !important;
 }
 
-.list-colours {
-  background-color: white;
-  color: #292826;
-}
-
-.padded {
-  margin-bottom: 10px;
+.narrow-column {
+  width: 28% !important;
+  height: 67vh;
+  margin-left: 2%;
+  padding: 0 !important;
 }
 
 .remove-button {
@@ -42,9 +62,8 @@
 
 .title {
   position: relative;
-  top: 2vh;
-  left: 0.5vh;
-  font-size: 2vh;
+  top: 49%;
+  font-size: 4.5vh;
 }
 
 .top-header {
@@ -58,34 +77,30 @@
 
 .turn-yellow {
   color: #292826;
+  font-size: 2.5vh;
 }
 
 .turn-yellow:hover {
   color: #f9d342;
 }
 
-.viewport {
+.under-header {
+  background: white;
   position: fixed;
   top: 20vh;
-  left: 17vmax;
-  height: 75vh;
+  left: 16vw;
+  height: 70vh;
   width: 80vw;
-  align-content: center;
+  justify-content: center;
+}
+
+.viewport {
+  height: 66vh;
+  width: 110%;
   overflow-y: scroll;
 }
 
-@media only screen and (min-width: 500px) and (max-width: 1100px) {
-  .viewport {
-    width: 70vw;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .item {
-    width: 55vw;
-  }
-
-  .top-header {
-    top: 11vh;
-  }
+.wide-column {
+  width: 70% !important;
+  overflow-x: hidden;
 }

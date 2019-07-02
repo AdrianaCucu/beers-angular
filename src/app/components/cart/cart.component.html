@@ -1,7 +1,7 @@
 <div *ngIf="!items.length" class="top-header">
-  <h3>
-    Your cart is empty.
-  </h3>
+  <div class="header">
+    Your basket is empty
+  </div>
 </div>
 
 <div *ngIf="items.length" class="top-header">
@@ -17,29 +17,63 @@
   </button>
 </div>
 
-
-  <div class="ui base-colours viewport">
-    <div class="ui relaxed divided list">
-      <div class="ui item list-colours" *ngFor="let item of items">
-        <div class="content">
-          <a
-            class="title turn-yellow list-colours"
-            [title]="item.name + ' details'"
-            [routerLink]="['/beers', item.id]"
-          >
-            {{ item.name }}
-          </a>
-        </div>
-        <div class="extra content">
-          <button
-            class="ui right floated button turn-yellow bottom-button"
-            style="background-color: transparent"
-            (click)="removeBeer(item)"
-          >
-            X
-          </button>
+<div class="ui segment under-header">
+  <div class="ui two column very relaxed center aligned grid">
+    <div class="column wide-column">
+      <div class="ui middle aligned divided list viewport">
+        <div class="item" *ngFor="let item of items">
+          <div class="right floated content">
+            <div
+              class="ui button right-floated turn-yellow"
+              (click)="removeBeer(item)"
+            >
+              <i class="x icon"></i>
+          </div>
+          </div>
+          <div class="left floated content image-container">
+            <img src="{{ item.image_url }}" />
+          </div>
+          <div class="left floated content">
+            <a
+              class="turn-yellow"
+              [title]="item.name + ' details'"
+              [routerLink]="['/beers', item.id]"
+            >
+              {{ item.name }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <div class="column narrow-column">
+      <div class="ui button checkout-button">
+        <div class="title">Checkout</div>
+      </div>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    ready?
+  </div>
+</div>
+
+<!--
+<div class="ui base-colours viewport">
+  <div class="ui row list-colours" *ngFor="let item of items">
+    <a
+      class="ui left floated button title turn-yellow list-colours"
+      [title]="item.name + ' details'"
+      [routerLink]="['/beers', item.id]"
+    >
+      {{ item.name }}
+    </a>
+
+    <button
+      class="ui button right-floated turn-yellow"
+      (click)="removeBeer(item)"
+    >
+      <i class="x large icon"></i>
+    </button>
+  </div>
+</div>
+-->
