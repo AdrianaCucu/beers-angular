@@ -5,6 +5,22 @@
 .black-text {
   color: #292826;
   font-size: 1.5vh;
+  padding: 0.5vh;
+}
+
+.bottom-left {
+  position: absolute;
+  top: 62vh;
+}
+
+.bottom-right {
+  position: absolute;
+  top: 62vh;
+  left: 70vw;
+}
+
+.divider {
+  left: 50% !important;
 }
 
 .inverted-colours {
@@ -14,6 +30,10 @@
 
 .inverted-colours:hover {
   background-color: #292826 !important;
+  color: #f9d342;
+}
+
+.mid-text {
   color: #f9d342;
 }
 

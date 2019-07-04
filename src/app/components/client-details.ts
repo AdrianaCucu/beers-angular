@@ -9,6 +9,8 @@ export class ClientDetails {
     public cvc: number,
     public expirationMonth: string,
     public expirationYear: number,
-    public apartment?: string
+    public apartment?: string,
+    public items?: [],
+    public orderDate?: string
   ) {}
 }

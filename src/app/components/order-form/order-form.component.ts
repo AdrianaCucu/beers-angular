@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { ClientDetails } from '../client-details';
 import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-order-form',
@@ -49,7 +50,10 @@ export class OrderFormComponent {
 
   submitted = false;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private orderService: OrderService
+  ) {}
 
   clearCart() {
     this.cartService.clearCart();
@@ -58,10 +62,21 @@ export class OrderFormComponent {
 
   onSubmit() {
     this.submitted = true;
+    this.model.items = this.cartService.getItems();
+
+    // console.log(this.model.items);
   }
 
-  submitForm(customerData) {
-    console.warn('Your order has been submitted', customerData);
+  submitForm() {
+    console.log('Your order has been submitted', this.model);
     window.alert('Your order has been submitted');
+
+    // console.log(localStorage.getItem('orders'));
+
+    this.orderService.updateOrders(this.model);
+
+    // console.log(localStorage.getItem('orders'));
+
+    this.clearCart();
   }
 }
