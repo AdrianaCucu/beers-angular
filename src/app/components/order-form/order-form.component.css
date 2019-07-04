@@ -36,6 +36,7 @@
 .form-container {
   width: 95%;
   padding-left: 5%;
+  overflow-x: hidden;
 }
 
 .full-container {
@@ -65,6 +66,12 @@
 .sub-header {
   font-size: 2vh;
   padding: 1vh 0;
+}
+
+.viewport {
+  height:60vh;
+  width: 70vh;
+  overflow-y: scroll;
 }
 
 .wide-column {

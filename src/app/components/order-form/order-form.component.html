@@ -211,43 +211,48 @@
   <div class="ui two column very relaxed center aligned grid">
     <div class="left aligned column wide-column">
       <div class="form-container">
-        <div class="row">
-          <div *ngFor="let beer of model.items">
-            <div class="column black-text">
-                {{beer.quantity}} x {{ beer.name }}
+        <div class="viewport">
+          <div class="row">
+            <div *ngFor="let beer of model.items">
+              <div class="column black-text">
+                {{ beer.quantity }} x {{ beer.name }}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="ui dividing header"></div>
+          <div class="ui dividing header"></div>
 
-        <div class="row">
-          <div class="column sub-header">Name</div>
-          <div class="column black-text">
-            {{ model.firstName }} {{ model.lastName }}
+          <div class="row">
+            <div class="column sub-header">Name</div>
+            <div class="column black-text">
+              {{ model.firstName }} {{ model.lastName }}
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="column sub-header">Address</div>
-          <div class="column black-text">
-            {{ model.address }} {{ model.apartment }}, {{ model.country }}
+          <div class="row">
+            <div class="column sub-header">Address</div>
+            <div class="column black-text">
+              {{ model.address }} {{ model.apartment }}, {{ model.country }}
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="column sub-header">Billing Information</div>
-          <div class="column black-text">Card type: {{ model.cardType }}</div>
-          <div class="column black-text">
-            Card number: {{ model.cardNumber }}
+          <div class="row">
+            <div class="column sub-header">Billing Information</div>
+            <div class="column black-text">Card type: {{ model.cardType }}</div>
+            <div class="column black-text">
+              Card number: {{ model.cardNumber }}
+            </div>
+            <div class="column black-text">CVC: {{ model.cvc }}</div>
+            <div class="column black-text">
+              Expires: {{ model.expirationMonth }} {{ model.expirationYear }}
+            </div>
           </div>
-          <div class="column black-text">CVC: {{ model.cvc }}</div>
-          <div class="column black-text">
-            Expires: {{ model.expirationMonth }} {{ model.expirationYear }}
-          </div>
-        </div>
 
-        <button class="ui button inverted-colours bottom-left" (click)="submitted = false">
-          Edit Details
-        </button>
+          <button
+            class="ui button inverted-colours bottom-left"
+            (click)="submitted = false"
+          >
+            Edit Details
+          </button>
+        </div>
       </div>
     </div>
 
