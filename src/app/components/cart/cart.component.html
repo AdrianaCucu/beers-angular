@@ -42,6 +42,17 @@
               >
                 {{ item.name }}
               </a>
+
+              <div>
+                <input
+                  class="item-quantity"
+                  type="number"
+                  min="1"
+                  max="20"
+                  name="quantity"
+                  [(ngModel)]="item.quantity"
+                />
+              </div>
             </div>
           </div>
         </div>

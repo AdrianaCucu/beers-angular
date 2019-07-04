@@ -25,16 +25,14 @@ export class CartService {
   }
 
   updateCart(beer) {
-    this.isInCart(beer)
-      ? this.removeFromCart(beer)
-      : this.addToCart(beer);
+    this.isInCart(beer) ? this.removeFromCart(beer) : this.addToCart(beer);
   }
-
 
   addToCart(beer) {
     const exists = this.isInCart(beer);
 
     if (!exists) {
+      beer.quantity = 1;
       this.items.push(beer);
     }
 

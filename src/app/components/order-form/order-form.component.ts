@@ -68,7 +68,7 @@ export class OrderFormComponent {
   }
 
   submitForm() {
-    console.log('Your order has been submitted', this.model);
+    //  console.log('Your order has been submitted', this.model);
     window.alert('Your order has been submitted');
 
     // console.log(localStorage.getItem('orders'));

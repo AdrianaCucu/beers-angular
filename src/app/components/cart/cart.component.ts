@@ -10,26 +10,20 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  items;
+  items = this.cartService.getItems();
 
   deviceWidth;
   link;
 
   checkoutForm;
 
-  constructor(
-    private cartService: CartService,
-    private route: ActivatedRoute
-  ) {
+  constructor(private cartService: CartService, private route: ActivatedRoute) {
     route.params.subscribe(params => (this.link = params['cart-link']));
     // console.log(this.link);
   }
 
   ngOnInit() {
     this.deviceWidth = window.innerWidth;
-
-    // console.log(localStorage.getItem('favourites'));
-    this.items = this.cartService.getItems();
   }
 
   removeBeer(beer) {
