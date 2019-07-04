@@ -18,7 +18,10 @@
     </button>
   </div>
 
-  <div *ngIf="items.length && deviceWidth > 450" class="ui segment under-header">
+  <div
+    *ngIf="items.length && deviceWidth > 450"
+    class="ui segment under-header"
+  >
     <div class="ui two column very relaxed center aligned grid">
       <div class="column wide-column">
         <div class="ui middle aligned divided list viewport">
@@ -55,7 +58,10 @@
     </div>
   </div>
 
-  <div *ngIf="items.length && deviceWidth <= 450" class="ui segment under-header">
+  <div
+    *ngIf="items.length && deviceWidth <= 450"
+    class="ui segment under-header"
+  >
     <div class="ui action">
       <div class="ui button checkout-button" [routerLink]="['/checkout']">
         <div class="title">Checkout</div>
@@ -97,137 +103,7 @@
     </div>
 
     <div *ngIf="items.length > 0" class="ui segment under-header">
-      <form
-        class="ui form form-container"
-        [formGroup]="checkoutForm"
-        (ngSubmit)="onSubmit(checkoutForm.value)"
-      >
-        <h4 class="ui dividing header yellow-text">Shipping Information</h4>
-
-        <div class="field">
-          <label>Name</label>
-          <div class="two fields">
-            <div class="field">
-              <input formControlName="first_name" />
-            </div>
-            <div class="field">
-              <input formControlName="last_name" />
-            </div>
-          </div>
-        </div>
-        <div class="field">
-          <label>Billing Address</label>
-          <div class="fields">
-            <div class="twelve wide field">
-              <input formControlName="address" />
-            </div>
-            <div class="four wide field">
-              <input type="text" placeholder="Apt #" />
-            </div>
-          </div>
-        </div>
-
-        <div class="two fields">
-          <div class="field">
-            <label>Country</label>
-
-            <select class="ui fluid search dropdown" name="country">
-              <option value="">
-                <div>Select Country</div>
-              </option>
-              <option value="1">
-                <div class="item" data-value="us">
-                  United States
-                </div>
-              </option>
-              <option value="2">
-                <div class="item" data-value="uk">
-                  United Kingdom
-                </div>
-              </option>
-              <option value="3">
-                <div class="item" data-value="ro">
-                  Romania
-                </div>
-              </option>
-              <option value="4">
-                <div class="item" data-value="fr">
-                  France
-                </div>
-              </option>
-              <option value="5">
-                <div class="item" data-value="ge">
-                  Germany
-                </div>
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <h4 class="ui dividing header yellow-text">Billing Information</h4>
-
-        <div class="field">
-          <label>Card Type</label>
-          <select class="ui fluid search dropdown" name="card[type]">
-            <option value="">Card Type</option>
-            <option value="1">
-              <div class="item" data-value="visa">
-                Visa
-              </div>
-            </option>
-            <option value="2">
-              <div class="item" data-value="amex">
-                American Express
-              </div>
-            </option>
-            <option value="3">
-              <div class="item" data-value="master">
-                MasterCard
-              </div>
-            </option>
-          </select>
-
-          <div class="fields">
-            <div class="seven wide field">
-              <label>Card Number</label>
-              <input maxlength="16" />
-            </div>
-            <div class="three wide field">
-              <label>CVC</label>
-              <input maxlength="3" />
-            </div>
-            <div class="six wide field">
-              <label>Expiration</label>
-              <div class="two fields">
-                <div class="field">
-                  <select class="ui fluid search dropdown">
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <input maxlength="4" placeholder="Year" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="ui button inverted-colours submit-button" type="submit">
-          Submit Order
-        </button>
-      </form>
+      <app-order-form></app-order-form>
     </div>
   </div>
 </div>

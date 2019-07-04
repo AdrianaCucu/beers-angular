@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { BeersService } from './services/beers.service';
 import { FavouritesService } from './services/favourites.service';
@@ -17,6 +17,7 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ScrollableDirective } from './directives/scrollable.directive';
 import { CartComponent } from './components/cart/cart.component';
+import { OrderFormComponent } from './components/order-form/order-form.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import { CartComponent } from './components/cart/cart.component';
     BeerDetailsComponent,
     LandingPageComponent,
     ScrollableDirective,
-    CartComponent
+    CartComponent,
+    OrderFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ScrollingModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: LandingPageComponent },

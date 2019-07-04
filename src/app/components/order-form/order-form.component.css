@@ -1,0 +1,28 @@
+.alert-text {
+  color: red;
+}
+
+.black-text {
+  color: #292826;
+  font-size: 1.5vh;
+}
+
+.inverted-colours {
+  background-color: #f9d342 !important;
+  color: #292826;
+}
+
+.inverted-colours:hover {
+  background-color: #292826 !important;
+  color: #f9d342;
+}
+
+.sub-header {
+  font-size: 2vh;
+  padding: 1vh 0;
+}
+
+.yellow-text {
+  color: #f9d342;
+  font-size: 3vh !important;
+}

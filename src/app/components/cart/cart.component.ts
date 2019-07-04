@@ -19,17 +19,10 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private route: ActivatedRoute
   ) {
     route.params.subscribe(params => (this.link = params['cart-link']));
     // console.log(this.link);
-
-    this.checkoutForm = this.formBuilder.group({
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
-      address: ['', Validators.required]
-    });
   }
 
   ngOnInit() {
@@ -50,12 +43,5 @@ export class CartComponent implements OnInit {
   clearCart() {
     this.cartService.clearCart();
     window.location.reload();
-  }
-
-  onSubmit(customerData) {
-    console.warn('Your order has been submitted', customerData);
-    window.alert('Your order has been submitted');
-    this.clearCart();
-    this.checkoutForm.reset();
   }
 }
