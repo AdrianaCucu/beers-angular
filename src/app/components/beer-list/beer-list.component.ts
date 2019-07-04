@@ -61,7 +61,11 @@ export class BeerListComponent implements OnInit {
           (this.currentBeers = items),
           this.allBeers.push(...this.currentBeers),
           (this.beers = this.beersService.filterBeers(this.allBeers)),
-          this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)) // Sorts the beers by id.
+          this.beers.sort((a, b) => (a.id > b.id ? 1 : -1)), // Sorts the beers by id.
+          // This is used when a filter only has less than 10 beers on the first page/pages.
+          this.beers.length < 10
+            ? this.getNextBeers()
+            : null
 
           // For testing:
           // console.log(this.currentBeers),
@@ -90,12 +94,16 @@ export class BeerListComponent implements OnInit {
     this.cartService.updateCart(beer);
   }
 
+  getNextBeers() {
+    this.page++;
+    this.updatePage();
+  }
+
   scrollHandler(e) {
     // console.log(e);
 
     if (e === 'bottom') {
-      this.page++;
-      this.updatePage();
+      this.getNextBeers();
     }
   }
 }

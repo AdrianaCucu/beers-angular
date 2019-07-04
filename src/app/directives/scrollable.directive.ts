@@ -22,6 +22,7 @@ export class ScrollableDirective {
 
       if (top > height - offset - 1) {
         this.scrollPosition.emit('bottom');
+        // console.log('bottom');
       }
     } catch (err) {}
   }
