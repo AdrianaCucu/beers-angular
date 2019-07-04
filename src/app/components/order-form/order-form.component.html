@@ -1,247 +1,269 @@
-<div [hidden]="submitted">
-  <form
-    class="ui form error form-container"
-    (ngSubmit)="onSubmit()"
-    #orderForm="ngForm"
-  >
-    <h4 class="ui dividing header yellow-text">Shipping Information</h4>
+<div [hidden]="submitted" class="full-container">
+  <form class="ui form error" (ngSubmit)="onSubmit()" #orderForm="ngForm">
+    <div class="ui two column very relaxed center aligned grid">
+      <div class="column wide-column">
+        <div class="form-container">
+          <h4 class="ui dividing header yellow-text">Shipping Information</h4>
 
-    <div class="field">
-      <label>* Name</label>
-      <div class="two fields">
-        <div class="field">
-          <input
-            type="text"
-            id="firstName"
-            required
-            [(ngModel)]="model.firstName"
-            name="firstName"
-            #firstName="ngModel"
-          />
-          <div
-            class="alert-text"
-            [hidden]="firstName.valid || firstName.pristine"
-          >
-            Please enter a valid first name
+          <div class="field">
+            <label>* Name</label>
+            <div class="two fields">
+              <div class="field">
+                <input
+                  type="text"
+                  id="firstName"
+                  required
+                  [(ngModel)]="model.firstName"
+                  name="firstName"
+                  #firstName="ngModel"
+                />
+                <div
+                  class="alert-text"
+                  [hidden]="firstName.valid || firstName.pristine"
+                >
+                  Please enter a valid first name
+                </div>
+              </div>
+
+              <div class="field">
+                <input
+                  type="text"
+                  id="lastName"
+                  required
+                  [(ngModel)]="model.lastName"
+                  name="lastName"
+                  #lastName="ngModel"
+                />
+                <div
+                  class="alert-text"
+                  [hidden]="lastName.valid || lastName.pristine"
+                >
+                  Please enter a valid last name
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="field">
-          <input
-            type="text"
-            id="lastName"
-            required
-            [(ngModel)]="model.lastName"
-            name="lastName"
-            #lastName="ngModel"
-          />
-          <div
-            class="alert-text"
-            [hidden]="lastName.valid || lastName.pristine"
-          >
-            Please enter a valid last name
+          <div class="field">
+            <label>* Billing Address</label>
+            <div class="fields">
+              <div class="twelve wide field">
+                <input
+                  type="text"
+                  id="address"
+                  required
+                  [(ngModel)]="model.address"
+                  name="address"
+                  #address="ngModel"
+                />
+                <div
+                  class="alert-text"
+                  [hidden]="address.valid || address.pristine"
+                >
+                  Please enter a valid address
+                </div>
+              </div>
+              <div class="four wide field">
+                <input
+                  type="text"
+                  id="apartment"
+                  [(ngModel)]="model.apartment"
+                  name="apartment"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="field">
-      <label>* Billing Address</label>
-      <div class="fields">
-        <div class="twelve wide field">
-          <input
-            type="text"
-            id="address"
-            required
-            [(ngModel)]="model.address"
-            name="address"
-            #address="ngModel"
-          />
-          <div class="alert-text" [hidden]="address.valid || address.pristine">
-            Please enter a valid address
-          </div>
-        </div>
-        <div class="four wide field">
-          <input
-            type="text"
-            id="apartment"
-            [(ngModel)]="model.apartment"
-            name="apartment"
-          />
-        </div>
-      </div>
-    </div>
 
-    <div class="two fields">
-      <div class="field">
-        <label>* Country</label>
-
-        <select
-          class="ui fluid search dropdown"
-          id="country"
-          required
-          [(ngModel)]="model.country"
-          name="country"
-        >
-          <option *ngFor="let country of countries" [value]="country">
-            {{ country }}
-          </option>
-        </select>
-      </div>
-    </div>
-
-    <h4 class="ui dividing header yellow-text">Billing Information</h4>
-
-    <div class="field">
-      <label>* Card Type</label>
-
-      <select
-        class="ui fluid search dropdown"
-        id="cardType"
-        required
-        [(ngModel)]="model.cardType"
-        name="cardType"
-      >
-        <option *ngFor="let type of cardTypes" [value]="type">
-          {{ type }}
-        </option>
-      </select>
-
-      <div class="fields">
-        <div class="seven wide field">
-          <label>* Card Number</label>
-
-          <input
-            minlength="16"
-            maxlength="16"
-            type="text"
-            id="cardNumber"
-            required
-            [(ngModel)]="model.cardNumber"
-            name="cardNumber"
-            #cardNumber="ngModel"
-          />
-          <div
-            class="alert-text"
-            [hidden]="cardNumber.valid || cardNumber.pristine"
-          >
-            Please enter a valid card number
-          </div>
-        </div>
-
-        <div class="three wide field">
-          <label>* CVC</label>
-
-          <input
-            minlength="3"
-            maxlength="3"
-            type="text"
-            id="cvc"
-            required
-            [(ngModel)]="model.cvc"
-            name="cvc"
-            #cvc="ngModel"
-          />
-          <div class="alert-text" [hidden]="cvc.valid || cvc.pristine">
-            Please enter a valid CVC
-          </div>
-        </div>
-
-        <div class="six wide field">
-          <label>* Expiration</label>
           <div class="two fields">
             <div class="field">
+              <label>* Country</label>
+
               <select
                 class="ui fluid search dropdown"
-                id="month"
+                id="country"
                 required
-                [(ngModel)]="model.expirationMonth"
-                name="month"
+                [(ngModel)]="model.country"
+                name="country"
               >
-                <option *ngFor="let month of months" [value]="month">
-                  {{ month }}
+                <option *ngFor="let country of countries" [value]="country">
+                  {{ country }}
                 </option>
               </select>
             </div>
+          </div>
 
-            <div class="field">
-              <input
-                minlength="4"
-                maxlength="4"
-                type="text"
-                id="year"
-                required
-                [(ngModel)]="model.expirationYear"
-                name="year"
-                #year="ngModel"
-              />
-              <div class="alert-text" [hidden]="year.valid || year.pristine">
-                Please enter a valid year
+          <h4 class="ui dividing header yellow-text">Billing Information</h4>
+
+          <div class="field">
+            <label>* Card Type</label>
+
+            <select
+              class="ui fluid search dropdown"
+              id="cardType"
+              required
+              [(ngModel)]="model.cardType"
+              name="cardType"
+            >
+              <option *ngFor="let type of cardTypes" [value]="type">
+                {{ type }}
+              </option>
+            </select>
+
+            <div class="fields">
+              <div class="seven wide field">
+                <label>* Card Number</label>
+
+                <input
+                  minlength="16"
+                  maxlength="16"
+                  type="text"
+                  id="cardNumber"
+                  required
+                  [(ngModel)]="model.cardNumber"
+                  name="cardNumber"
+                  #cardNumber="ngModel"
+                />
+                <div
+                  class="alert-text"
+                  [hidden]="cardNumber.valid || cardNumber.pristine"
+                >
+                  Please enter a valid card number
+                </div>
+              </div>
+
+              <div class="three wide field">
+                <label>* CVC</label>
+
+                <input
+                  minlength="3"
+                  maxlength="3"
+                  type="text"
+                  id="cvc"
+                  required
+                  [(ngModel)]="model.cvc"
+                  name="cvc"
+                  #cvc="ngModel"
+                />
+                <div class="alert-text" [hidden]="cvc.valid || cvc.pristine">
+                  Please enter a valid CVC
+                </div>
+              </div>
+
+              <div class="six wide field">
+                <label>* Expiration</label>
+                <div class="two fields">
+                  <div class="field">
+                    <select
+                      class="ui fluid search dropdown"
+                      id="month"
+                      required
+                      [(ngModel)]="model.expirationMonth"
+                      name="month"
+                    >
+                      <option *ngFor="let month of months" [value]="month">
+                        {{ month }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <input
+                      minlength="4"
+                      maxlength="4"
+                      type="text"
+                      id="year"
+                      required
+                      [(ngModel)]="model.expirationYear"
+                      name="year"
+                      #year="ngModel"
+                    />
+                    <div
+                      class="alert-text"
+                      [hidden]="year.valid || year.pristine"
+                    >
+                      Please enter a valid year
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="centered column narrow-column">
+        <button
+          [disabled]="orderForm.form.invalid"
+          class="ui button checkout-button"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
     </div>
 
-    <button
-      [disabled]="orderForm.form.invalid"
-      class="ui button inverted-colours bottom-right"
-      type="submit"
-    >
-      Submit
-    </button>
+    <div class="ui vertical divider">
+      ready?
+    </div>
   </form>
 </div>
 
-<div [hidden]="!submitted" >
+<div [hidden]="!submitted">
   <div class="ui two column very relaxed center aligned grid">
-    <div class="left aligned column">
-      <div class="row">
-        <div class="column sub-header">Name</div>
-        <div class="column black-text">
-          {{ model.firstName }} {{ model.lastName }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="column sub-header">Address</div>
-        <div class="column black-text">
-          {{ model.address }} {{ model.apartment }}, {{ model.country }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="column sub-header">Billing Information</div>
-        <div class="column black-text">Card type: {{ model.cardType }}</div>
-        <div class="column black-text">Card number: {{ model.cardNumber }}</div>
-        <div class="column black-text">CVC: {{ model.cvc }}</div>
-        <div class="column black-text">
-          Expires: {{ model.expirationMonth }} {{ model.expirationYear }}
-        </div>
-      </div>
-
-      <br />
-
-      <button class="ui button inverted-colours" (click)="submitted = false">
-        Edit Details
-      </button>
-    </div>
-
-    <div class="left aligned column">
-      <div class="row">
-        <div *ngFor="let beer of model.items">
-          <div class="column black-text">
-            {{ beer.name }} hi
+    <div class="left aligned column wide-column">
+      <div class="form-container">
+        <div class="row">
+          <div *ngFor="let beer of model.items">
+            <div class="column black-text">
+              {{ beer.name }}
+            </div>
           </div>
         </div>
-      </div>
 
+        <div class="ui dividing header"></div>
+
+        <div class="row">
+          <div class="column sub-header">Name</div>
+          <div class="column black-text">
+            {{ model.firstName }} {{ model.lastName }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="column sub-header">Address</div>
+          <div class="column black-text">
+            {{ model.address }} {{ model.apartment }}, {{ model.country }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="column sub-header">Billing Information</div>
+          <div class="column black-text">Card type: {{ model.cardType }}</div>
+          <div class="column black-text">
+            Card number: {{ model.cardNumber }}
+          </div>
+          <div class="column black-text">CVC: {{ model.cvc }}</div>
+          <div class="column black-text">
+            Expires: {{ model.expirationMonth }} {{ model.expirationYear }}
+          </div>
+        </div>
+
+        <button class="ui button inverted-colours bottom-left" (click)="submitted = false">
+          Edit Details
+        </button>
+      </div>
+    </div>
+
+    <div class="left aligned column narrow-column">
       <button
-        class="ui button inverted-colours"
+        class="ui button checkout-button"
         type="submit"
         (click)="submitForm()"
       >
-        Submit Order
+        Submit
+
+        <br />
+        Order
       </button>
     </div>
-    <div class="ui vertical divider mid-text">summary</div>
+
+    <div class="ui vertical divider">ready?</div>
   </div>
 </div>

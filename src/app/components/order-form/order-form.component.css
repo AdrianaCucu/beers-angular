@@ -13,14 +13,37 @@
   top: 62vh;
 }
 
-.bottom-right {
-  position: absolute;
-  top: 62vh;
-  left: 70vw;
+.checkout-button {
+  padding: 1vh;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  right: 1vh;
+  top: 1vh;
+  font-size: 4.5vh;
+  color: #292826;
+  background-color: transparent !important;
+}
+
+.checkout-button:hover {
+  color: #f9d342;
 }
 
 .divider {
-  left: 50% !important;
+  left: 70.4% !important;
+}
+
+.form-container {
+  width: 95%;
+  padding-left: 5%;
+}
+
+.full-container {
+  height: 70vh;
+}
+
+.grid {
+  height: 70vh !important;
 }
 
 .inverted-colours {
@@ -33,13 +56,21 @@
   color: #f9d342;
 }
 
-.mid-text {
-  color: #f9d342;
+.narrow-column {
+  width: 28% !important;
+  height: 67vh;
+  padding: 0 !important;
 }
 
 .sub-header {
   font-size: 2vh;
   padding: 1vh 0;
+}
+
+.wide-column {
+  width: 70% !important;
+  overflow-x: hidden;
+  padding-left: 0 !important;
 }
 
 .yellow-text {
