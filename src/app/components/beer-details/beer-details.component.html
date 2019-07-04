@@ -87,3 +87,63 @@
     </div>
   </div>
 </div>
+
+<div class="ui container">
+  <div class="similar">
+
+    <div class="header-similar base-colours">
+      Similar Items:
+    </div>
+
+    <div *ngFor="let item of similarItems" class="ui column">
+      <div class="ui card">
+        <div class="content">
+          <div class="ui mini image" style="background: transparent;">
+            <img src="{{ item.image_url }}" />
+          </div>
+
+          <div class="header">
+            <a
+              class="turn-yellow"
+              [title]="item.name + ' details'"
+              [routerLink]="['/beers', item.id]"
+              (click)="ngOnInit()"
+            >
+              {{ item.name }}
+            </a>
+          </div>
+        </div>
+
+        <div class="bottom-right">
+          <div class="extra content">
+            <button
+              class="ui left floated icon button"
+              (click)="updateFavourites(item)"
+            >
+              <div *ngIf="!isInFavourites(item)">
+                <i class="star large icon turn-yellow"></i>
+              </div>
+
+              <div *ngIf="isInFavourites(item)">
+                <i class="star large icon yellow-text"></i>
+              </div>
+            </button>
+
+            <button
+              class="ui right floated icon button turn-yellow"
+              (click)="updateCart(item)"
+            >
+              <div *ngIf="!isInCart(item)">
+                <i class="shopping cart large icon turn-yellow"></i>
+              </div>
+
+              <div *ngIf="isInCart(item)">
+                <i class="shopping cart large icon yellow-text"></i>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

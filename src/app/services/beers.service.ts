@@ -189,4 +189,10 @@ export class BeersService {
 
     return filteredBeers;
   }
+
+  getSimilarBeers(abv) {
+    return this.http.get(
+      `${this.API_PATH}/beers?per_page=12&abv_gt=${abv - 1}&abv_lt${abv + 1}`
+    );
+  }
 }

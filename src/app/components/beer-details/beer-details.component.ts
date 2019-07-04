@@ -13,6 +13,9 @@ import { CartService } from 'src/app/services/cart.service';
 export class BeerDetailsComponent implements OnInit {
   items;
   id;
+
+  similarItems;
+  abv;
   idError: boolean;
 
   constructor(
@@ -20,14 +23,14 @@ export class BeerDetailsComponent implements OnInit {
     private beersService: BeersService,
     private cartService: CartService,
     private route: ActivatedRoute
-  ) {
-    route.params.subscribe(params => (this.id = params['beerId']));
-  }
+  ) {}
 
   ngOnInit() {
     this.idError = false;
 
-    // console.log(this.id);
+    console.log(this.route.params);
+    this.route.params.subscribe(params => (this.id = params['beerId']));
+    console.log(this.id);
 
     this.updatePage();
   }
@@ -43,9 +46,16 @@ export class BeerDetailsComponent implements OnInit {
 
   updatePage() {
     if (this.validateId(this.id)) {
-      this.beersService
-        .getSelectedBeer(this.id)
-        .subscribe(item => (this.items = item));
+      this.beersService.getSelectedBeer(this.id).subscribe(
+        item => (
+          (this.items = item),
+          (this.abv = this.items[0].abv),
+          this.beersService.getSimilarBeers(this.abv).subscribe(
+            similar => (this.similarItems = similar)
+            // console.log(this.similarItems))
+          )
+        )
+      );
     } else {
       this.idError = true;
     }
