@@ -108,7 +108,7 @@
               class="turn-yellow"
               [title]="item.name + ' details'"
               [routerLink]="['/beers', item.id]"
-              (click)="ngOnInit()"
+              (click)="updatePage()"
             >
               {{ item.name }}
             </a>

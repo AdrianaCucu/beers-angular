@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { FavouritesService } from 'src/app/services/favourites.service';
 import { BeersService } from 'src/app/services/beers.service';
@@ -22,15 +22,21 @@ export class BeerDetailsComponent implements OnInit {
     private favouritesService: FavouritesService,
     private beersService: BeersService,
     private cartService: CartService,
-    private route: ActivatedRoute
-  ) {}
+    private router: Router
+  ) {
+    router.events.subscribe(val => {
+      val instanceof NavigationEnd
+        ? ((this.id = val.url.replace(/\D/g, '')), this.ngOnInit())
+        : null;
+
+      // console.log(this.id);
+
+      // console.log(val instanceof NavigationEnd);
+    });
+  }
 
   ngOnInit() {
     this.idError = false;
-
-    console.log(this.route.params);
-    this.route.params.subscribe(params => (this.id = params['beerId']));
-    console.log(this.id);
 
     this.updatePage();
   }
