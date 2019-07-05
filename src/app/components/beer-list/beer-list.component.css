@@ -68,9 +68,9 @@ button {
 }
 
 .under-header {
-  position: relative;
+  position: fixed;
   top: 12vh;
-  left: 6vw;
+  left: 15vw;
 }
 
 .viewport {
@@ -95,7 +95,7 @@ button {
   }
 
   .under-header {
-    left: 7vw;
+    left: 20vw;
   }
 
   .viewport {
@@ -104,12 +104,17 @@ button {
 }
 
 @media only screen and (max-width: 450px) {
+  .card-box {
+    width: 70vw;
+  }
+
   .under-header {
-    left: 16vw;
+    left: 30vw;
+    top: 12vh;
   }
 
   .viewport {
-    height: 85vh;
-    width: 45vmax !important;
+    height: 100vh;
+    width: 80vw !important;
   }
 }

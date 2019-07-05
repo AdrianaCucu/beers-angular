@@ -39,10 +39,11 @@ button {
 
 .header-similar {
   position: fixed;
-  top: 12vh;
+  top: 13vh;
   font-size: 3vh;
-  height: 3vh;
+  height: 3.5vh;
   width: 20vw;
+  padding-top: 0.5vh;
   z-index: 2;
 }
 
@@ -61,7 +62,7 @@ img {
 
 .similar {
   position: fixed;
-  top: 15vh;
+  top: 16.5vh;
   left: 75vw;
   width: 20vw;
   height: 78vh;

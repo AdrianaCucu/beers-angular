@@ -1,3 +1,7 @@
+<div class="ui container">
+  <app-nav-bar></app-nav-bar>
+</div>
+
 <div *ngIf="link === 'cart'">
   <div *ngIf="!items.length" class="top-header">
     <div class="header">
@@ -103,15 +107,15 @@
           </a>
 
           <div>
-              <input
-                class="item-quantity"
-                type="number"
-                min="1"
-                max="20"
-                name="quantity"
-                [(ngModel)]="item.quantity"
-              />
-            </div>
+            <input
+              class="item-quantity"
+              type="number"
+              min="1"
+              max="20"
+              name="quantity"
+              [(ngModel)]="item.quantity"
+            />
+          </div>
         </div>
       </div>
     </div>
