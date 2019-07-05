@@ -11,6 +11,8 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./beer-details.component.css']
 })
 export class BeerDetailsComponent implements OnInit {
+  deviceWidth;
+
   items;
   id;
 
@@ -36,6 +38,8 @@ export class BeerDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.deviceWidth = window.innerWidth;
+
     this.idError = false;
 
     this.updatePage();
