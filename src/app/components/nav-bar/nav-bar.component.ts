@@ -15,7 +15,9 @@ export class NavBarComponent implements OnInit {
   abv = ['weak', 'medium', 'strong'];
   ibu = ['low', 'normal', 'high'];
 
-  constructor(private beersService: BeersService) {}
+  constructor(
+    private beersService: BeersService
+  ) {}
 
   ngOnInit() {
     this.deviceWidth = window.innerWidth;

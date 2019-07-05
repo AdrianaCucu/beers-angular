@@ -18,6 +18,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { ScrollableDirective } from './directives/scrollable.directive';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
+import { GoogleAuthComponent } from './components/google-auth/google-auth.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { OrderFormComponent } from './components/order-form/order-form.component
     LandingPageComponent,
     ScrollableDirective,
     CartComponent,
-    OrderFormComponent
+    OrderFormComponent,
+    GoogleAuthComponent
   ],
   imports: [
     BrowserModule,

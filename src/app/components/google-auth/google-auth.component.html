@@ -1,0 +1,13 @@
+<div id="signOut" *ngIf="isSignedIn()">
+  <button class="ui red google button">
+    <i class="google icon"></i>
+    <span class="button-text">Sign Out</span>
+  </button>
+</div>
+
+<div id="signIn" *ngIf="!isSignedIn()">
+  <button class="ui red google button">
+    <i class="google icon"></i>
+    <span class="button-text">Sign In with Google</span>
+  </button>
+</div>
