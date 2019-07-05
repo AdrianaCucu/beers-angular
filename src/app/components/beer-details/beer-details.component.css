@@ -46,6 +46,11 @@ button {
   z-index: 2;
 }
 
+.image-container {
+  height: 15vh;
+  padding-right: 1vw;
+}
+
 img {
   height: 60vmin;
 }
