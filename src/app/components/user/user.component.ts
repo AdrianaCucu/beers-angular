@@ -27,6 +27,7 @@ export class UserComponent implements OnInit {
     this.googleAuthService.setOrders(this.orders);
 
     this.signedIn = this.googleAuthService.signedIn;
+    // console.log(this.signedIn);
   }
 
   ngOnInit() {}
