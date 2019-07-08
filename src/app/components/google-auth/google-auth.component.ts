@@ -1,51 +1,58 @@
 import { Component, AfterViewInit } from '@angular/core';
 
-import { AuthService } from 'src/app/services/auth.service';
-
 @Component({
   selector: 'app-google-auth',
   templateUrl: './google-auth.component.html',
   styleUrls: ['./google-auth.component.css']
 })
 export class GoogleAuthComponent implements AfterViewInit {
-  public auth2: any;
+  GoogleAuth;
+  public user;
   public profile;
+  public signedIn;
 
-  constructor(private authService: AuthService) {}
+  constructor() {}
 
   public googleInit() {
     gapi.load('auth2', () => {
-      this.auth2 = gapi.auth2.init({
-        client_id:
-          '210762821208-ved7kejd3nteooa841bdv0sf03476ajv.apps.googleusercontent.com',
-        scope: 'profile email'
-      });
-      this.attachSignIn(document.getElementById('signIn'));
+      gapi.auth2
+        .init({
+          client_id:
+            '210762821208-ved7kejd3nteooa841bdv0sf03476ajv.apps.googleusercontent.com',
+          scope: 'profile'
+        })
+        .then(() => {
+          this.GoogleAuth = gapi.auth2.getAuthInstance();
+          // console.log(this.GoogleAuth);
+          // console.log(this.GoogleAuth.currentUser);
+          // console.log(this.GoogleAuth.isSignedIn.get());
+        });
+      // this.attachSignIn(document.getElementById('signIn'));
     });
   }
 
-  public attachSignIn(element) {
-    this.auth2.attachClickHandler(
-      element,
-      {},
-      googleUser => {
-        this.profile = googleUser.getBasicProfile();
-        this.authService.setProfile(this.profile);
-        // console.log('token', googleUser.getAuthResponse().id_token);
-        // console.log('id', profile.getId());
-        // console.log('name', this.profile.getName());
-        // console.log('image', this.profile.getImageUrl());
-        // console.log('email', this.profile.getEmail());
-        this.authService.setStatus(true);
-      },
-      error => {
-        alert(JSON.stringify(error, undefined, 2));
-      }
-    );
+  handleAuthClick() {
+    this.signedIn = !this.signedIn;
+    this.signedIn ? this.signIn() : this.signOut();
   }
 
-  isSignedIn() {
-    return this.authService.isSignedIn;
+  signIn() {
+    this.GoogleAuth.signIn().then(() => {
+      this.signedIn = true;
+      this.user = this.GoogleAuth.currentUser.get();
+      this.profile = this.user.getBasicProfile();
+      // console.log('reached sign in', this.signedIn, this.user);
+      // console.log(this.GoogleAuth.isSignedIn.get());
+    });
+  }
+
+  signOut() {
+    this.GoogleAuth.signOut().then(() => {
+      this.signedIn = false;
+      this.user = null;
+      // console.log('reached sign out', this.signedIn, this.user);
+      // console.log(this.GoogleAuth.isSignedIn.get());
+    });
   }
 
   ngAfterViewInit() {
