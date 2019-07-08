@@ -1,4 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
+
+import { GoogleAuthService } from '../../services/google-auth.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 declare var gapi: any;
 
 @Component({
@@ -16,8 +20,10 @@ export class GoogleAuthComponent implements AfterViewInit {
   public profile;
   public imageUrl;
 
-  constructor() {
+  constructor(private googleAuthService: GoogleAuthService) {
     this.deviceWidth = window.innerWidth;
+    this.signedIn = this.googleAuthService.signedIn;
+    this.setProfile();
   }
 
   public googleInit() {
@@ -48,6 +54,7 @@ export class GoogleAuthComponent implements AfterViewInit {
       this.user = this.GoogleAuth.currentUser.get();
       this.profile = this.user.getBasicProfile();
       this.imageUrl = this.profile.getImageUrl();
+      this.googleAuthService.setStatus(this.signedIn, this.profile);
       // console.log(this.imageUrl);
       // console.log('reached sign in', this.signedIn, this.user);
       // console.log(this.GoogleAuth.isSignedIn.get());
@@ -58,9 +65,17 @@ export class GoogleAuthComponent implements AfterViewInit {
     this.GoogleAuth.signOut().then(() => {
       this.signedIn = false;
       this.user = null;
+      this.googleAuthService.setStatus();
       // console.log('reached sign out', this.signedIn, this.user);
       // console.log(this.GoogleAuth.isSignedIn.get());
     });
+  }
+
+  setProfile() {
+    this.profile = this.googleAuthService.profile;
+    if (this.googleAuthService.signedIn) {
+      this.imageUrl = this.googleAuthService.getImage();
+    }
   }
 
   ngAfterViewInit() {
