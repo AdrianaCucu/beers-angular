@@ -7,12 +7,18 @@ declare var gapi: any;
   styleUrls: ['./google-auth.component.css']
 })
 export class GoogleAuthComponent implements AfterViewInit {
+  deviceWidth;
+
   GoogleAuth;
   public user;
-  public profile;
   public signedIn;
 
-  constructor() {}
+  public profile;
+  public imageUrl;
+
+  constructor() {
+    this.deviceWidth = window.innerWidth;
+  }
 
   public googleInit() {
     gapi.load('auth2', () => {
@@ -20,7 +26,7 @@ export class GoogleAuthComponent implements AfterViewInit {
         .init({
           client_id:
             '210762821208-ved7kejd3nteooa841bdv0sf03476ajv.apps.googleusercontent.com',
-          scope: 'profile'
+          scope: 'email profile'
         })
         .then(() => {
           this.GoogleAuth = gapi.auth2.getAuthInstance();
@@ -41,6 +47,8 @@ export class GoogleAuthComponent implements AfterViewInit {
       this.signedIn = true;
       this.user = this.GoogleAuth.currentUser.get();
       this.profile = this.user.getBasicProfile();
+      this.imageUrl = this.profile.getImageUrl();
+      // console.log(this.imageUrl);
       // console.log('reached sign in', this.signedIn, this.user);
       // console.log(this.GoogleAuth.isSignedIn.get());
     });

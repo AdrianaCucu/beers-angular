@@ -1,0 +1,13 @@
+.header {
+  font-size: 5vh;
+  margin-top: 1vh;
+}
+
+.under-header {
+  position: fixed;
+  top: 12vh;
+  left: 17vw;
+  height: 80vh;
+  width: 80vw;
+  z-index: 2;
+}

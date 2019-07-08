@@ -3,11 +3,6 @@ a:hover {
   color: #292826 !important;
 }
 
-.auth-button {
-  position: fixed;
-  left: 15vmax;
-}
-
 .background-gradient {
   background: linear-gradient(
     180deg,

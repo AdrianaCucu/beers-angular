@@ -11,6 +11,7 @@ a:active {
   float: right !important;
   top: 3.5vh;
   margin-right: 15vw;
+  display: inline-flex;
   z-index: 3;
 }
 

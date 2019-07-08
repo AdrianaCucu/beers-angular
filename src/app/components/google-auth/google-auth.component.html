@@ -1,3 +1,9 @@
+<div *ngIf="signedIn && deviceWidth > 450">
+  <a class="ui tiny circular padded image" [routerLink]="['/user']">
+    <img src="{{ imageUrl }}" />
+  </a>
+</div>
+
 <div *ngIf="signedIn" (click)="handleAuthClick()">
   <button class="ui red google button">
     <i class="google icon"></i>
