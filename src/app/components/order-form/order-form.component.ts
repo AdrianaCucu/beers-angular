@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ClientDetails } from '../client-details';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
+import { GoogleAuthService } from 'src/app/services/google-auth.service';
 
 @Component({
   selector: 'app-order-form',
@@ -52,7 +53,8 @@ export class OrderFormComponent {
 
   constructor(
     private cartService: CartService,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private googleAuthService: GoogleAuthService
   ) {}
 
   clearCart() {
@@ -73,7 +75,9 @@ export class OrderFormComponent {
 
     // console.log(localStorage.getItem('orders'));
 
-    this.orderService.updateOrders(this.model);
+    if (this.googleAuthService.signedIn) {
+      this.orderService.updateOrders(this.model);
+    }
 
     // console.log(localStorage.getItem('orders'));
 

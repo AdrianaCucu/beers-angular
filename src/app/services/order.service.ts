@@ -32,4 +32,8 @@ export class OrderService {
     this.orders.push(order);
     localStorage.setItem('orders', JSON.stringify(this.orders));
   }
+
+  getOrders() {
+    return this.orders;
+  }
 }

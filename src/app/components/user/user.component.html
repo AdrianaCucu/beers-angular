@@ -1,4 +1,16 @@
 <div *ngIf="signedIn" class="ui segment under-header">
   <div class="header">{{ name }}'s Account</div>
   <div class="orders">Orders</div>
+  <div class="ui relaxed divided list order-list">
+    <div class="item" *ngFor="let order of orders">
+      <div class="content">
+        <a class="yellow-text">{{ order.orderDate }}</a>
+        <div class="description">
+          <div class="item" *ngFor="let item of order.items">
+            {{item.quantity}} x {{ item.name }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

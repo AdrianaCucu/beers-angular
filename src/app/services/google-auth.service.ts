@@ -16,6 +16,11 @@ export class GoogleAuthService {
     ? JSON.parse(localStorage.getItem('userDetails')).profile
     : undefined;
 
+  setOrders(orders) {
+    this.details['o: []rders'] = orders;
+    localStorage.setItem('userDetails', JSON.stringify(this.details));
+  }
+
   setStatus(signedIn: boolean = false, name?: string, image?: string) {
     this.details['signedIn'] = signedIn;
     this.profile['name'] = name;
