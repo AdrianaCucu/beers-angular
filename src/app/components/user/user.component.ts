@@ -10,11 +10,15 @@ import { GoogleAuthService } from 'src/app/services/google-auth.service';
 export class UserComponent implements OnInit {
   name;
   imageUrl;
+  signedIn;
 
-  constructor(private googleAuthService: GoogleAuthService) {}
-
-  ngOnInit() {
+  constructor(private googleAuthService: GoogleAuthService) {
     this.name = this.googleAuthService.getName();
     this.imageUrl = this.googleAuthService.getImage();
+    // console.log(this.name, this.imageUrl);
+
+    this.signedIn = this.googleAuthService.signedIn;
   }
+
+  ngOnInit() {}
 }

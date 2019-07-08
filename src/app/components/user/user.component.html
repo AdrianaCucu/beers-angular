@@ -1,3 +1,4 @@
-<div class="ui segment under-header">
-  <div class="header">Hello, {{ name }}!</div>
+<div *ngIf="signedIn" class="ui segment under-header">
+  <div class="header">{{ name }}'s Account</div>
+  <div class="orders">Orders</div>
 </div>

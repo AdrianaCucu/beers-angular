@@ -1,6 +1,11 @@
 .header {
   font-size: 5vh;
   margin-top: 1vh;
+  height: 6vh;
+}
+
+.orders {
+  font-size: 3vh;
 }
 
 .under-header {

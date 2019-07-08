@@ -54,7 +54,11 @@ export class GoogleAuthComponent implements AfterViewInit {
       this.user = this.GoogleAuth.currentUser.get();
       this.profile = this.user.getBasicProfile();
       this.imageUrl = this.profile.getImageUrl();
-      this.googleAuthService.setStatus(this.signedIn, this.profile);
+      this.googleAuthService.setStatus(
+        this.signedIn,
+        this.profile.getName(),
+        this.imageUrl
+      );
       // console.log(this.imageUrl);
       // console.log('reached sign in', this.signedIn, this.user);
       // console.log(this.GoogleAuth.isSignedIn.get());

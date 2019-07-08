@@ -16,19 +16,21 @@ export class GoogleAuthService {
     ? JSON.parse(localStorage.getItem('userDetails')).profile
     : undefined;
 
-  setStatus(signedIn: boolean = false, profile?: any) {
+  setStatus(signedIn: boolean = false, name?: string, image?: string) {
     this.details['signedIn'] = signedIn;
-    this.details['profile'] = profile;
+    this.profile['name'] = name;
+    this.profile['image'] = image;
+    this.details['profile'] = this.profile;
 
     localStorage.setItem('userDetails', JSON.stringify(this.details));
-    console.log(localStorage.getItem('userDetails'));
+    // console.log(localStorage.getItem('userDetails'));
   }
 
   getName() {
-    return this.profile.ig;
+    return this.profile.name;
   }
 
   getImage() {
-    return this.profile.Paa;
+    return this.profile.image;
   }
 }

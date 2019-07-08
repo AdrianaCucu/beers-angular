@@ -4,14 +4,14 @@
   </a>
 </div>
 
-<div *ngIf="signedIn" (click)="handleAuthClick()">
+<div *ngIf="signedIn" (click)="handleAuthClick()" [routerLink]="['/']">
   <button class="ui red google button">
     <i class="google icon"></i>
     <span class="button-text">Sign Out</span>
   </button>
 </div>
 
-<div *ngIf="!signedIn" (click)="handleAuthClick()">
+<div *ngIf="!signedIn" (click)="handleAuthClick()" [routerLink]="['/']">
   <button class="ui red google button">
     <i class="google icon"></i>
     <span class="button-text">Sign In with Google</span>
