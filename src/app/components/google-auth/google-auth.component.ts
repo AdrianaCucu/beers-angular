@@ -27,7 +27,6 @@ export class GoogleAuthComponent implements AfterViewInit {
           // console.log(this.GoogleAuth.currentUser);
           // console.log(this.GoogleAuth.isSignedIn.get());
         });
-      // this.attachSignIn(document.getElementById('signIn'));
     });
   }
 
