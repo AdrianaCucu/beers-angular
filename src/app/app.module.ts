@@ -19,7 +19,6 @@ import { ScrollableDirective } from './directives/scrollable.directive';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
 import { GoogleAuthComponent } from './components/google-auth/google-auth.component';
-import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { UserComponent } from './components/user/user.component';
     ScrollableDirective,
     CartComponent,
     OrderFormComponent,
-    GoogleAuthComponent,
-    UserComponent
+    GoogleAuthComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +45,6 @@ import { UserComponent } from './components/user/user.component';
       { path: 'beers/:beerId', component: BeerDetailsComponent },
       { path: 'beer-catalogue', component: BeerListComponent },
       { path: 'favourites', component: FavouritesComponent },
-      { path: 'user', component: UserComponent },
       { path: ':cart-link', component: CartComponent },
       { path: '**', redirectTo: '' }
     ])

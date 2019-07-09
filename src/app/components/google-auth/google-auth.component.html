@@ -1,7 +1,7 @@
 <div *ngIf="signedIn && deviceWidth > 450">
-  <a class="ui tiny circular padded image" [routerLink]="['/user']">
+  <div class="ui tiny circular padded image">
     <img src="{{ imageUrl }}" />
-  </a>
+  </div>
 </div>
 
 <div *ngIf="signedIn" (click)="handleAuthClick()" [routerLink]="['/']">

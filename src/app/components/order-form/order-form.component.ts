@@ -75,9 +75,7 @@ export class OrderFormComponent {
 
     // console.log(localStorage.getItem('orders'));
 
-    if (this.googleAuthService.signedIn) {
-      this.orderService.updateOrders(this.model);
-    }
+    this.orderService.updateOrders(this.model);
 
     // console.log(localStorage.getItem('orders'));
 

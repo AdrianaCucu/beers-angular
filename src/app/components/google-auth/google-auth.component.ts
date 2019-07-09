@@ -72,6 +72,7 @@ export class GoogleAuthComponent implements AfterViewInit {
       this.googleAuthService.setStatus();
       // console.log('reached sign out', this.signedIn, this.user);
       // console.log(this.GoogleAuth.isSignedIn.get());
+      // console.log(localStorage.getItem('userDetails'));
     });
   }
 

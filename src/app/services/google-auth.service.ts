@@ -34,7 +34,7 @@ export class GoogleAuthService {
     this.details['profile'] = this.profile;
 
     localStorage.setItem('userDetails', JSON.stringify(this.details));
-    console.log(localStorage.getItem('userDetails'));
+    // console.log(localStorage.getItem('userDetails'));
   }
 
   getName() {
