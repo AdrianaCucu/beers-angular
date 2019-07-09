@@ -1,27 +1,48 @@
 # BeersAngular
 
+## Overview
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
-## Development server
+### Why build this?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The purpose of this project was to become familiar with Angular and TypeScript.
 
-## Code scaffolding
+### Can I try it?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Of course!
 
-## Build
+Visit [beercatalogue.netlify.com](https://beercatalogue.netlify.com/) to view the app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Why host it on Netlify? It's free. It's easy to use (eventually 😅). It's super fast.
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
+1. Install Git from [here](https://git-scm.com/downloads)
+2. Install Node.js and NPM from [here](https://nodejs.org/en/download/)
+3. Install the Angular CLI by following the instructions [here](https://angular.io/cli)
+4. Clone this repository by running `git clone https://github.com/AdrianaCucu/beers-angular`
+5. Enter the project folder: `cd beers-angular`
 
-## Running end-to-end tests
+### Build
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng build` to build the project. 
+The build artifacts will be stored in the `dist/` directory. 
+Use the `--prod` flag for a production build.
 
-## Further help
+### Development server 🤺
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run the app in development mode:
+
+```bash
+ng serve -o
+```
+
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser 🌍
+The app will automatically reload if you change any of the source files.
+
+
+## Credit
+
+Built with ❤ by [A.C.](https://github.com/AdrianaCucu)
