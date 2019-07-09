@@ -34,6 +34,7 @@ p {
 
 @media only screen and (min-width: 500px) and (max-width: 1100px) {
   .auth-button {
+    left: 5vw;
     margin-right: 5vw;
   }
 }

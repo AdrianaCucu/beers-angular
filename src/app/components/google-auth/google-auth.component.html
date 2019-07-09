@@ -1,6 +1,8 @@
-<div *ngIf="signedIn && deviceWidth > 450">
-  <div class="ui tiny circular padded image">
-    <img src="{{ imageUrl }}" />
+<div *ngIf="signedIn">
+  <div *ngIf="deviceWidth > 500">
+    <div class="ui tiny circular padded image">
+      <img src="{{ imageUrl }}" />
+    </div>
   </div>
 </div>
 
@@ -14,6 +16,12 @@
 <div *ngIf="!signedIn" (click)="handleAuthClick()" [routerLink]="['/']">
   <button class="ui red google button">
     <i class="google icon"></i>
-    <span class="button-text">Sign In with Google</span>
+    <div *ngIf="deviceWidth > 500">
+      <span class="button-text">Sign In with Google</span>
+    </div>
+
+    <div *ngIf="deviceWidth < 450">
+      <span class="button-text">Sign In</span>
+    </div>
   </button>
 </div>
