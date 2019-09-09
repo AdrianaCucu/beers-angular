@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { ClientDetails } from '../client-details';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
-import { GoogleAuthService } from 'src/app/services/google-auth.service';
 
 @Component({
   selector: 'app-order-form',
@@ -53,8 +52,7 @@ export class OrderFormComponent {
 
   constructor(
     private cartService: CartService,
-    private orderService: OrderService,
-    private googleAuthService: GoogleAuthService
+    private orderService: OrderService
   ) {}
 
   clearCart() {
